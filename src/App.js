@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useContext, useState} from "react"
+import Signin from "./screens/login/Login"
+import Layout from "./components/c-layout/Layout"
+import "./assets/css/grid.css"
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {AuthContext} from "./context/authContext/AuthContext"
+import Signup from "./screens/signup/Signup"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [mobileScreen, setMobileScreen] = useState(false);
+
+  export const GetWindowScreen = () => {
+    if(window.innerWidth > 768 ){
+        setMobileScreen(false);
+    }else {
+      setMobileScreen(true);
+    }
+  }
+		const {user, isFetching} = useContext(AuthContext)
+      return (
+        <>
+      {/* New AuthProvidr */}
+          <Router>
+            <Switch>
+              <Route exact path="/">{ user? <Layout/> : <Redirect to="/register" />}</Route>
+              <Route path = "/login">
+                {!user ? <Signin/> : <Redirect to="/" />}
+              </Route>
+              <Route path = "/register">
+                {!user ? <Signup/> : <Redirect to="/" />}
+              </Route>
+            </Switch>
+          </Router>
+    </>
+  )
 }
 
-export default App;
+export default App
