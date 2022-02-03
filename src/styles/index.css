@@ -3,9 +3,9 @@
 :root {
     --kWhite: #FFFFFF;
     --kBlack : #263253;
-    --kBlue: #09185E;
+    --kBlue: #030762;
     --kBlueSec: #253da7;
-    --kLightGrey: #f7f9fc;
+    --kGray: #505050;
     --font-family: 'Poppins' , sans-serif;
     --font-normal : 1rem;
     --body1 : 24px;
@@ -23,7 +23,7 @@
     --main-color-warning: red;
 
 
-    --sidebar-width: 18.75rem; /* 300 px*/
+    --sidebar-width: 16rem; /* 300 px*/
     --border-radius: 15px;
     --topnav-height: 6.88rem;
     --transition-cubic : cubic-bezier(0.175, 0.885, 0.32, 1.275);

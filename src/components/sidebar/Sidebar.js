@@ -5,10 +5,8 @@ import {SidebarWrapper, SidebarLogo, SideBarItemWrapper,
 } from "./sidebar_element.js"
 import sidebar_items from "../../assets/JsonData/sidebar_routes"
 import {Link} from 'react-router-dom'
-import * as Icons from "react-icons/ai"
-// import * as Icons from "react-icons/bi"
-// import "boxicons/css/boxicons.min.css"
-
+import authLogo from "../../assets/image/auth/authLogo.svg"
+import { BannerLogo } from '../../screens/login/Login__element.js'
 const SideBarItem = props => {
     const active = props.active ? "active" : ""
     return (
@@ -33,7 +31,7 @@ const Sidebar = props => {
         <>
             <SidebarWrapper>
                 <SidebarLogo>
-                    <h2>Admin Dashboard</h2>
+                    <img src = {authLogo} alt="" style={{width: "120px", marginTop: 20}}/>
                 </SidebarLogo>
                 {
                     sidebar_items.map((item, index) => (

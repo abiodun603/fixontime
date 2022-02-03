@@ -6,15 +6,16 @@ export const SidebarWrapper = styled.div `
     position: fixed;
     left: 0;
     top: 0; 
-    box-shadow: var(--box-shadow);
-    background: var(--kWhite);
+    /* box-shadow: var(--box-shadow); */
+    background: var(--kBlue);
     z-index: 100;
 `
 
 export const SidebarLogo = styled.div `
     display: flex;
     align-items: center;
-    padding: 22px;
+    justify-content: center;
+    /* padding: 22px; */
     height: 80px;
     margin-bottom: 2rem;
 
@@ -27,7 +28,7 @@ export const SidebarLogo = styled.div `
 `
 
 export const SideBarItemWrapper = styled.div `
-    padding: 0px 18px;
+    padding: 0px 0px;
     
 `
 export const SideBarItemInner = styled.div `
@@ -51,13 +52,9 @@ export const SideBarItemInner = styled.div `
     }
 
     &.active{
-        border-radius: var(--border-radius);
-        background-image: linear-gradient(
-            to right,
-            var(--kBlue),
-            var(--kBlack)
-        );
+        background: #232783;
         color : #FFF;
+        border-left: 4px solid red;
 `
 
 export const SideBarIcon = styled.div `

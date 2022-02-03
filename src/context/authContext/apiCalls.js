@@ -6,7 +6,7 @@ export const login = async(user, dispatch) => {
     try {
         const res = await axios({
                 method: "post",
-                url: "https://candid-nest.herokuapp.com/auth/login",
+                url: "https://fixontime.herokuapp.com/auth/login",
                 data: {
                     email: user.email,
                     password: user.password,

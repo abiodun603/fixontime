@@ -1,10 +1,12 @@
 import styled from "styled-components"
 
 export const TopNavWrapper = styled.div   `
-    padding: 30px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0,,0,0.05);
 `
 
 export const TopNavSearch = styled.div `

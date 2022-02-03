@@ -9,6 +9,7 @@ import user_menu from '../../assets/JsonData/user_menus.js'
 // import {FiSearch} from "react-icons/fi"
 import { AuthContext } from '../../context/authContext/AuthContext'
 import { logOut } from '../../context/authContext/AuthActions'
+import authLogo from "../../assets/image/auth/authLogo.svg"
 
 const curr_user = {
     display_name: "candid security",
@@ -39,10 +40,10 @@ const TopNav = () => {
     const renderUserToggle = () => (
         <TopNavRightUser>
             <TopNavRightUserImage>
-                <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png" alt=""/>
+                {/* <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png" alt=""/> */}
             </TopNavRightUserImage>
             <TopNavRightUsername>
-                {user.user.name}
+                {/* {user.user.name} */}
             </TopNavRightUsername>
         </TopNavRightUser>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {Dashboard, Customers} from "../screens/"
+import {Dashboard, Blog, Contact, Learn, Subscribe} from "../screens/"
 
 
 
@@ -9,7 +9,10 @@ function DRoutes() {
         <Router>
             <Switch>
                 <Route path="/" exact  component = {Dashboard}/>
-                <Route path ="/customers" component = {Customers}/>
+                <Route path ="/blog" component = {Blog}/>
+                <Route path ="/contact" component = {Contact}/>
+                <Route path ="/learn" component = {Learn}/>
+                <Route path = "/subscriber" component = {Subscribe} />
             </Switch>
         </Router>
         
