@@ -5,7 +5,7 @@ import {useHistory} from "react-router-dom"
 import axios from "axios"
 import authLogo from "../../assets/image/auth/authLogo.svg"
 
-const Signup = () => {
+const Reset = () => {
     const history = useHistory()
 
     const [values, handleChange] = useForm({
@@ -55,10 +55,10 @@ const Signup = () => {
                             reset your password
                         </p>
                         <FromBx>
-                            <span>Email Address</span>
+                            <span>New Password</span>
                             
-                            <Input 
-                                type = "text" 
+                            <Input
+                                type= "text" 
                                 // placeholder = "Enter Username"
                                 name = "name"
                                 required
@@ -68,19 +68,29 @@ const Signup = () => {
                         </FromBx>
 
                         <FromBx>
-                            <Button type="submit" disabled = {values.isSubmitting}  onClick= {() => history.push("/reset")}>
+                            <span>Confirm New Password</span>
+                            
+                            <Input
+                                type= "text" 
+                                // placeholder = "Enter Username"
+                                name = "name"
+                                required
+                                value = {values.name}
+                                onChange = {handleChange}
+                            />
+                        </FromBx>
+
+                        <FromBx>
+                            <Button type="submit" onClick= {() => history.push("/login")} disabled = {values.isSubmitting}>
                                 {values.isSubmitting ? (
                                     "Loading"
                                 ): "Reset Password"}
                             </Button>
                         </FromBx>
-                        <div style={{justifyContent: "center", display: "flex", alignItems: "center"}}>
-                            <label style={{cursor: "pointer", color: "#505050", fontSize: 14, marginTop: 5}} onClick= {() => history.push("/login")}>Sign In</label>
-                        </div>
                     </LoginForm>
                 </FormWrapper>
             </LoginWrapper>
         </>
     )
 }
-export default Signup;
+export default Reset;

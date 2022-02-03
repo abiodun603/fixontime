@@ -11,16 +11,33 @@ export const LoginBanner = styled.div `
     position: relative;
     width: 50%;
     height: 100%;
-    background-color: red;
+    background-color: #030762;
 
     img{
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height:100%;
         object-fit: cover;
+        width: 150px;
+        margin: 2rem;
     }
+
+    h1{
+        color: var(--main-bg);
+        font-weight: var(--fw-semi);
+        font-size: 48px;
+    }
+
+    span {
+        color: var(--main-bg);
+        font-weight: var(--fw-thin);
+        font-size: var(--body1)
+    }
+`
+
+export const BannerLogo = styled.img `
+    
+    /* height: 80px; */
 `
 
 export const FormWrapper = styled.form `
@@ -30,22 +47,31 @@ export const FormWrapper = styled.form `
     flex-direction: column; 
     width: 50%;
     height: 100%;
+    background: #E5E5E5;
 `
 
 export const LoginForm = styled.div `
-    width:65%;
+    width:69%;
+    border-radius: 5px;
+    background: #FFFFFF;
+    padding: 2rem;
 
     h2{
         text-align: left !important;
         margin-bottom: var(--mb-2);
-        &:after{
-            content: "";
-            display: block;
-            width: 75px;
-            height: 5px;
-            background: var(--kBlue);
-            margin-top: 5px;
-        }
+        font-weight: 700;
+        color: #505050;
+    }
+
+    p{
+        line-height: 24px;
+        /* font-size: 1rem; */
+        display: inline-block; 
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #505050;
+        margin-bottom: .5rem
     }
 `
 
@@ -59,10 +85,12 @@ export const FromBx = styled.div `
 
     span{
         line-height: 36px;
-        font-size: 1rem;
+        /* font-size: 1rem; */
         display: inline-block; 
         letter-spacing: 1px;
-        font-size: 300;
+        font-size: 14px;
+        font-weight: normal;
+        color: #505050
     }
 
     label{

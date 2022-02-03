@@ -8,6 +8,10 @@
     --kLightGrey: #f7f9fc;
     --font-family: 'Poppins' , sans-serif;
     --font-normal : 1rem;
+    --body1 : 24px;
+    --fw-semi: 600;
+    --fw-normal: 500;
+    --fw-thin: 400;
 
     /* colors */
     --main-bg: #FFFFFF;

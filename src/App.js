@@ -5,11 +5,12 @@ import "./assets/css/grid.css"
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import {AuthContext} from "./context/authContext/AuthContext"
 import Signup from "./screens/signup/Signup"
+import { Reset } from "./screens"
 
 function App() {
   const [mobileScreen, setMobileScreen] = useState(false);
 
-  export const GetWindowScreen = () => {
+ const GetWindowScreen = () => {
     if(window.innerWidth > 768 ){
         setMobileScreen(false);
     }else {
@@ -22,12 +23,15 @@ function App() {
       {/* New AuthProvidr */}
           <Router>
             <Switch>
-              <Route exact path="/">{ user? <Layout/> : <Redirect to="/register" />}</Route>
+              <Route exact path="/">{ user? <Layout/> : <Redirect to="/login" />}</Route>
               <Route path = "/login">
                 {!user ? <Signin/> : <Redirect to="/" />}
               </Route>
-              <Route path = "/register">
+              <Route path = "/forget">
                 {!user ? <Signup/> : <Redirect to="/" />}
+              </Route>
+              <Route path = "/reset">
+                <Reset/>
               </Route>
             </Switch>
           </Router>
