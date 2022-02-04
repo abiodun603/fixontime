@@ -35,7 +35,7 @@ const Dashboard = (props) => {
 
     return (
         <>
-           <p>Dashboard</p>
+           <TableData/>
         </>
     )
 }

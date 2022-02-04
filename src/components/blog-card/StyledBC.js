@@ -7,7 +7,7 @@ export const BlogContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .news__container{
     min-height: 100vh;
