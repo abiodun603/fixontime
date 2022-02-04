@@ -11,7 +11,7 @@ const BCard = () => {
                             <div className="tabContent" id="category">
                                 <div className="news__card">
                                     <div className = "image__container">
-                                        <img src="" alt="" className="news__img "/>
+                                        <img src="https://media.istockphoto.com/photos/some-moments-require-some-seriousness-picture-id1174056245?k=20&m=1174056245&s=612x612&w=0&h=P2JZJQVCJ_6FwD0F_vgEU4vF2lZaSGElx41e09UqciA=" alt="" className="news__img "/>
 
                                         <ButtonAction>
                                             <DeleteButton>

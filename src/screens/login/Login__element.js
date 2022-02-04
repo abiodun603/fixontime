@@ -102,7 +102,7 @@ export const Input = styled.input.attrs(props => ({
 
 })) `
     width: 100%;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 10px 20px;
     background: var(--kLightGrey);
     border: 2px solid #D0D0D0;

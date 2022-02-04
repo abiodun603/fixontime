@@ -24,7 +24,7 @@ export default [
     },
     {
         "display_name": "E-Learning",
-        "route": "/lean",
+        "route": "/learn",
         "icon":<RiDashboardLine/>
     },
     {

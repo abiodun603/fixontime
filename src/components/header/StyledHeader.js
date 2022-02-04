@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div `
     align-items: center;
     justify-content: space-between;
     padding: 0 3rem;
+    margin-bottom: 3rem;
 
     p{
         font-weight: var(--fw-semi);

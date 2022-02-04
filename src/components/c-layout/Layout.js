@@ -15,7 +15,7 @@ const Layout = () => {
                             <Sidebar {...props}/>
                             <LayoutContent>
                                 <TopNav/>
-                                <LayoutContentMain>
+                                <LayoutContentMain >
                                     <DRoutes/>
                                 </LayoutContentMain>
                             </LayoutContent>

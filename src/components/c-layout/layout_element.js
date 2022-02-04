@@ -5,10 +5,12 @@ export const LayoutWrapper = styled.div `
 `
 export const LayoutContent = styled.div `
     padding-left: var(--sidebar-width);
-    background: var(--second-bg);
+    background: var(--kWhite);
     min-height: 100vh;
 `
 
 export const LayoutContentMain = styled.div `
     padding: 30px;
+    // background: #FFFFFF;
+    /* height: 80vh; */
 `    

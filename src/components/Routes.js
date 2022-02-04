@@ -6,15 +6,17 @@ import {Dashboard, Blog, Contact, Learn, Subscribe} from "../screens/"
 
 function DRoutes() {
     return (
-        <Router>
+        // <Router>
             <Switch>
                 <Route path="/" exact  component = {Dashboard}/>
-                <Route path ="/blog" component = {Blog}/>
+                <Route path ="/blog" >
+                    <Blog/>
+                </Route>
                 <Route path ="/contact" component = {Contact}/>
                 <Route path ="/learn" component = {Learn}/>
-                <Route path = "/subscriber" component = {Subscribe} />
+                <Route path = "/subscribe" component = {Subscribe} />
             </Switch>
-        </Router>
+        // {/* </Router> */}
         
     )
 }

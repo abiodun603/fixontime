@@ -1,9 +1,14 @@
 import React from "react"
+import Header from "../../components/header/Header"
+import TableData from "../../components/mui-table/TableData"
 
 const Contact = () => {
     return (
         <>
-            <p>Contact</p>
+            <Header
+                header = "Contact"
+            />
+            <TableData/>
         </>
     )
 }

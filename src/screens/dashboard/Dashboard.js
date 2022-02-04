@@ -7,7 +7,7 @@ import Header from "../../components/header/Header"
 import {PageHeader, AddCustomer, HeaderContainer, Card2, FormWrapper} from "./StyledGuards"
 import {AiOutlineUserAdd} from "react-icons/ai"
 import {  DialogActions, DialogContent } from '@mui/material'
-import {FromBx, Input } from "../login/Login__element"
+import {FromBx, Input, LoginForm } from "../login/Login__element"
 import AlertDialog from "../../components/dialog/Dialog"
 import axios from "axios"
 import { useForm } from '../../hooks/useForm';
@@ -16,58 +16,30 @@ import {useHistory} from "react-router-dom"
 import { deleteStaff, getStaff } from "../../context/staffContext/apiCalls"
 import { StaffContext } from "../../context/staffContext/StaffContext"
 import BCard from "../../components/blog-card/BCard"
+import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
+import CardButton from "../../components/card-button/CardButton"
+import File from "../../components/browserFile/File"
+import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
+import Blog from "../blog/Blog"
+import AddPost from "../blog/AddPost"
+import EditPost from "../blog/EditPost"
+import VideoFrame from "../../components/videoFrame/VideoFrame"
+import TableData from "../../components/mui-table/TableData"
 
-const staffsTableHead = [
-    "",
-    "name",
-    "age",
-    "email",
-    "action"
-]
+import Learn from "../learn/Learn"
+import AddLearn from "../learn/AddLearn"
+import Contact from "../contact/Contact"
 
-const renderHead = (item, index) => <th key={index}>{item}</th>
 
 const Dashboard = (props) => {
 
-    // Render Staff
-    const renderBody = (item, index) => (
-            <tr key={index}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-                <td>{item.email}</td>
-                <td>
-                    <span style={{display: "flex"}}>
-                        {/* <ActionButton
-                            icon = {<AiOutlineFolderView/>}
-                            type = "view"
-                        /> */}
-                        <ActionButton
-                            icon = {<FiEdit/>}
-                            type = "edit"
-                            // onClick ={()  => navigate(item.id)}
-
-                        />
-                        <ActionButton
-                            // onClick ={()  => handleDelete(item.id)}
-                            icon = {<FiTrash2/>}
-                            type = "warning"
-                        />                        
-                    </span>
-                </td>
-            </tr>             
-        
-    ) 
     return (
         <>
-            <Header
-                header= "Blog Post"
-                title = "New Blog Post"
-                onClick = {() => alert("you clicked me")}
-            />
-            <BCard/>
+           <p>Dashboard</p>
         </>
     )
 }
 
 export default Dashboard
+
+
