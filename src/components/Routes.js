@@ -16,8 +16,8 @@ function DRoutes() {
                 <Route path ="/learn" component = {Learn}/>
                 <Route path = "/subscribe" component = {Subscribe} />
                 {/* <Route path = "/subscribe" component = {Subscribe} /> */}
-                <Route path = "/addPost" component = {AddPost} />
-                <Route path = "/editPost" component = {EditPost} />
+                {/* <Route path = "/addPost" component = {AddPost} />
+                <Route path = "/editPost" component = {EditPost} /> */}
 
                 <Route path = "/addLearn" component = {AddLearn} />
                 {/* <Route path = "/addPost" component = {AddPost} /> */}
