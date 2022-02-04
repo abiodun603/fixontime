@@ -5,6 +5,9 @@ import {IoAddSharp} from "react-icons/io5"
 const Header = (props) => {
     return (
         <>
+        {/* {
+            props.header
+        } */}
             <HeaderContainer>
                 <p>{props.header}</p>
                 <HeaderButton onClick = {props.onClick}>
