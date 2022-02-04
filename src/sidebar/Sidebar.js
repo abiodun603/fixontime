@@ -5,11 +5,9 @@ import {SidebarWrapper, SidebarLogo, SideBarItemWrapper,
 } from "./sidebar_element.js"
 import sidebar_items from "../../assets/JsonData/sidebar_routes"
 import {Link} from 'react-router-dom'
-import * as Icons from "react-icons/ai"
-import "boxicons/css/boxicons.min.css"
 
 const SideBarItem = props => {
-    const active = props.active ? "active" : ""
+    const active = props.active ? "active" : "noActive"
     return (
         <>
             <SideBarItemWrapper>

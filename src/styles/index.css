@@ -16,8 +16,10 @@
     /* colors */
     --main-bg: #FFFFFF;
     --second-bg: #FAFAFB;
-    --txt-color: #FFFFFF;
-    --txt-color2: #455560;
+    /* --txt-color: #FFFFFF; */
+    --txt-color: #455560;
+    --txt-colors: #455560;
+
     --txt-white: #FFF;
     --second-color: #62b4ff;
 

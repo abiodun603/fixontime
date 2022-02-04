@@ -6,7 +6,6 @@ export const SidebarWrapper = styled.div `
     position: fixed;
     left: 0;
     top: 0; 
-    /* box-shadow: var(--box-shadow); */
     background: var(--kBlue);
     z-index: 100;
 `
@@ -40,7 +39,7 @@ export const SideBarItemInner = styled.div `
 
     &:hover{
         color: var(--KWhite);
-        opacity: 0.4
+        opacity: 0.4;
     }
 
     i{
@@ -50,6 +49,8 @@ export const SideBarItemInner = styled.div `
 
     span{
         text-transform: capitalize;
+        color: #FFFFFF;
+        margin-top: -7px;
     }
 
     &.active{
@@ -57,10 +58,16 @@ export const SideBarItemInner = styled.div `
         color : #FFF;
         border-left: 4px solid red;
         opacity: 1 !important;
+    }
+
+    &.noActive{
+        color : #FFFFFF;
+    }
 `
 
 export const SideBarIcon = styled.div `
     font-size: 1.2rem;
     margin-right: 0.5rem;
+    color: #FFFFFF;
 `
  
