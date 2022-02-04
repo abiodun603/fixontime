@@ -1,7 +1,7 @@
-import {RiDashboardLine} from "react-icons/ri"
-import {GiPoliceOfficerHead} from "react-icons/gi"
-import {FaRegUserCircle} from "react-icons/fa"
-import {FiSettings} from "react-icons/fi"
+import {RiDashboardFill} from "react-icons/ri"
+import {BiWorld} from "react-icons/bi"
+import {AiFillMessage, AiFillYoutube} from "react-icons/ai"
+import {FaEnvelope} from "react-icons/fa"
 import {SiSimpleanalytics} from "react-icons/si"
 import {FiUsers} from "react-icons/fi"
 
@@ -10,26 +10,26 @@ export default [
     {
         "display_name": "Dashboard",
         "route": "/",
-        "icon":<RiDashboardLine/>
+        "icon":<RiDashboardFill/>
     },
     {
         "display_name": "Blog",
         "route": "/blog",
-        "icon":<RiDashboardLine/>
+        "icon":<BiWorld/>
     },
     {
         "display_name": "Contact",
         "route": "/contact",
-        "icon":<RiDashboardLine/>
+        "icon":<AiFillMessage/>
     },
     {
         "display_name": "E-Learning",
         "route": "/learn",
-        "icon":<RiDashboardLine/>
+        "icon":<AiFillYoutube/>
     },
     {
         "display_name": "Subcriber",
         "route": "/subscribe",
-        "icon":<RiDashboardLine/>
+        "icon":<FaEnvelope/>
     },
 ]
