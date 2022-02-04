@@ -24,7 +24,7 @@ const AddLearn = (props) => {
             {/*<BCard/> */}
 
             <FormCard
-                header = "Edit post"
+                header = "Add new post"
             >  
             <FromBx>
                 <span>Title</span>
