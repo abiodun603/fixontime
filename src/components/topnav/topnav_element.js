@@ -43,6 +43,10 @@ export const TopNavRight = styled.div `
 
 export const TopNavRightItem = styled.div `
     margin-left: 30px;
+
+    p{
+        color: var(---txt-color2) !important;
+    }
 `
 
 export const NotificationItem = styled.div `

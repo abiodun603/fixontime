@@ -16,7 +16,8 @@
     /* colors */
     --main-bg: #FFFFFF;
     --second-bg: #FAFAFB;
-    --txt-color: #ffffff;
+    --txt-color: #FFFFFF;
+    --txt-color2: #455560;
     --txt-white: #FFF;
     --second-color: #62b4ff;
 
@@ -70,7 +71,7 @@ a{
 }
 
 a:hover {
-    color: var(--kBlue);
+    color: var(--KWhite);
 }
 
 button {

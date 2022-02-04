@@ -78,7 +78,7 @@ const TopNav = () => {
                             renderData = {(item, index) => renderNoticationItem(item, index)}
                             renderFooter = {()=><Link>View All</Link>}
                         /> */}
-                        <p onClick = {handleLogout}>Logout</p>
+                        <p onClick = {handleLogout} style={{color: "#455560"}}>Logout</p>
                     </TopNavRightItem>
                     <TopNavRightItem>
                         {/* Theme here */}

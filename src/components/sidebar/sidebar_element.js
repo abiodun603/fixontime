@@ -39,7 +39,8 @@ export const SideBarItemInner = styled.div `
     transition: color .3s ease 0s;
 
     &:hover{
-        color: var(--kBlue);
+        color: var(--KWhite);
+        opacity: 0.4
     }
 
     i{
@@ -55,6 +56,7 @@ export const SideBarItemInner = styled.div `
         background: #232783;
         color : #FFF;
         border-left: 4px solid red;
+        opacity: 1 !important;
 `
 
 export const SideBarIcon = styled.div `

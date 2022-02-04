@@ -5,16 +5,26 @@ import {IoAddSharp} from "react-icons/io5"
 const Header = (props) => {
     return (
         <>
-        {/* {
-            props.header
-        } */}
-            <HeaderContainer>
-                <p>{props.header}</p>
-                <HeaderButton onClick = {props.onClick}>
-                    <IoAddSharp style={{fontSize: 20, color: "#FFFFFF"}}/>
-                    <span>{props.title}</span>
-                </HeaderButton>
-            </HeaderContainer>
+        {
+            props.title ? (
+                <HeaderContainer>
+                    <p>{props.header}</p>
+                    <HeaderButton onClick = {props.onClick}>
+                        <IoAddSharp style={{fontSize: 20, color: "#FFFFFF"}}/>
+                        <span>{props.title}</span>
+                    </HeaderButton>
+                </HeaderContainer>
+            ): (
+                <HeaderContainer>
+                    <p>{props.header}</p>
+                    {/* <HeaderButton onClick = {props.onClick}>
+                        <IoAddSharp style={{fontSize: 20, color: "#FFFFFF"}}/>
+                        <span>{props.title}</span>
+                    </HeaderButton> */}
+                </HeaderContainer>
+            )
+        }
+            
 
         </>
     )
