@@ -1,9 +1,14 @@
 import React from "react"
+import Header from "../../components/header/Header"
+import TableData from "../../components/mui-table/TableData"
 
 const Subscribe = () => {
     return (
         <>
-            <p>Learn</p>
+            <Header
+                header = "Subscribe"
+            />
+            <TableData/>
         </>
     )
 }

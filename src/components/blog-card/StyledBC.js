@@ -49,13 +49,20 @@ export const BlogContainer = styled.div `
     dispay: none !important;
 }
 
-.image__container{
+#image__container{
     width: 100%;
     height: 200px;
     margin-bottom: .5rem;
     position: relative;
 }
 
+#image__container .hidden-child{
+    visibility: hidden;
+}
+
+#image__container:hover .hidden-child{
+    visibility: visible;
+}
 .news__img{
     width: 100%;
     height: 100%;
@@ -159,9 +166,7 @@ export const BlogContainer = styled.div `
     border-radius: 6px;
 }
 
-&:hover{
 
-}
 `
 
 export const ButtonAction = styled.div `
@@ -175,8 +180,9 @@ export const ButtonAction = styled.div `
         /* visiblity: visible !important; */
     }
 `
-export const DeleteButton = styled.div `
-    padding: .6rem 1rem;
+export const DeleteButton = styled.button `
+    height: 40px;
+    width: 120px;
     background : var(--kWhite);
     border-radius: 10px;
     color: var(--KGray);
@@ -191,8 +197,9 @@ export const DeleteButton = styled.div `
     }
    
 `
-export const EditButton = styled.div `
-    padding: .6rem 1rem;
+export const EditButton = styled.button `
+    height: 40px;
+    width: 120px;    
     background : var(--kBlue);
     border-radius: 10px;
     color: var(--main-bg);

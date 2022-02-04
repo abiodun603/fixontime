@@ -21,14 +21,19 @@ import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 
 const Blog = (props) => {
+
+    const history = useHistory()
+
     return (
         <>
              <Header
                 header= "Blog Post"
                 title = "New Blog Post"
-                onClick = {() => alert("you clicked me")}
+                onClick = {() => history.push("/addPost")}
             />
-            <BCard/>   
+            <BCard
+                onEdit = {() => history.push("/editPost")}
+            />   
         </>
     )
 }

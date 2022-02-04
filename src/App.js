@@ -21,7 +21,7 @@ function App() {
       return (
         <>
       {/* New AuthProvidr */}
-          {/* <Router>
+          <Router>
             <Switch>
               <Route exact path="/">{ user? <Layout/> : <Redirect to="/login" />}</Route>
               <Route path = "/login">
@@ -34,8 +34,7 @@ function App() {
                 <Reset/>
               </Route>
             </Switch>
-          </Router> */}
-          <Layout/>
+          </Router>
     </>
   )
 }

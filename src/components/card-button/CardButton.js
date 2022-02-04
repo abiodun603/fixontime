@@ -5,12 +5,12 @@ const CardButton = (props) => {
   return (
       <>
             <ButtonContainer>
-                <ButtonCancel>
+                <ButtonCancel onClick={props.onCancel}>
                     <span>
                          {props.cancel}
                     </span>
                 </ButtonCancel>
-                <ButtonSubmit>
+                <ButtonSubmit onClick = {props.onSubmit}>
                        {props.submit} 
                 </ButtonSubmit>
             </ButtonContainer>

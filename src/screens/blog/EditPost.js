@@ -15,6 +15,7 @@ import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
 
 const EditPost = (props) => {
+    const history = useHistory();
     return (
         <>
              <Header
@@ -53,7 +54,9 @@ const EditPost = (props) => {
                 <CardButton
                     cancel = "Cancel"
                     submit= "Save"
-                />
+                    onCancel = {() => history.push("/blog")}
+                    onSubmit = {() => history.push("/blog")}
+                />  
             </FormCard>                      
         </>
     )
