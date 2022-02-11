@@ -6,7 +6,7 @@ export const ButtonContainer = styled.div   `
     justify-content: center;
 `
 
-export const ButtonCancel = styled.div   `
+export const ButtonCancel = styled.button   `
     display: flex;
     align-items:center;
     justify-content: center;
@@ -21,7 +21,7 @@ export const ButtonCancel = styled.div   `
     background: var(--kGray);
 `
 
-export const ButtonSubmit = styled.div   `
+export const ButtonSubmit = styled.button   `
     display: flex;
     display: flex;
     align-items:center;

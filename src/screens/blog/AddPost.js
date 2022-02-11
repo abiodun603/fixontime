@@ -10,6 +10,9 @@ import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
 import { BlogContext } from "../../context/blogContext/BlogContext";
 import { createBlog } from "../../context/blogContext/apiCalls";
+import swal from 'sweetalert';
+import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton";
+import CardButton from "../../components/card-button/CardButton";
 
 const AddPost = (props) => {
     const history = useHistory();
@@ -81,7 +84,16 @@ const AddPost = (props) => {
                         submit= "Save"
                         onCancel = {() => history.push("/blog")}
                     />  */}
-                    <button type= "submit">Sumbit</button>
+                     <CardButton>
+                        <ButtonCancel>
+                            <span>
+                                Cancel
+                            </span>
+                        </ButtonCancel>
+                        <ButtonSubmit type = "sumbit">
+                            Ok 
+                        </ButtonSubmit>
+                    </CardButton>
                 </FormWrapper> 
             </FormCard>                    
         </>

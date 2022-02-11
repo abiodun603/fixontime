@@ -15,6 +15,7 @@ import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
 import { LearnContext } from "../../context/learningContext/LearnContext"
 import { createLearn } from "../../context/learningContext/apiCalls"
+import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
 
 const AddLearn = (props) => {
     const [selectedFile, setSelectedFile] = useState(null)
@@ -85,14 +86,18 @@ const AddLearn = (props) => {
                         />
                     </FromBx>
                     <div style={{marginTop: 40}}></div>
-                    <CardButton
-                        cancel = "Cancel"
-                        submit= "Save"
-                        type = "submit"
-                        // onCancel = {() => history.push("/learn")}
-                        // onSubmit = {() => history.push("/learn")}
-                    />  
-                    <button type = "submit" >submit</button>
+
+                    <CardButton>
+                        <ButtonCancel onClick ={() => history.push("/learn")} >
+                            <span>
+                                Cancel
+                            </span>
+                        </ButtonCancel>
+                        <ButtonSubmit type = "submit">
+                            Ok 
+                        </ButtonSubmit>
+                    </CardButton>
+                    {/* <button type = "submit" >submit</button> */}
                 </FormWrapper> 
             </FormCard>                    
         </>

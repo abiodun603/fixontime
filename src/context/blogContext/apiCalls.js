@@ -1,5 +1,8 @@
+import React from "react"
 import axios from "axios"
 import { createBlogFailure, createBlogStart, createBlogSuccess, getBlogFailure, getBlogStart, getBlogSuccess, deleteBlogSuccess,deleteBlogStart, deleteBlogFailure } from "./BlogActions";
+import swal from "sweetalert"
+import {useHistory} from "react-router-dom"
 
 // get staff
 export const getBlog = async(dispatch)=> {
@@ -20,6 +23,8 @@ export const getBlog = async(dispatch)=> {
 }
 // create blog post
 export const createBlog = async(blog, dispatch)=> {
+    // const history = useHistory()
+
     dispatch(createBlogStart());
     console.log(blog)
     try {
@@ -32,8 +37,21 @@ export const createBlog = async(blog, dispatch)=> {
                     // "Access-Control-Allow-Methods": "*" 
                 }
             }
-        )  
+        )
         console.log(res)
+        swal({
+            title: "Are you sure?",
+            text: "New blog post have been uploaded successfully",
+            icon: "success",
+            confirmButtonColor: '#030762',
+            // buttons: true,
+            dangerMode: true,
+          }).then((willDelete) => {
+            if (willDelete) {
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+        });
         dispatch(createBlogSuccess(res.data)) 
     }catch(err) {
         dispatch(createBlogFailure());
@@ -51,9 +69,21 @@ export const deleteBlog = async (id, dispatch) => {
                 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
             }
         })
-        console.log(res)
-
-    dispatch(deleteBlogSuccess(id));
+        dispatch(deleteBlogSuccess(id));
+        swal({
+            title: "Are you sure?",
+            text: "Blog post have been de;eted successfully",
+            icon: "success",
+            confirmButtonColor: '#030762',
+            // buttons: true,
+            dangerMode: true,
+          }).then((willDelete) => {
+            if (willDelete) {
+                // history.push("/blog")
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+        }); 
     }catch (err) {
         dispatch(deleteBlogFailure())
     }

@@ -46,7 +46,7 @@ export const LearnReducer = (state, action) => {
         case "CREATE_LEARN_SUCCESS":
             return {
                 ...state,
-                learns:[...state.blogs, action.payload],
+                learns:[...state.learns, action.payload],
                 isFetching: false,
                 error: false
             }

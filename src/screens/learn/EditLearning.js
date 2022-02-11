@@ -8,6 +8,9 @@ import CardButton from "../../components/card-button/CardButton"
 import File from "../../components/browserFile/File"
 import FormCard from "../../components/form-card/FormCard"
 import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
+import swal from "sweetalert"
+import {FormWrapper } from "../blog/StyledBlog"
+
 
 const EditLearn = (props) => {
     const [selectedFile, setSelectedFile] = useState(null)
@@ -27,6 +30,55 @@ const EditLearn = (props) => {
         newValue[e.target.name] = e.target.value
         setValue(newValue)
     }
+
+    const handleSubmit =  (e) => {
+        // const [value, setValue]
+        e.preventDefault();
+        console.log(value);
+        // alert("boy")
+
+		const url =  "https://fixontime.herokuapp.com/learnings/" + id;
+
+        const formData = new FormData();
+        formData.append("title", value.title);
+        formData.append("url", value.url);
+        // formData.append("categoryId", "4");
+        formData.append("image", selectedFile);
+
+        const token = JSON.parse(localStorage.getItem("user")).access_token
+
+        axios.put(
+            url ,
+            formData,
+			{
+				headers: {
+				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+			}}
+        ).then(response => {
+
+            console.log(response.data)
+			// alert("update successfully")
+            swal({
+                title: "Are you sure?",
+                text: "E-Learning post have been updated successfully",
+                icon: "success",
+                confirmButtonColor: '#030762',
+                // buttons: true,
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                    history.push("/learn")
+                } else {
+                  swal("Your imaginary file is safe!");
+                }
+            });
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+
     useEffect( () => {
          axios.get("https://fixontime.herokuapp.com/learnings/" + id,
             {
@@ -36,8 +88,9 @@ const EditLearn = (props) => {
             }
         ).then((res) => {
             console.log(res.data)
-            // values.title = res.data.title
+           
             setValue(res.data)
+
         })        
     }, [id])
     return (
@@ -49,20 +102,20 @@ const EditLearn = (props) => {
 
             <FormCard
                 header = "Add new post"
-            >  
-            <FromBx>
-                <span>Title</span>
-                <Input 
-                    type = "text" 
-                    placeholder = ""
-                    name = "email"
-                    required
-                    value = {value.title}
-                    onChange = {(e) => handle(e)}
-                    style={{background: "#FFFFFF"}}
+            > 
+            <FormWrapper onSubmit = {handleSubmit}>
+                <FromBx>
+                    <span>Title</span>
+                    <Input 
+                        type = "text" 
+                        placeholder = ""
+                        name = "title"
+                        required
+                        value = {value.title}
+                        onChange = {(e) => handle(e)}
+                        style={{background: "#FFFFFF"}}
 
-                />
-                    
+                    />  
                 </FromBx>
 
                 <FromBx>
@@ -77,7 +130,7 @@ const EditLearn = (props) => {
                     <Input 
                         type = "text" 
                         placeholder = ""
-                        name = "link"
+                        name = "url"
                         required
                         value = {value.url}
                         onChange = {(e) => handle(e)}
@@ -92,10 +145,11 @@ const EditLearn = (props) => {
                             Cancel
                         </span>
                     </ButtonCancel>
-                    <ButtonSubmit type = "sumbit">
+                    <ButtonSubmit type = "submit">
                         Ok 
                     </ButtonSubmit>
                 </CardButton>
+            </FormWrapper> 
                    
                 {/* <button type="submit">submit</button> */}
             </FormCard>                    

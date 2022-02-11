@@ -24,26 +24,6 @@ const Blog = (props) => {
         // setGetBlogPost(blogs);
     },[dispatch]) 
 
-    // useEffect(() => { 
-    //     async function fetchBlog() {
-    //         try {
-    //             const res = await axios.get("https://fixontime.herokuapp.com/posts",
-    //                 {
-    //                     headers: {
-    //                         "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-    //                     }
-    //                 }
-    //             ).then((res) => {
-    //                 setGetBlogPost(res.data.items)
-    //             })
-
-    //         }catch(err) {
-    //             console.log(err)
-    //         }
-    //      }
-    //      fetchBlog()  
-
-    // }, [])
     const handleDelete = (id) => {
         deleteBlog(id, dispatch)
         console.log(id)

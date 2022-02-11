@@ -15,6 +15,8 @@ import CardButton from "../../components/card-button/CardButton"
 import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
+import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
+import swal from "sweetalert"
 
 const EditPost = (props) => {
     // const [values, handleChange] = useForm({title: "",content: ""})
@@ -39,7 +41,7 @@ const EditPost = (props) => {
         // const [value, setValue]
         e.preventDefault();
         console.log(value);
-        alert("boy")
+        // alert("boy")
 
 		const url =  "https://fixontime.herokuapp.com/posts/" + id;
 
@@ -49,30 +51,37 @@ const EditPost = (props) => {
         formData.append("categoryId", "4");
         formData.append("image", selectedFile);
 
-        // const token = JSON.parse(localStorage.getItem("user")).access_token
-       
-        // const data = {
-		// 	title: values.title,
-		// 	content: values.content,
-		// }
+        const token = JSON.parse(localStorage.getItem("user")).access_token
 
-        // await axios.put(
-        //     url ,
-        //     data,
-		// 	{
-		// 		headers: {
-		// 		 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-		// 	}}
-        // ).then(response => {
+        axios.put(
+            url ,
+            formData,
+			{
+				headers: {
+				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+			}}
+        ).then(response => {
 
-        //     console.log(response.data)
-		// 	alert("update successfully")
-			
-		// 	history.push("/")
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
+            // console.log(response.data)
+			// alert("update successfully")
+            swal({
+                title: "Are you sure?",
+                text: "Blog post have been up successfully",
+                icon: "success",
+                confirmButtonColor: '#030762',
+                // buttons: true,
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                    history.push("/blog")
+                } else {
+                  swal("Your imaginary file is safe!");
+                }
+            });
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     useEffect(() => {
@@ -93,7 +102,7 @@ const EditPost = (props) => {
              <Header
                 header= "E-Learing"
                 title="New Post"
-
+                onClick = {() => history.push("/addPost")}
             />
             {/*<BCard/> */}
 
@@ -102,7 +111,6 @@ const EditPost = (props) => {
             >
                 <FormWrapper onSubmit = {handleSubmit} enctype = "multipart/form-data">
 
-                </FormWrapper>
                 <FromBx>
                     <span>Title</span>
                     <Input 
@@ -112,8 +120,6 @@ const EditPost = (props) => {
                         required
                         value = {value.title}
                         onChange = {(e) => handle(e)}
-                        // value = {values.title}
-                        // onChange = {handleChange}
                         style={{background: "#FFFFFF"}}
                     />
                 </FromBx>
@@ -128,20 +134,23 @@ const EditPost = (props) => {
                 <FromBx>
                     <span>Blog text</span>
                     <ScrollTextArea
-                        // value = {values.text}
-                        // onChange = {handleChange}
                         value = {value.content}
                         onChange = {(e) => handle(e)}
                     />
                 </FromBx>
                 <div style={{marginTop: 40}}></div>
-                {/* <CardButton
-                    cancel = "Cancel"
-                    submit= "Save"
-                    onCancel = {() => history.push("/blog")}
-                    onSubmit = {() => history.push("/blog")}
-                />   */}
-                <button type="submit">submit</button>
+                <CardButton>
+                    <ButtonCancel>
+                        <span>
+                            Cancel
+                        </span>
+                    </ButtonCancel>
+                    <ButtonSubmit type = "submit">
+                        Ok 
+                    </ButtonSubmit>
+                </CardButton>
+                                </FormWrapper>
+
             </FormCard>                      
         </>
     )

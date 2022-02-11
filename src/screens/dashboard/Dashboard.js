@@ -59,7 +59,6 @@ const Dashboard = (props) => {
             <TableData
                 rows = {data}
                 columns = {columns}
-
             />
         </>
     )
