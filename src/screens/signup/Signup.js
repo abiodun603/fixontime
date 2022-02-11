@@ -9,11 +9,8 @@ const Signup = () => {
     const history = useHistory()
 
     const [values, handleChange] = useForm({
-        name: "",
         email: "",
-        password: "",
     });
-    const [roleId, setRoleId] = useState(1);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -21,16 +18,12 @@ const Signup = () => {
 
         await axios({
             method: "post",
-            url: "https://candid-nest.herokuapp.com/auth/register",
+            url: "https://fixontime.herokuapp.com/auth/forgot-password",
             data: {
-                name: values.name,
                 email: values.email,
-                password: values.password,
-                roleId: 1
             }
         }).then( res => {
             console.log(res.data)
-            history.push("/login")
         })
     }
 
@@ -59,16 +52,15 @@ const Signup = () => {
                             
                             <Input 
                                 type = "text" 
-                                // placeholder = "Enter Username"
-                                name = "name"
+                                name = "email"
                                 required
-                                value = {values.name}
+                                value = {values.email}
                                 onChange = {handleChange}
                             />
                         </FromBx>
 
                         <FromBx>
-                            <Button type="submit" disabled = {values.isSubmitting}  onClick= {() => history.push("/reset")}>
+                            <Button type="submit" disabled = {values.isSubmitting} >
                                 {values.isSubmitting ? (
                                     "Loading"
                                 ): "Reset Password"}

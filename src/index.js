@@ -4,15 +4,18 @@ import App from './App';
 // import "./styles/index.css"
 import "./styles/index.css"
 import { AuthContextProvider } from './context/authContext/AuthContext';
-import { StaffContextProvider } from './context/staffContext/StaffContext';
+import { BlogContextProvider } from './context/blogContext/BlogContext';
+import { LearnContextProvider } from './context/learningContext/LearnContext';
 
 document.title = "candidsolutionlimited"
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <StaffContextProvider>
-        <App />
-      </StaffContextProvider>
+      <BlogContextProvider>
+        <LearnContextProvider>
+          <App />
+        </LearnContextProvider>
+      </BlogContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

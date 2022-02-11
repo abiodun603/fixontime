@@ -1,21 +1,41 @@
 import React, {useEffect, useState, useReducer, useContext} from "react"
-import Button from "../../components/button/Button"
 import Header from "../../components/header/Header"
-import {PageHeader, AddCustomer, HeaderContainer, Card2, FormWrapper} from "../dashboard/StyledGuards"
 import {FromBx, Input, LoginForm } from "../login/Login__element"
-import axios from "axios"
 import { useForm } from '../../hooks/useForm';
 // import
 import {useHistory} from "react-router-dom"
-import BCard from "../../components/blog-card/BCard"
-import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
-import CardButton from "../../components/card-button/CardButton"
+import {FormWrapper } from "../blog/StyledBlog"
 import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
+import { BlogContext } from "../../context/blogContext/BlogContext";
+import { createBlog } from "../../context/blogContext/apiCalls";
 
 const AddPost = (props) => {
     const history = useHistory();
+    const [values, handleChange] = useForm({
+        title: "",
+        content: ""
+    })
+    const [selectedFile, setSelectedFile] = useState(null)
+
+    // useContext
+    const {dispatch} = useContext(BlogContext)
+
+
+    const handleForm = (e) => {
+        const formData = new FormData();
+        formData.append("title", values.title);
+        formData.append("content", values.content);
+        formData.append("categoryId", "4");
+        formData.append("image", selectedFile);
+        e.preventDefault();
+
+        createBlog(formData, dispatch);
+
+        console.log(values);
+    }
+
     return (
         <>
              <Header
@@ -26,37 +46,43 @@ const AddPost = (props) => {
             <FormCard
                 header = "Add blog post"
             >  
-            <FromBx>
-                <span>Title</span>
-                <Input 
-                    type = "text" 
-                    placeholder = ""
-                    name = "email"
-                    required
-                    // value = {values.email}
-                    // onChange = {handleChange}
-                    style={{background: "#FFFFFF"}}
+                <FormWrapper onSubmit = {handleForm} enctype = "multipart/form-data">
+                    <FromBx>
+                        <span>Title</span>
+                        <Input 
+                            type = "text" 
+                            placeholder = ""
+                            name = "title"
+                            required
+                            value = {values.title}
+                            onChange = {handleChange}
+                            style={{background: "#FFFFFF"}}
 
-                />
-                    
-                </FromBx>
+                        />
+                    </FromBx>
 
-                <FromBx>
-                    <span>Thumbnail image</span>
-                    <File/>
-                </FromBx>
+                    <FromBx>
+                        <span>Thumbnail image</span>
+                        <File
+                            onFileSelect={(file) => setSelectedFile(file)}
+                        />
+                    </FromBx>
 
-                <FromBx>
-                    <span>Blog text</span>
-                    <ScrollTextArea/>
-                </FromBx>
-                <div style={{marginTop: 40}}></div>
-                <CardButton
-                    cancel = "Cancel"
-                    submit= "Save"
-                    onCancel = {() => history.push("/blog")}
-                    onSubmit = {() => history.push("/blog")}
-                />  
+                    <FromBx>
+                        <span>Blog text</span>
+                        <ScrollTextArea
+                            value = {values.text}
+                            onChange = {handleChange}
+                        />
+                    </FromBx>
+                    <div style={{marginTop: 40}}></div>
+                    {/* <CardButton
+                        cancel = "Cancel"
+                        submit= "Save"
+                        onCancel = {() => history.push("/blog")}
+                    />  */}
+                    <button type= "submit">Sumbit</button>
+                </FormWrapper> 
             </FormCard>                    
         </>
     )

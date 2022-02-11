@@ -1,56 +1,56 @@
-export const BlogReducer = (state, action) => {
+export const LearnReducer = (state, action) => {
     switch (action.type) {
-        case "GET_BLOG_START": 
+        case "GET_LEARN_START": 
             return {
-                blogs: [],
+                learns: [],
                 isFetching: true,
                 error: false
             };
-        case "GET_BLOG_SUCCESS":
+        case "GET_LEARN_SUCCESS":
             return {
-                blogs: action.payload,
+                learns: action.payload,
                 isFetching:  false,
                 error: false
             }
-        case "GET_BLOG_FAILURE":
+        case "GET_LEARN_FAILURE":
             return {
-                blogs: null,
+                learns: null,
                 isFetching: false,
                 error: true
             }
-        case "DELETE_BLOG_START":
+        case "DELETE_LEARN_START":
             return {
                 ...state,
                 isFetching: true,
                 error: false
             }
-        case "DELETE_BLOG_SUCCESS": 
+        case "DELETE_LEARN_SUCCESS": 
             return {
-                blogs: state.blogs.filter((blog) => blog.id !== action.payload),
+                learns: state.learns.filter((learn) => learn.id !== action.payload),
                 isFetching: false,
                 error: false
             }
-        case "DELETE_BLOG_FAILURE": 
+        case "DELETE_LEARN_FAILURE": 
             return {
                 ...state,
                 isFetching: false,
                 error: false
             }
-        case "CREATE_BLOG_START":
+        case "CREATE_LEARN_START":
             return {
                 ...state,
                 isFetching: true,
                 error: false,
+
             }
-        
-        case "CREATE_BLOG_SUCCESS":
+        case "CREATE_LEARN_SUCCESS":
             return {
                 ...state,
-                blogs: [...state.blogs, action.payload],
+                learns:[...state.blogs, action.payload],
                 isFetching: false,
                 error: false
             }
-        case "CREATE_BLOG_FAILURE": 
+        case "CREATE_LEARN_FAILURE": 
             return {
                 ...state,
                 isFetching: false,
@@ -61,4 +61,3 @@ export const BlogReducer = (state, action) => {
         }
     }
 }
-

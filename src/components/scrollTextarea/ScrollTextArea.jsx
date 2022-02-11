@@ -1,15 +1,17 @@
 import React from 'react';
 import "./StyledTextArea.css"
-const ScrollTextArea = () => {
+const ScrollTextArea = (props) => {
   return (
       <>
         <div className = "textarea_style">
             <textarea
-                class="textarea"
+                className="textarea"
                 id="textarea"
-                name ="textarea_discription"
+                name ="content"
                 rows= "6"
                 cols = "37"
+                value = {props.value}
+                onChange={props.onChange}
                 // maxLength="100"
             >
 

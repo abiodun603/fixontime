@@ -13,9 +13,33 @@ import CardButton from "../../components/card-button/CardButton"
 import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
+import { LearnContext } from "../../context/learningContext/LearnContext"
+import { createLearn } from "../../context/learningContext/apiCalls"
 
 const AddLearn = (props) => {
+    const [selectedFile, setSelectedFile] = useState(null)
+
     const history = useHistory();
+    const [values, handleChange] = useForm({
+        title: "",
+        link: ""
+    })
+
+    // useContext
+    const {dispatch} = useContext(LearnContext)
+
+
+    const handleForm = (e) => {
+        const formData = new FormData();
+        formData.append("title", values.title);
+        formData.append("url", values.link);
+        formData.append("thumbnail", selectedFile);
+        e.preventDefault();
+
+        createLearn(formData, dispatch);
+
+        console.log(values);
+    }
     return (
         <>
              <Header
@@ -25,47 +49,51 @@ const AddLearn = (props) => {
 
             <FormCard
                 header = "Add new post"
-            >  
-            <FromBx>
-                <span>Title</span>
-                <Input 
-                    type = "text" 
-                    placeholder = ""
-                    name = "email"
-                    required
-                    // value = {values.email}
-                    // onChange = {handleChange}
-                    style={{background: "#FFFFFF"}}
+            > 
+                <FormWrapper onSubmit = {handleForm} enctype = "multipart/form-data">
+                    <FromBx>
+                        <span>Title</span>
+                        <Input 
+                            type = "text" 
+                            placeholder = ""
+                            name = "title"
+                            required
+                            value = {values.title}
+                            onChange = {handleChange}
+                            style={{background: "#FFFFFF"}}
 
-                />
-                    
-                </FromBx>
+                        />
+                    </FromBx>
+                    <FromBx>
+                        <span>Thumbnail image</span>
+                        <File
+                            onFileSelect={(file) => setSelectedFile(file)}
+                        />
+                    </FromBx>
 
-                <FromBx>
-                    <span>Thumbnail image</span>
-                    <File/>
-                </FromBx>
+                    <FromBx>
+                        <span>Video link</span>
+                        <Input 
+                            type = "text" 
+                            placeholder = ""
+                            name = "link"
+                            required
+                            value = {values.link}
+                            onChange = {handleChange}
+                            style={{background: "#FFFFFF"}}
 
-                <FromBx>
-                    <span>Video link</span>
-                    <Input 
-                        type = "text" 
-                        placeholder = ""
-                        name = "email"
-                        required
-                        // value = {values.email}
-                        // onChange = {handleChange}
-                        style={{background: "#FFFFFF"}}
-
-                    />
-                </FromBx>
-                <div style={{marginTop: 40}}></div>
-                <CardButton
-                    cancel = "Cancel"
-                    submit= "Save"
-                    onCancel = {() => history.push("/learn")}
-                    onSubmit = {() => history.push("/learn")}
-                />  
+                        />
+                    </FromBx>
+                    <div style={{marginTop: 40}}></div>
+                    <CardButton
+                        cancel = "Cancel"
+                        submit= "Save"
+                        type = "submit"
+                        // onCancel = {() => history.push("/learn")}
+                        // onSubmit = {() => history.push("/learn")}
+                    />  
+                    <button type = "submit" >submit</button>
+                </FormWrapper> 
             </FormCard>                    
         </>
     )

@@ -18,14 +18,12 @@ const Signin = (validateInfo) => {
     });
     const [roleId, setRoleId] = useState(1);
     const [erros, setErrors] = useState({})
-
-
     // New CONFIGURATION
     const {isFetching, dispatch} = useContext(AuthContext);
-    console.log(isFetching)
+    
+    console.log(isFetching);
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log(values)
         const email = values.email
         const password = values.password
         login({email, password, roleId}, dispatch);
@@ -69,14 +67,11 @@ const Signin = (validateInfo) => {
                                 onChange = {handleChange}    
                             />
                         </FromBx>
-
-                        
-
                         <FromBx>
                             <Button type="submit" disabled = {isFetching}>
-                                {!isFetching ? (
-                                    "Sign In"
-                                ): ""}
+                                {isFetching ? (
+                                    ""
+                                ): "Sign In"}
                             </Button>
                         </FromBx>
                         <div style={{justifyContent: "center", display: "flex", alignItems: "center"}}>

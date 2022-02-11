@@ -2,18 +2,21 @@ import styled from "styled-components"
 
 export const BlogContainer = styled.div `
     margin-bottom: 4rem;
+     /* display: flex;
+    flex-wrap: wrap;
+    align-items: center; */
     /* =========== News ============= */
 .news__wrapper{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: center; */
     /* justify-content: center; */
 }
 .news__container{
-    min-height: 100vh;
+    /* min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--mb-5);
+    margin-bottom: var(--mb-5); */
 }
 
 .news__title{
@@ -34,15 +37,15 @@ export const BlogContainer = styled.div `
 }
 
 .tabContent{
-    margin: 0 auto;
-    display: flex;
+    /* margin: 0 auto; */
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: center; */
+    /* flex-wrap: wrap; */
     margin: var(--mb-5) auto;
 }
 .news__card{
-    width: 380px;
+    width: 340px;
     padding: 2rem 2rem;
     margin: var(--mb-3) var(--mb-2);
     border-radius: 6px;

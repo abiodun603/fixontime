@@ -30,12 +30,37 @@ import Learn from "../learn/Learn"
 import AddLearn from "../learn/AddLearn"
 import Contact from "../contact/Contact"
 
+const columns = [
+    { field: 'created_at', headerName: 'Date', flex: 1 },
+    { field: 'firstName', headerName: 'Name',flex: 1 },
+    { field: 'company', headerName: 'Company', flex: 1 },
+    { field: 'email', headerName: 'Email', flex: 1,}
+];
 
 const Dashboard = (props) => {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        axios.get("https://fixontime.herokuapp.com/contacts",
+                {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            console.log(res.data)
+            // values.title = res.data.title
+            setData(res.data.items)
+        }) 
+    }, [])
 
     return (
         <>
-           <TableData/>
+            <TableData
+                rows = {data}
+                columns = {columns}
+
+            />
         </>
     )
 }

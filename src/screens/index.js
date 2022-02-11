@@ -7,7 +7,7 @@ import EditPost from "./blog/EditPost"
 
 import Learn from "./learn/Learn"
 import AddLearn from "./learn/AddLearn"
-// import EditLearn from "./learn/EditLearn"
+import EditLearn from "./learn/EditLearning"
 import Contact from "./contact/Contact"
 import Subscribe from "./subscribe/Subscribe"
 
@@ -18,7 +18,7 @@ export  {
     Blog,
     Learn,
     AddLearn,
-    // EditLearn,
+    EditLearn,
     Contact,
     Subscribe,
     AddPost,

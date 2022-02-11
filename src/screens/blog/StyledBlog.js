@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+export const FormWrapper = styled.form `
+
+`
+
 export const CardWrapper =  styled.div `
     width: 100%;
     display: flex;
@@ -15,14 +19,9 @@ export const Card = styled.div `
 export const CardHeader = styled.div   `
     height: 60px;
     background:#D0D0D0;
-    /* border-top-right-radius: 10px;
-    border-top-left-radius: 10px; */
     display:flex;
     align-items: center;
     justify-content: center;
-
-    /* width: 70%; */
-
     P{
         color: var(--kBlue);
         font-size: 18px;
@@ -36,6 +35,6 @@ export const CardBody= styled.div   `
     background: #f9f9f9;
 `
 
-export const CardForm = styled.form `
+export const CardForm = styled.div `
 
 `

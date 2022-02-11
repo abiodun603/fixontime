@@ -17,10 +17,6 @@ const Header = (props) => {
             ): (
                 <HeaderContainer>
                     <p>{props.header}</p>
-                    {/* <HeaderButton onClick = {props.onClick}>
-                        <IoAddSharp style={{fontSize: 20, color: "#FFFFFF"}}/>
-                        <span>{props.title}</span>
-                    </HeaderButton> */}
                 </HeaderContainer>
             )
         }

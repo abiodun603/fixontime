@@ -9,32 +9,34 @@ const Reset = () => {
     const history = useHistory()
 
     const [values, handleChange] = useForm({
-        name: "",
-        email: "",
         password: "",
+        confirm_password: ""
     });
-    const [roleId, setRoleId] = useState(1);
+
+    // const foo = params.get('query');
 
     const handleLogin = async (e) => {
         e.preventDefault();
         console.log(values);
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const emailReset = params.get("email")
+        const resetToken = params.get("token")
 
+        console.log(values.password)
         await axios({
             method: "post",
-            url: "https://candid-nest.herokuapp.com/auth/register",
+            url: "https://fixontime.herokuapp.com/auth/reset-password",
             data: {
-                name: values.name,
-                email: values.email,
+                email: emailReset,
+                token: resetToken,
                 password: values.password,
-                roleId: 1
+                passwordConfirmation: values.confirm_password
             }
         }).then( res => {
-            console.log(res.data)
-            history.push("/login")
+            console.log(res)
         })
     }
-
-    
     return (
         <>
             <LoginWrapper>
@@ -60,9 +62,9 @@ const Reset = () => {
                             <Input
                                 type= "text" 
                                 // placeholder = "Enter Username"
-                                name = "name"
+                                name = "password"
                                 required
-                                value = {values.name}
+                                value = {values.password}
                                 onChange = {handleChange}
                             />
                         </FromBx>
@@ -73,15 +75,15 @@ const Reset = () => {
                             <Input
                                 type= "text" 
                                 // placeholder = "Enter Username"
-                                name = "name"
+                                name = "confirm_password"
                                 required
-                                value = {values.name}
+                                value = {values.confirm_password}
                                 onChange = {handleChange}
                             />
                         </FromBx>
 
                         <FromBx>
-                            <Button type="submit" onClick= {() => history.push("/login")} disabled = {values.isSubmitting}>
+                            <Button type="submit" disabled = {values.isSubmitting}>
                                 {values.isSubmitting ? (
                                     "Loading"
                                 ): "Reset Password"}

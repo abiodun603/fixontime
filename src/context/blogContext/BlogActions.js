@@ -1,14 +1,14 @@
 export const getBlogStart = () => ({
-    type: "GET_STAFF_START"
+    type: "GET_BLOG_START"
 });
 
-export const getBlogSuccess = (staff) => ({
-    type: "GET_STAFF_SUCCESS",
-    payload: staff,
+export const getBlogSuccess = (blogs) => ({
+    type: "GET_BLOG_SUCCESS",
+    payload: blogs,
 });
 
-export const getBlogFailure = ({
-    type: "GET_STAFF_FAILURE"
+export const getBlogFailure = () => ({
+    type: "GET_BLOG_FAILURE"
 })
 
 // Create Staff
@@ -25,16 +25,16 @@ export const createBlogFailure = () => ({
     type: "CREATE_BLOG_FAILURE"
 })
 
-// Delete Staff
-// export const deleteStaffStart = () => ({
-//     type: "DELETE_STAFF_START"
-// })
+// Delete Blog
+export const deleteBlogStart = () => ({
+    type: "DELETE_STAFF_START"
+})
 
-// export const deleteStaffSuccess = (id) => ({
-//     type: "DELETE_STAFF_SUCCESS",
-//     payload: id
-// })
+export const deleteBlogSuccess = (id) => ({
+    type: "DELETE_BLOG_SUCCESS",
+    payload: id
+})
 
-// export const deleteStaffFailure = () => ({
-//     type: "DELETE_STAFF_FAILURE"
-// })
+export const deleteBlogFailure = () => ({
+    type: "DELETE_BLOG_FAILURE"
+})

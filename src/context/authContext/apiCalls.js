@@ -12,10 +12,11 @@ export const login = async(user, dispatch) => {
                     password: user.password,
                     roleId: user.roleId
                 }
+            }).then((response) => {
+                dispatch(loginSuccess(response.data));
             })
-            console.log(user)
+            // console.log(user)
             // console.log(res.data)
-        dispatch(loginSuccess(res.data));
     }catch(err){
         dispatch(loginFailure)
     }

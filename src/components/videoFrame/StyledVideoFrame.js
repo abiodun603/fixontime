@@ -25,7 +25,7 @@ export const ElearnContent = styled.div`
 export const ElandingPage = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-bottom: 104px;
     @media screen and (max-width: 1086px){
         align-items: flex-end;
@@ -173,7 +173,7 @@ export const ElearningCard = styled.div`
 `;
 
 export const ElearningImage = styled.div`
-    max-width: 500px;
+    max-width: 300px;
     position: relative;
     @media screen and (max-width: 1310px){
         width: 300px;

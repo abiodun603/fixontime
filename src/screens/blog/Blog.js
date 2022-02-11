@@ -1,28 +1,60 @@
 import React, {useEffect, useState, useReducer, useContext} from "react"
-import Button from "../../components/button/Button"
-import Table from "../../components/table/Table"
-import {FiEdit, FiTrash2} from "react-icons/fi"
-import ActionButton from "../../components/action-button/ActionButton"
 import Header from "../../components/header/Header"
-import {AiOutlineUserAdd} from "react-icons/ai"
-import {  DialogActions, DialogContent } from '@mui/material'
-import {FromBx, Input, LoginForm } from "../login/Login__element"
-import AlertDialog from "../../components/dialog/Dialog"
-import axios from "axios"
-import { useForm } from '../../hooks/useForm';
 // import
 import {useHistory} from "react-router-dom"
-import { deleteStaff, getStaff } from "../../context/staffContext/apiCalls"
-import { StaffContext } from "../../context/staffContext/StaffContext"
 import BCard from "../../components/blog-card/BCard"
-import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
-import CardButton from "../../components/card-button/CardButton"
-import File from "../../components/browserFile/File"
-import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
+import { BlogContext } from "../../context/blogContext/BlogContext"
+import {getBlog, deleteBlog} from "../../context/blogContext/apiCalls"
+import axios from "axios"
+
 
 const Blog = (props) => {
+    const [getBlogPost, setGetBlogPost] = useState([])
+    const {blogs, dispatch} = useContext(BlogContext)
 
     const history = useHistory()
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+        year: 'numeric',
+        month: "long",
+        day: "2-digit"
+    });
+
+    useEffect(() => { 
+        getBlog(dispatch)
+        // setGetBlogPost(blogs);
+    },[dispatch]) 
+
+    // useEffect(() => { 
+    //     async function fetchBlog() {
+    //         try {
+    //             const res = await axios.get("https://fixontime.herokuapp.com/posts",
+    //                 {
+    //                     headers: {
+    //                         "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+    //                     }
+    //                 }
+    //             ).then((res) => {
+    //                 setGetBlogPost(res.data.items)
+    //             })
+
+    //         }catch(err) {
+    //             console.log(err)
+    //         }
+    //      }
+    //      fetchBlog()  
+
+    // }, [])
+    const handleDelete = (id) => {
+        deleteBlog(id, dispatch)
+        console.log(id)
+     }
+
+    const handleUpdate = (id) => {
+        console.log(id)
+        history.push(`/editPost/${id}`)
+    }
+
+    console.log(getBlogPost);
 
     return (
         <>
@@ -31,9 +63,24 @@ const Blog = (props) => {
                 title = "New Blog Post"
                 onClick = {() => history.push("/addPost")}
             />
-            <BCard
-                onEdit = {() => history.push("/editPost")}
-            />   
+
+            <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
+                {
+                    blogs.map((item, index) => (
+                            <div key = {index}>
+                                <BCard
+                                    src = {item.image}
+                                    title= {item.title}
+                                    date= {formatter.format(new Date(item.created_at))}
+                                    onDelete = {()  => handleDelete(item.id)}
+                                    onEdit = {() => handleUpdate(item.id)}
+                                />
+                           </div>
+                       )
+                   )
+                }
+            </div>
+             
         </>
     )
 }

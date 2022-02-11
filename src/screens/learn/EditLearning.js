@@ -1,20 +1,45 @@
 import React, {useEffect, useState, useReducer, useContext} from "react"
-import Button from "../../components/button/Button"
 import Header from "../../components/header/Header"
-import {PageHeader, AddCustomer, HeaderContainer, Card2, FormWrapper} from "../dashboard/StyledGuards"
 import {FromBx, Input, LoginForm } from "../login/Login__element"
 import axios from "axios"
-import { useForm } from '../../hooks/useForm';
 // import
-import {useHistory} from "react-router-dom"
-import BCard from "../../components/blog-card/BCard"
-import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
+import {useRouteMatch, useHistory, useLocation} from "react-router-dom"
 import CardButton from "../../components/card-button/CardButton"
 import File from "../../components/browserFile/File"
-import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
+import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
 
 const EditLearn = (props) => {
+    const [selectedFile, setSelectedFile] = useState(null)
+    const [value , setValue] = useState({
+        title: "",
+        url: ""
+    })
+
+    const history = useHistory();
+    const list = useLocation();
+    const {
+      params: { id },
+    } = useRouteMatch("/editLearn/:id");
+
+    function handle(e){
+        const newValue = {...value}
+        newValue[e.target.name] = e.target.value
+        setValue(newValue)
+    }
+    useEffect( () => {
+         axios.get("https://fixontime.herokuapp.com/learnings/" + id,
+            {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            console.log(res.data)
+            // values.title = res.data.title
+            setValue(res.data)
+        })        
+    }, [id])
     return (
         <>
              <Header
@@ -32,8 +57,8 @@ const EditLearn = (props) => {
                     placeholder = ""
                     name = "email"
                     required
-                    // value = {values.email}
-                    // onChange = {handleChange}
+                    value = {value.title}
+                    onChange = {(e) => handle(e)}
                     style={{background: "#FFFFFF"}}
 
                 />
@@ -42,7 +67,9 @@ const EditLearn = (props) => {
 
                 <FromBx>
                     <span>Thumbnail image</span>
-                    <File/>
+                    <File
+                        onFileSelect={(file) => setSelectedFile(file)}
+                    />
                 </FromBx>
 
                 <FromBx>
@@ -50,19 +77,27 @@ const EditLearn = (props) => {
                     <Input 
                         type = "text" 
                         placeholder = ""
-                        name = "email"
+                        name = "link"
                         required
-                        // value = {values.email}
-                        // onChange = {handleChange}
+                        value = {value.url}
+                        onChange = {(e) => handle(e)}
                         style={{background: "#FFFFFF"}}
 
                     />
                 </FromBx>
                 <div style={{marginTop: 40}}></div>
-                <CardButton
-                    cancel = "Cancel"
-                    submit= "Save"
-                />  
+                <CardButton>
+                    <ButtonCancel >
+                        <span>
+                            Cancel
+                        </span>
+                    </ButtonCancel>
+                    <ButtonSubmit type = "sumbit">
+                        Ok 
+                    </ButtonSubmit>
+                </CardButton>
+                   
+                {/* <button type="submit">submit</button> */}
             </FormCard>                    
         </>
     )
