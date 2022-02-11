@@ -10,8 +10,8 @@ import {MdEdit, MdDeleteForever} from "react-icons/md"
 const VideoFrame = (props) => {
   return (
       <>
-        <ElearningCat>
-			<ElearningStore>
+        {/* <ElearningCat>
+			<ElearningStore> */}
 				{/* {ElearnVideo.map((item,index) => {
 					return ( */}
 						<ElearningItems>
@@ -47,8 +47,8 @@ const VideoFrame = (props) => {
 						</ElearningItems>
 					{/* ) */}
 				{/* })} */}
-			</ElearningStore>  
-		</ElearningCat>
+			{/* </ElearningStore>  
+		</ElearningCat> */}
       </>
   );
 };

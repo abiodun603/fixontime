@@ -120,8 +120,8 @@ export const ElearningStore = styled.div`
 `;
 
 export const ElearningItems = styled.div`
-
-    margin-right: 33px;
+    display: flex;
+    margin-right: 20px;
     margin-bottom: 36px;
     @media screen and (max-width: 1498px){
         width: 350px;
