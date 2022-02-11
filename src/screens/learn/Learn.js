@@ -42,12 +42,15 @@ const Learn = () => {
                     learns.map((item, index) => (
                         <div key = {index}>
                             <VideoFrame
+                                image = {item.thumbnail}
+                                url = {item.url}
                                 title= {item.title}
                                 date = {formatter.format(new Date(item.created_at))}
                                 onEdit = {() => handleUpdate(item.id)}
                                 onDelete = {()  => handleDelete(item.id)}
 
                             />
+
                         </div>
                     ))
                 }

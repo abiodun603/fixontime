@@ -25,6 +25,7 @@ import AddPost from "../blog/AddPost"
 import EditPost from "../blog/EditPost"
 import VideoFrame from "../../components/videoFrame/VideoFrame"
 import TableData from "../../components/mui-table/TableData"
+import { AuthContext } from "../../context/authContext/AuthContext"
 
 import Learn from "../learn/Learn"
 import AddLearn from "../learn/AddLearn"
@@ -38,7 +39,10 @@ const columns = [
 ];
 
 const Dashboard = (props) => {
+    const {user} = useContext(AuthContext)
+    // console.log(user)
     const [data, setData] = useState([])
+    const [blog, setBlog] = useState({})
 
     useEffect(() => {
         axios.get("https://fixontime.herokuapp.com/contacts",
@@ -52,10 +56,237 @@ const Dashboard = (props) => {
             // values.title = res.data.title
             setData(res.data.items)
         }) 
-    }, [])
 
+        axios.get("https://fixontime.herokuapp.com/contacts/status/count",
+                {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            console.log(res.data);
+            setBlog(res.data.count)
+            // values.title = res.data.title
+            // setData(res.data.items)
+        }) 
+    }, [])
+    console.log()
     return (
         <>
+        <div style = {{display: "flex"}}>
+            <Card
+                style={{
+                    width: 260,
+                    height: 129,
+                    backgroundColor: "rgba(3,7,98,.3)",
+                    borderRadius: 6,
+                    padding: 20,
+                    marginRight: 10,
+                    // marginBottom: 10
+                    // opacity: 0.3
+                }}
+            >
+                <div>
+                    <div 
+                        style = {{
+                            display : "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        }}
+                    >
+                        {/* cicle + image */}
+                        {/* <div
+                            style={{
+                                width: 45,
+                                height: 45,
+                                borderRadius: 50,
+                                background: "#FFFFFF"
+                            }}
+                        >
+                            
+                        </div> */}
+                        {/* text */}
+                        <p
+                            style = {{
+                                fontWeight: "400",
+                                fontSize: 18,
+                                color: "#030762",
+                                opacity: 1,
+                                marginLeft: 10,
+                                textAlign: "center"
+                            }}
+                        >Welcome</p>
+                    </div>
+                    <p
+                        style = {{
+                            color: "#030762",
+                            fontWeight: "600",
+                            textAlign: "center",
+                            fontSize: 40,
+                            marginTop: - 5
+                        }}
+                    >Admin</p>
+                </div>
+            </Card>
+            <Card
+                style={{
+                    width: 260,
+                    height: 129,
+                    backgroundColor: "rgba(33,150,83,.3)",
+                    borderRadius: 6,
+                    padding: 20,
+                    marginRight: 10
+                    // opacity: 0.3
+                }}
+            >
+                <div>
+                    <div 
+                        style = {{
+                            display : "flex",
+                            alignItems: "center"
+                        }}
+                    >
+                        {/* cicle + image */}
+                        <div
+                            style={{
+                                width: 45,
+                                height: 45,
+                                borderRadius: 50,
+                                background: "#FFFFFF"
+                            }}
+                        >
+                            
+                        </div>
+                        {/* text */}
+                        <p
+                            style = {{
+                                fontWeight: "400",
+                                fontSize: 18,
+                                color: "#219653",
+                                opacity: 1,
+                                marginLeft: 10
+                            }}
+                        >New Contact</p>
+                    </div>
+                    <p
+                        style = {{
+                            color: "#219653",
+                            fontWeight: "600",
+                            textAlign: "center",
+                            fontSize: 40,
+                            marginTop: - 5
+                        }}
+                    >20</p>
+                </div>
+            </Card>
+            <Card
+                style={{
+                    width: 260,
+                    height: 129,
+                    backgroundColor: "rgba(242,153,74,.3)",
+                    borderRadius: 6,
+                    padding: 20,
+                    marginRight: 10
+
+                    // opacity: 0.3
+                }}
+            >
+                <div>
+                    <div 
+                        style = {{
+                            display : "flex",
+                            alignItems: "center"
+                        }}
+                    >
+                        {/* cicle + image */}
+                        <div
+                            style={{
+                                width: 45,
+                                height: 45,
+                                borderRadius: 50,
+                                background: "#FFFFFF"
+                            }}
+                        >
+                            
+                        </div>
+                        {/* text */}
+                        <p
+                            style = {{
+                                fontWeight: "400",
+                                fontSize: 18,
+                                color: "#F2994A",
+                                opacity: 1,
+                                marginLeft: 10
+                            }}
+                        >Total Blog</p>
+                    </div>
+                    <p
+                        style = {{
+                            color: "#F2994A",
+                            fontWeight: "600",
+                            textAlign: "center",
+                            fontSize: 40,
+                            marginTop: - 5
+                        }}
+                    >40</p>
+                </div>
+            </Card>
+            <Card
+                style={{
+                    width: 260,
+                    height: 129,
+                    backgroundColor: "rgba(253,0,20,.3)",
+                    borderRadius: 6,
+                    padding: 20,
+                    marginRight: 10
+
+                    // opacity: 0.3
+                }}
+            >
+                <div>
+                    <div 
+                        style = {{
+                            display : "flex",
+                            alignItems: "center"
+                        }}
+                    >
+                        {/* cicle + image */}
+                        <div
+                            style={{
+                                width: 45,
+                                height: 45,
+                                borderRadius: 50,
+                                background: "#FFFFFF"
+                            }}
+                        >
+                            
+                        </div>
+                        {/* text */}
+                        <p
+                            style = {{
+                                fontWeight: "400",
+                                fontSize: 18,
+                                color: "#FD0014",
+                                opacity: 1,
+                                marginLeft: 10
+                            }}
+                        >New Contact</p>
+                    </div>
+                    <p
+                        style = {{
+                            color: "#FD0014",
+                            fontWeight: "600",
+                            textAlign: "center",
+                            fontSize: 40,
+                            marginTop: - 5
+                        }}
+                    >40</p>
+                </div>
+            </Card>
+        </div>
+            
+
+
             <TableData
                 rows = {data}
                 columns = {columns}

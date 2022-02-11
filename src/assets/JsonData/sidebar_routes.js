@@ -28,7 +28,7 @@ export default [
         "icon":<AiFillYoutube/>
     },
     {
-        "display_name": "Subcriber",
+        "display_name": "Subcribe",
         "route": "/subscribe",
         "icon":<FaEnvelope/>
     },

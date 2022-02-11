@@ -13,6 +13,7 @@ export const login = async(user, dispatch) => {
                     roleId: user.roleId
                 }
             }).then((response) => {
+                console.log(response)
                 dispatch(loginSuccess(response.data));
             })
             // console.log(user)

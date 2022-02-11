@@ -12,7 +12,7 @@ export const getLearn = async(dispatch)=> {
                 }
             }
         )  
-        // console.log(res.data)
+        console.log(res.data)
         dispatch(getLearnSuccess(res.data.items)) 
     }catch(err) {
         dispatch(getLearnFailure());
@@ -32,7 +32,7 @@ export const createLearn = async(learn, dispatch)=> {
         )
             //                 setGetBlogPost(res.data.items)
             //             })
-            // console.log(res.data)
+            console.log(res.data)
         dispatch(createLearnSuccess(res.data))
         swal({
             title: "Are you sure?",

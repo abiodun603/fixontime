@@ -4,7 +4,7 @@ import {LoginBanner, LoginForm, LoginWrapper,FormWrapper, FromBx, Input, FromBxR
 import {useHistory} from "react-router-dom"
 import axios from "axios"
 import authLogo from "../../assets/image/auth/authLogo.svg"
-
+import swal from "sweetalert"
 const Signup = () => {
     const history = useHistory()
 
@@ -24,6 +24,21 @@ const Signup = () => {
             }
         }).then( res => {
             console.log(res.data)
+            swal({
+                title: "Processing...",
+                text: "Kindly check your mail a reset link as been sent",
+                icon: "success",
+                confirmButtonColor: '#030762',
+                // buttons: true,
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                    history.push("/learn")
+                } else {
+                  swal("Your imaginary file is safe!");
+                }
+            });
+            // })
         })
     }
 
