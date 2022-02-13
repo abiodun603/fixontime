@@ -30,6 +30,12 @@ import { AuthContext } from "../../context/authContext/AuthContext"
 import Learn from "../learn/Learn"
 import AddLearn from "../learn/AddLearn"
 import Contact from "../contact/Contact"
+import {BiWorld} from "react-icons/bi"
+import {RiContactsBook2Fill} from "react-icons/ri"
+import {IoBookSharp} from "react-icons/io5"
+import { DataGrid } from '@mui/x-data-grid';
+
+
 
 const columns = [
     { field: 'created_at', headerName: 'Date', flex: 1 },
@@ -42,7 +48,11 @@ const Dashboard = (props) => {
     const {user} = useContext(AuthContext)
     // console.log(user)
     const [data, setData] = useState([])
-    const [blog, setBlog] = useState({})
+    const [blog, setBlog] = useState("")
+    const [learn, setLearn] = useState("")
+    const [contact, setContact] = useState("")
+    const [selectionModel, setSelectionModel] = useState([]);
+
 
     useEffect(() => {
         axios.get("https://fixontime.herokuapp.com/contacts",
@@ -52,9 +62,29 @@ const Dashboard = (props) => {
                 }
             }
         ).then((res) => {
-            console.log(res.data)
-            // values.title = res.data.title
             setData(res.data.items)
+        }) 
+
+        axios.get("https://fixontime.herokuapp.com/posts/status/count",
+                {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            // console.log(res.data);
+            setBlog(res.data.count)
+        }) 
+
+        axios.get("https://fixontime.herokuapp.com/learnings/status/count",
+                {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            console.log(res.data.count);
+            setLearn(res.data.count)
         }) 
 
         axios.get("https://fixontime.herokuapp.com/contacts/status/count",
@@ -64,16 +94,15 @@ const Dashboard = (props) => {
                 }
             }
         ).then((res) => {
-            console.log(res.data);
-            setBlog(res.data.count)
-            // values.title = res.data.title
-            // setData(res.data.items)
+            // console.log(res.data);
+            setContact(res.data.count)
         }) 
     }, [])
-    console.log()
+    console.log(learn)
     return (
         <>
         <div style = {{display: "flex"}}>
+            {/* Welcome Admin */}
             <Card
                 style={{
                     width: 260,
@@ -83,7 +112,6 @@ const Dashboard = (props) => {
                     padding: 20,
                     marginRight: 10,
                     // marginBottom: 10
-                    // opacity: 0.3
                 }}
             >
                 <div>
@@ -94,18 +122,6 @@ const Dashboard = (props) => {
                             justifyContent: "center"
                         }}
                     >
-                        {/* cicle + image */}
-                        {/* <div
-                            style={{
-                                width: 45,
-                                height: 45,
-                                borderRadius: 50,
-                                background: "#FFFFFF"
-                            }}
-                        >
-                            
-                        </div> */}
-                        {/* text */}
                         <p
                             style = {{
                                 fontWeight: "400",
@@ -128,6 +144,7 @@ const Dashboard = (props) => {
                     >Admin</p>
                 </div>
             </Card>
+            {/* New Contact */}
             <Card
                 style={{
                     width: 260,
@@ -136,7 +153,6 @@ const Dashboard = (props) => {
                     borderRadius: 6,
                     padding: 20,
                     marginRight: 10
-                    // opacity: 0.3
                 }}
             >
                 <div>
@@ -152,10 +168,14 @@ const Dashboard = (props) => {
                                 width: 45,
                                 height: 45,
                                 borderRadius: 50,
-                                background: "#FFFFFF"
+                                background: "#FFFFFF",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "#219653"
                             }}
                         >
-                            
+                            <RiContactsBook2Fill/>
                         </div>
                         {/* text */}
                         <p
@@ -176,9 +196,10 @@ const Dashboard = (props) => {
                             fontSize: 40,
                             marginTop: - 5
                         }}
-                    >20</p>
+                    >{contact}</p>
                 </div>
             </Card>
+            {/* Total Blog */}
             <Card
                 style={{
                     width: 260,
@@ -204,10 +225,18 @@ const Dashboard = (props) => {
                                 width: 45,
                                 height: 45,
                                 borderRadius: 50,
-                                background: "#FFFFFF"
+                                background: "#FFFFFF",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                positive: "relative"
                             }}
                         >
-                            
+                            <BiWorld
+                                style= {{
+                                    color: "#F2994A"
+                                }}
+                            />
                         </div>
                         {/* text */}
                         <p
@@ -228,9 +257,12 @@ const Dashboard = (props) => {
                             fontSize: 40,
                             marginTop: - 5
                         }}
-                    >40</p>
+                    >
+                        {blog}
+                    </p>
                 </div>
             </Card>
+            {/* E-Learngin */}
             <Card
                 style={{
                     width: 260,
@@ -256,10 +288,17 @@ const Dashboard = (props) => {
                                 width: 45,
                                 height: 45,
                                 borderRadius: 50,
-                                background: "#FFFFFF"
+                                background: "#FFFFFF",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center"
                             }}
                         >
-                            
+                            <IoBookSharp
+                                style = {{
+                                    color: "#FD0014"
+                                }}
+                            />
                         </div>
                         {/* text */}
                         <p
@@ -270,7 +309,7 @@ const Dashboard = (props) => {
                                 opacity: 1,
                                 marginLeft: 10
                             }}
-                        >New Contact</p>
+                        >E-Learning</p>
                     </div>
                     <p
                         style = {{
@@ -280,13 +319,11 @@ const Dashboard = (props) => {
                             fontSize: 40,
                             marginTop: - 5
                         }}
-                    >40</p>
+                    >{learn}</p>
                 </div>
             </Card>
         </div>
-            
-
-
+        
             <TableData
                 rows = {data}
                 columns = {columns}

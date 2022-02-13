@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import authBanner from "../../assets/image/auth/authBanner.svg"
 export const LoginWrapper = styled.div `
     position: relative;
     width: 100%;
@@ -18,8 +18,10 @@ export const LoginBanner = styled.div `
         top: 0;
         left: 0;
         object-fit: cover;
-        width: 150px;
+        width: 100%;
+        /* height: 100vh; */
         margin: 2rem;
+        z-index: -1
     }
 
     h1{

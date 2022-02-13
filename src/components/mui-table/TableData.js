@@ -17,6 +17,8 @@ const rows = [
 ];
 
 export default function DataTable(props) {
+  const [selectionModel, setSelectionModel] = React.useState([]);
+  console.log(selectionModel)
   return (
     <>
       <div style={{ height: 400, width: '100%', marginTop: 80 }}>
@@ -26,6 +28,11 @@ export default function DataTable(props) {
           pageSize={5}
           rowsPerPageOptions={[5]}
           checkboxSelection
+          onSelectionModelChange={(newSelection) => {
+            setSelectionModel(newSelection.selectionModel);
+        }}
+        selectionModel={selectionModel}
+        // {...data}
         />
         <ButtonAction>
           <ButtonDelete>
