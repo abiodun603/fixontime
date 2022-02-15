@@ -45,7 +45,7 @@ const Reset = () => {
                     <div style={{display: 'flex', alignItems: "center",flexDirection: 'column',justifyContent: "center", width: "100%", height: "100%"}}>
                         <span>Welcome to</span>
                         <h1>FIXONTIME</h1>
-                        <span>Admin Pannel</span>
+                        <span>Admin Panel</span>
                     </div>
                     {/* <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4b55bc102925351.5f41b2583a8db.png" alt="name"/> */}
                 </LoginBanner>
