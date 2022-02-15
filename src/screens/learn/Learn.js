@@ -57,19 +57,8 @@ const Learn = () => {
                                 date = {formatter.format(new Date(item.created_at))}
                                 onEdit = {() => handleUpdate(item.id)}
                                 onDelete = {()  => handleDelete(item.id)}
-                                onClick = {handleToggle}
+                                // onClick = {handleToggle}
                             />
-
-                            <Backdrop
-                                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                    open={open}
-                                        onClick={handleClose}
-                                    >
-                                        {/* <CircularProgress color="inherit" /> */}
-                                    <ReactPlayer
-                                        url = {item.url}
-                                    />
-                                                                        </Backdrop>
                         </div>
                     ))
                 }

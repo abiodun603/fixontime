@@ -6,13 +6,26 @@ import playIcon from "../../assets/image/playicon.svg"
 import { FaEye } from 'react-icons/fa'
 import { ButtonAction, DeleteButton, EditButton } from '../blog-card/StyledBC';
 import {MdEdit, MdDeleteForever} from "react-icons/md"
+import Backdrop from '@mui/material/Backdrop';
+import ReactPlayer from 'react-player'
 
 const VideoFrame = (props) => {
+	const [open, setOpen] = React.useState(false);
+
 	const [play, setPlay] = useState(false);
 
+	const handleClose = () => {
+        setOpen(false);
+    };
+    const handleToggle = () => {
+        setOpen(!open);
+    };
+
 	const url = play ? props.url+`autoplay?1` : ""
+
   	return (
       <>
+	  	
         {/* <ElearningCat>
 			<ElearningStore> */}
 				{/* {ElearnVideo.map((item,index) => {
@@ -20,7 +33,7 @@ const VideoFrame = (props) => {
 						<ElearningItems>
 							<ElearningCard>
 								<ElearningImage>
-									<PlayImg onClick = {props.onClick} src={playIcon} />
+									<PlayImg onClick = {handleToggle} src={playIcon} />
 									
 									<EImg src={props.image}/>
 
@@ -52,6 +65,16 @@ const VideoFrame = (props) => {
 
 							{/* </iframe> */}
 						</ElearningItems>
+						<Backdrop
+                                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                    open={open}
+                                        onClick={handleClose}
+                                    >
+                                        {/* <CircularProgress color="inherit" /> */}
+                                    <ReactPlayer
+                                        url = {props.url}
+                                    />
+                                                                        </Backdrop>
 					{/* ) */}
 				{/* })} */}
 			{/* </ElearningStore>  
