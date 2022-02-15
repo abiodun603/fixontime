@@ -60,9 +60,9 @@ const Signin = (validateInfo) => {
                             <span>Password</span>
                             <Input 
                                 name= "password"
-                                type = "text" 
+                                type = "password" 
                                 required
-                                placeholder = "*****" 
+                                placeholder = "*************" 
                                 value = {values.password}
                                 onChange = {handleChange}    
                             />

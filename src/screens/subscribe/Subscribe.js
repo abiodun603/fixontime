@@ -39,16 +39,15 @@ const Subscribe = () => {
     const handleDelete = async(ids,e) =>  {
         e.preventDefault();
         // console.log(selectionModel)
-
         await axios.delete("https://fixontime.herokuapp.com/subscriptions/" + ids,
                 {
                 headers: {
                     "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
                 }
             }
-        ).then((res) => {
-            console.log(res.data);
-        }) 
+        )
+        setData(data.filter((item) => item.id !== ids));
+        // console.log(res.data);
     }
     return (
         <>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import authBanner from "../../assets/image/auth/authBanner.svg"
+import authBanner from "../../assets/image/auth/fot-bg.png"
 export const LoginWrapper = styled.div `
     position: relative;
     width: 100%;
@@ -11,7 +11,10 @@ export const LoginBanner = styled.div `
     position: relative;
     width: 50%;
     height: 100%;
-    background-color: #030762;
+    background-image: url(${authBanner});
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: #030762; */
 
     img{
         position: absolute;
@@ -38,7 +41,9 @@ export const LoginBanner = styled.div `
 `
 
 export const BannerLogo = styled.img `
-    
+    z-index: 999;
+    height: 200px;
+    background: red;
     /* height: 80px; */
 `
 
