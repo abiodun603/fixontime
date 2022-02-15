@@ -33,7 +33,7 @@ const Signin = (validateInfo) => {
         <>
             <LoginWrapper>
                 <LoginBanner>
-                    <BannerLogo src = {authLogo} alt="" />
+                    <BannerLogo src = {authLogo} alt=""  style = {{zIndex: 999 , width: 200}}/>
                     <div style={{display: 'flex', alignItems: "center",flexDirection: 'column',justifyContent: "center", width: "100%", height: "100%"}}>
                         <span>Welcome to</span>
                         <h1>FIXONTIME</h1>

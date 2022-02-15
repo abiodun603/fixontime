@@ -42,8 +42,8 @@ export const LoginBanner = styled.div `
 
 export const BannerLogo = styled.img `
     z-index: 999;
-    height: 200px;
-    background: red;
+    width: 50px;
+    /* background: red; */
     /* height: 80px; */
 `
 
