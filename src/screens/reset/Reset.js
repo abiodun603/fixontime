@@ -60,7 +60,7 @@ const Reset = () => {
                             <span>New Password</span>
                             
                             <Input
-                                type= "text" 
+                                type= "password" 
                                 // placeholder = "Enter Username"
                                 name = "password"
                                 required
@@ -73,7 +73,7 @@ const Reset = () => {
                             <span>Confirm New Password</span>
                             
                             <Input
-                                type= "text" 
+                                type= "password" 
                                 // placeholder = "Enter Username"
                                 name = "confirm_password"
                                 required
