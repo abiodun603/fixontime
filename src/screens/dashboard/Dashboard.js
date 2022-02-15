@@ -1,43 +1,18 @@
 import React, {useEffect, useState, useReducer, useContext} from "react"
-import Button from "../../components/button/Button"
-import Table from "../../components/table/Table"
-import {FiEdit, FiTrash2} from "react-icons/fi"
-import ActionButton from "../../components/action-button/ActionButton"
-import Header from "../../components/header/Header"
-import {PageHeader, AddCustomer, HeaderContainer, Card2, FormWrapper} from "./StyledGuards"
-import {AiOutlineUserAdd} from "react-icons/ai"
-import {  DialogActions, DialogContent } from '@mui/material'
-import {FromBx, Input, LoginForm } from "../login/Login__element"
-import AlertDialog from "../../components/dialog/Dialog"
 import axios from "axios"
-import { useForm } from '../../hooks/useForm';
-// import
-import {useHistory} from "react-router-dom"
-import { deleteStaff, getStaff } from "../../context/staffContext/apiCalls"
-import { StaffContext } from "../../context/staffContext/StaffContext"
-import BCard from "../../components/blog-card/BCard"
-import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
-import CardButton from "../../components/card-button/CardButton"
-import File from "../../components/browserFile/File"
-import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
-import Blog from "../blog/Blog"
-import AddPost from "../blog/AddPost"
-import EditPost from "../blog/EditPost"
-import VideoFrame from "../../components/videoFrame/VideoFrame"
-import TableData from "../../components/mui-table/TableData"
-import { AuthContext } from "../../context/authContext/AuthContext"
-
-import Learn from "../learn/Learn"
-import AddLearn from "../learn/AddLearn"
-import Contact from "../contact/Contact"
+import { Card} from "../blog/StyledBlog"
+import { AuthContext } from "../../context/authContext/AuthContext" 
 import {BiWorld} from "react-icons/bi"
 import {RiContactsBook2Fill} from "react-icons/ri"
 import {IoBookSharp} from "react-icons/io5"
 import { DataGrid } from '@mui/x-data-grid';
-
+import { ButtonDelete, ButtonDownload ,ButtonAction} from '../../components/mui-table/StyledTable';
+import {MdOutlineDeleteForever} from "react-icons/md"
+import {AiOutlineDownload} from "react-icons/ai"
 
 
 const columns = [
+    { field: 'id', headerName: 'Id', flex: 1 },
     { field: 'created_at', headerName: 'Date', flex: 1 },
     { field: 'firstName', headerName: 'Name',flex: 1 },
     { field: 'company', headerName: 'Company', flex: 1 },
@@ -63,6 +38,7 @@ const Dashboard = (props) => {
             }
         ).then((res) => {
             setData(res.data.items)
+            console.log(res.data.items)
         }) 
 
         axios.get("https://fixontime.herokuapp.com/posts/status/count",
@@ -97,8 +73,22 @@ const Dashboard = (props) => {
             // console.log(res.data);
             setContact(res.data.count)
         }) 
-    }, [])
-    console.log(learn)
+    }, [setData])
+
+    const handleDelete = async(ids,e) =>  {
+        e.preventDefault();
+        console.log(selectionModel)
+
+        await axios.delete("https://fixontime.herokuapp.com/contacts/" + [ids],
+                {
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                }
+            }
+        ).then((res) => {
+            console.log(res.data);
+        }) 
+    }
     return (
         <>
         <div style = {{display: "flex"}}>
@@ -323,11 +313,33 @@ const Dashboard = (props) => {
                 </div>
             </Card>
         </div>
-        
-            <TableData
+            {/* <TableData
                 rows = {data}
-                columns = {columns}
-            />
+                columns = {columns} */}
+            {/* /> */}
+         
+            <div style={{ height: 400, width: '100%',marginTop: 100 }}>
+                <DataGrid
+                    rows={data}
+                    columns={columns}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
+                    onSelectionModelChange={(item) => {setSelectionModel(item);}}
+                    selectionModel={selectionModel}
+                />
+                <ButtonAction>
+                    <ButtonDelete onClick = {(e) => handleDelete(selectionModel, e)}>
+                        <MdOutlineDeleteForever/>
+                        <span>Delete</span>
+                    </ButtonDelete>
+                    <ButtonDownload>
+                        <AiOutlineDownload/>
+                        <span>Download</span>
+                    </ButtonDownload>
+                </ButtonAction>
+            </div>
+            
         </>
     )
 }

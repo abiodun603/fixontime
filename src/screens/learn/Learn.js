@@ -4,14 +4,16 @@ import Header from "../../components/header/Header"
 import VideoFrame from "../../components/videoFrame/VideoFrame"
 import { deleteLearn, getLearn } from "../../context/learningContext/apiCalls";
 import { LearnContext } from "../../context/learningContext/LearnContext";
-
+import Backdrop from '@mui/material/Backdrop';
+import ReactPlayer from 'react-player'
 const Learn = () => {
+    const [open, setOpen] = React.useState(false);
+    
     const history = useHistory();
     const {learns, dispatch} = useContext(LearnContext)
 
     useEffect(() => { 
         getLearn(dispatch)
-        // setGetBlogPost(blogs);
     },[dispatch])
 
     const formatter = new Intl.DateTimeFormat("en-GB", {
@@ -29,6 +31,13 @@ const Learn = () => {
         console.log(id)
         history.push(`/editLearn/${id}`)
     }
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handleToggle = () => {
+        setOpen(!open);
+    };
 
     return (
         <>
@@ -48,9 +57,19 @@ const Learn = () => {
                                 date = {formatter.format(new Date(item.created_at))}
                                 onEdit = {() => handleUpdate(item.id)}
                                 onDelete = {()  => handleDelete(item.id)}
-
+                                onClick = {handleToggle}
                             />
 
+                            <Backdrop
+                                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                    open={open}
+                                        onClick={handleClose}
+                                    >
+                                        {/* <CircularProgress color="inherit" /> */}
+                                    <ReactPlayer
+                                        url = {item.url}
+                                    />
+                                                                        </Backdrop>
                         </div>
                     ))
                 }

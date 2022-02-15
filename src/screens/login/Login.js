@@ -17,9 +17,9 @@ const Signin = (validateInfo) => {
         password: ""
     });
     const [roleId, setRoleId] = useState(1);
-    const [erros, setErrors] = useState({})
+    const [errors, setErrors] = useState("")
     // New CONFIGURATION
-    const {isFetching, dispatch} = useContext(AuthContext);
+    const {isFetching,error, dispatch} = useContext(AuthContext);
     
     console.log(isFetching);
     const handleLogin = (e) => {
@@ -77,6 +77,7 @@ const Signin = (validateInfo) => {
                         <div style={{justifyContent: "center", display: "flex", alignItems: "center"}}>
                             <label style={{cursor: "pointer", color: "#505050", fontSize: 14, marginTop: 5}} onClick= {() => history.push("/forget")}>Forget your password?</label>
                         </div>
+                        {/* <p>{dispatch ? "error" :  "fgfg"}</p> */}
                     </LoginForm>
                 </FormWrapper>
             </LoginWrapper>

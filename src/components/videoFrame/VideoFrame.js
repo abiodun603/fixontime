@@ -20,7 +20,7 @@ const VideoFrame = (props) => {
 						<ElearningItems>
 							<ElearningCard>
 								<ElearningImage>
-									<PlayImg onClick = {() => setPlay(true)} src={playIcon} />
+									<PlayImg onClick = {props.onClick} src={playIcon} />
 									
 									<EImg src={props.image}/>
 
@@ -47,10 +47,10 @@ const VideoFrame = (props) => {
 									{props.date}
 								</ElearnDate>
 							</ElearningCard>
-
+{/* 
 							<iframe width="560" height="315" 
 							
-							src="https://www.youtube.com/embed/9exmH95COPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							src="https://www.youtube.com/embed/9exmH95COPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
 							{/* </iframe> */}
 						</ElearningItems>

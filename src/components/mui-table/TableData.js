@@ -34,16 +34,7 @@ export default function DataTable(props) {
         selectionModel={selectionModel}
         // {...data}
         />
-        <ButtonAction>
-          <ButtonDelete>
-            <MdOutlineDeleteForever/>
-            <span>Delete</span>
-          </ButtonDelete>
-          <ButtonDownload>
-            <AiOutlineDownload/>
-            <span>Download</span>
-          </ButtonDownload>
-        </ButtonAction>
+        
       </div>
     </>
   );
