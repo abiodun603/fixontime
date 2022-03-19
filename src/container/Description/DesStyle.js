@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { MdFileDownload } from "react-icons/md";
 import styled from "styled-components";
 import { COLORS, SIZES } from "../../constant";
 

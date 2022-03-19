@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import HeadFoot from '../../components/HeadFoot'
 import {HomeContainer,HomeContent,HomePage,
     LeftSection,LeftText,ButtonTouch,LandingTitle,LandingSubTitle,RightSection,HomePic,
-    HomeCompanyLogo,HomeAbout,HomeAboutTitle,HomeAboutSubTitle,WFE,HomeService,HomeTest, ArrowLeft,HomeConnected} from './HomeStyled'
+    HomeCompanyLogo,HomeAbout,HomeAboutTitle,HomeAboutSubTitle,WFE,HomeService,HomeTest,HomeConnected} from './HomeStyled'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './carousel.css';
-import { landingCarousel,solutionCarousel } from '../../components/data/data';
+import { landingCarousel } from '../../components/data/data';
 import {HomeQuoteWrapper,HomeQuoteContainer, Button} from "./HomeStyled.js";
 import Brand from '../../components/brand/Brand';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -32,8 +32,6 @@ function Home(props) {
     const [values, handleChange] = useForm({
         email: ""
     });
-
-    const [slider, setSlider] = useState({});
   
       const setCarousel = {
         dots: true,
@@ -106,13 +104,7 @@ function Home(props) {
                 confirmButtonColor: '#030762',
                 buttons: true,
                 dangerMode: true,
-              }).then((willDelete) => {
-                if (willDelete) {
-                   //  history.push("/blog")
-                } else {
-               //    swal("Your imaginary file is safe!");
-                }
-            });
+              })
     }
 
     return (
@@ -138,7 +130,7 @@ function Home(props) {
                                 <Slider {...setCarousel}>
                                     
                                         {landingCarousel.map((item) => (
-                                            <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`}/>
+                                            <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`} alt = ""/>
                                         ))}
                                     
                                 </Slider>
@@ -147,9 +139,9 @@ function Home(props) {
                         </RightSection>
                     </HomePage>
                     <HomeCompanyLogo>
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/nojapower.svg`} />
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/lucyelect.svg`} />
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/repl.svg`} />
+                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/nojapower.svg`} alt=""/>
+                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/lucyelect.svg`} alt=""/>
+                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/repl.svg`} alt=""/>
                     </HomeCompanyLogo>
                     <HomeAbout>
                         <HomeAboutTitle>
@@ -195,7 +187,7 @@ function Home(props) {
                                     </div>
                                 </div>
                                 <div className='wfe_right_section'>
-                                    <img src={process.env.PUBLIC_URL + `/Image/home/team_support.svg`} />
+                                    <img src={process.env.PUBLIC_URL + `/Image/home/team_support.svg`} alt=""/>
                                 </div>
                             </div>
                         </WFE>
@@ -205,10 +197,10 @@ function Home(props) {
                             <div className='home_text'>
                                 Solutions just for you 
                             </div>
-                            <img src={process.env.PUBLIC_URL + `/Image/home/thunder.svg`} />
+                            <img src={process.env.PUBLIC_URL + `/Image/home/thunder.svg`} alt=""/>
                         </div>
                         <div className='solution_info'>
-                            <img src={process.env.PUBLIC_URL + `/Image/home/servicepic.svg`} />
+                            <img src={process.env.PUBLIC_URL + `/Image/home/servicepic.svg`} alt=""/>
                             <Swiper 
                             pagination={true} 
                             modules={[Pagination,Autoplay]} 
@@ -282,14 +274,14 @@ function Home(props) {
                             modules={[ Autoplay,Navigation]}
                         >
                             <SwiperSlide className='card_item'>
-                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon'/>
+                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt =""/>
                                     <div className='card_center'>
                                         <div className='testimony'>Are you ready to buy state-of-the-art products from 
                                             original equipment manufacturers? As accredited vendors, 
                                             we help you purchase electrical power. 
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  />
+                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  alt =""/>
                                         </div>
                                         <div className='person_detail'>
                                             <p>Ayomide Akinyemi</p>
@@ -298,14 +290,14 @@ function Home(props) {
                                     </div>
                             </SwiperSlide>
                             <SwiperSlide className='card_item'>
-                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon'/>
+                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} alt="" width="20px" className='comment_icon'/>
                                     <div className='card_center'>
                                         <div className='testimony'>Are you ready to buy state-of-the-art products from 
                                             original equipment manufacturers? As accredited vendors, 
                                             we help you purchase electrical power. 
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  />
+                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `} alt="" />
                                         </div>
                                         <div className='person_detail'>
                                             <p>Ayomide Akinyemi</p>
@@ -314,14 +306,14 @@ function Home(props) {
                                     </div>
                             </SwiperSlide>
                             <SwiperSlide className='card_item'>
-                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon'/>
+                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt=""/>
                                     <div className='card_center'>
                                         <div className='testimony'>Are you ready to buy state-of-the-art products from 
                                             original equipment manufacturers? As accredited vendors, 
                                             we help you purchase electrical power. 
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  />
+                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}   alt=""/>
                                         </div>
                                         <div className='person_detail'>
                                             <p>Ayomide Akinyemi</p>
@@ -330,14 +322,14 @@ function Home(props) {
                                     </div>
                             </SwiperSlide>
                             <SwiperSlide className='card_item'>
-                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon'/>
+                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt=""/>
                                     <div className='card_center'>
                                         <div className='testimony'>Are you ready to buy state-of-the-art products from 
                                             original equipment manufacturers? As accredited vendors, 
                                             we help you purchase electrical power. 
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  />
+                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}   alt=""/>
                                         </div>
                                         <div className='person_detail'>
                                             <p>Ayomide Akinyemi</p>

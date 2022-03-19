@@ -1,15 +1,12 @@
-import React, {useEffect, useState, useReducer, useContext} from "react"
+import React, {useEffect, useContext} from "react"
 import Header from "../../components/header/Header"
-// import
 import {useHistory} from "react-router-dom"
 import BCard from "../../components/blog-card/BCard"
 import { BlogContext } from "../../context/blogContext/BlogContext"
 import {getBlog, deleteBlog} from "../../context/blogContext/apiCalls"
-import axios from "axios"
 
 
-const Blog = (props) => {
-    const [getBlogPost, setGetBlogPost] = useState([])
+const Blog = () => {
     const {blogs, dispatch} = useContext(BlogContext)
 
     const history = useHistory()
@@ -21,7 +18,6 @@ const Blog = (props) => {
 
     useEffect(() => { 
         getBlog(dispatch)
-        // setGetBlogPost(blogs);
     },[dispatch]) 
 
     const handleDelete = (id) => {
@@ -34,7 +30,6 @@ const Blog = (props) => {
         history.push(`/editPost/${id}`)
     }
 
-    console.log(getBlogPost);
 
     return (
         <>

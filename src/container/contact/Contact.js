@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react'
 import HeadFoot from '../../components/HeadFoot'
-import {ContactLand, BlogBanner, BlogForm, BlogWrapper,FormWrapper, FromBx, Input, FromBxRem, InputCheck, Button, Textarea, Contact, ContactDesc, WorkContainer, WorkTitle, WorkHourContainer, WorkHour, WorkWrapper} from "./StyledContact"
+import {ContactLand, BlogBanner, BlogForm, BlogWrapper,FormWrapper, FromBx, Input,Button, Textarea, Contact, ContactDesc, WorkContainer, WorkTitle, WorkHourContainer, WorkHour, WorkWrapper} from "./StyledContact"
 import address from "../../assets/image/contact/address.svg"
 import phone from "../../assets/image/contact/phone.svg"
 import mail from "../../assets/image/contact/mail.svg"
 import customer from "../../assets/image/contact/customer.svg"
 import contact from "../../assets/image/contact/contact-hr.svg";
 import {HiOutlineArrowNarrowRight} from "react-icons/hi";
-import pole from "../../assets/image/about/pole.svg";
 import { useForm } from '../../hooks/useForm';
 import axios from "axios"
 import swal from "sweetalert";
@@ -54,9 +53,7 @@ const ContactPage = (props) => {
                  dangerMode: true,
                }).then((willDelete) => {
                  if (willDelete) {
-                    //  history.push("/blog")
                  } else {
-                //    swal("Your imaginary file is safe!");
                  }
              });
              })

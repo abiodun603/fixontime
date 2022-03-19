@@ -1,16 +1,9 @@
-import React, {useEffect, useState, useReducer, useContext} from "react"
-import {useRouteMatch, useHistory, useLocation} from "react-router-dom"
-
-import Button from "../../components/button/Button"
+import React, {useEffect, useState} from "react"
+import {useRouteMatch, useHistory} from "react-router-dom"
 import Header from "../../components/header/Header"
-import {PageHeader, AddCustomer, HeaderContainer, Card2, FormWrapper} from "../dashboard/StyledGuards"
-import {FromBx, Input, LoginForm } from "../login/Login__element"
+import {FormWrapper} from "../dashboard/StyledGuards"
+import {FromBx, Input } from "../login/Login__element"
 import axios from "axios"
-import { useForm } from '../../hooks/useForm';
-// import
-// import {useHistory} from "react-router-dom"
-import BCard from "../../components/blog-card/BCard"
-import { Card, CardBody, CardForm, CardHeader, CardWrapper } from "../blog/StyledBlog"
 import CardButton from "../../components/card-button/CardButton"
 import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
@@ -19,14 +12,12 @@ import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledB
 import swal from "sweetalert"
 
 const EditPost = (props) => {
-    // const [values, handleChange] = useForm({title: "",content: ""})
     const [selectedFile, setSelectedFile] = useState(null)
     const [value , setValue] = useState({
         title: "",
         content: ""
     })
     const history = useHistory();
-    const list = useLocation();
     const {
       params: { id },
     } = useRouteMatch("/editPost/:id");
@@ -38,20 +29,14 @@ const EditPost = (props) => {
     }
 
     const handleSubmit =  (e) => {
-        // const [value, setValue]
         e.preventDefault();
         console.log(value);
-        // alert("boy")
-
 		const url =  "https://fixontime.herokuapp.com/posts/" + id;
-
         const formData = new FormData();
         formData.append("title", value.title);
         formData.append("content", value.content);
         formData.append("categoryId", "4");
         formData.append("image", selectedFile);
-
-        const token = JSON.parse(localStorage.getItem("user")).access_token
 
         axios.put(
             url ,
@@ -61,15 +46,11 @@ const EditPost = (props) => {
 				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
 			}}
         ).then(response => {
-
-            // console.log(response.data)
-			// alert("update successfully")
             swal({
                 title: "Are you sure?",
                 text: "Blog post have been up successfully",
                 icon: "success",
                 confirmButtonColor: '#030762',
-                // buttons: true,
                 dangerMode: true,
               }).then((willDelete) => {
                 if (willDelete) {
@@ -93,10 +74,9 @@ const EditPost = (props) => {
                 }
             ).then((res) => {
                 console.log(res.data)
-                // values.title = res.data.title
                 setValue(res.data)
             })        
-    }, [])
+    }, [id])  //take note of this 
     return (
         <>
              <Header
@@ -104,8 +84,6 @@ const EditPost = (props) => {
                 title="New Post"
                 onClick = {() => history.push("/addPost")}
             />
-            {/*<BCard/> */}
-
             <FormCard
                 header = "Edit blog post"
             >
@@ -149,7 +127,7 @@ const EditPost = (props) => {
                         Ok 
                     </ButtonSubmit>
                 </CardButton>
-                                </FormWrapper>
+            </FormWrapper>
 
             </FormCard>                      
         </>

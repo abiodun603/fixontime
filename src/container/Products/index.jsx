@@ -3,7 +3,7 @@ import HeadFoot from '../../components/HeadFoot';
 import {ProductsContainer,ProductsContent,PlandingPage,LeftSection,LandingTitle,LandingSubTitle,
 LandingPartner,PartnerText,PartnerLogo,NojaImage,LucyElectImage,ReplImage,RightSection,ElectricPic,ProductsCat,GetProduct,FindPro,SearchPro,
 SearchInput,SearchImg,Line,ShowProduct,EachProduct,ProductName,ProductStore,ProductItems,ProCard,
-ProductImage,ProImg,ItemName,ManufactName,SpanText} from './Products'
+ProductImage,ProImg,ItemName,ManufactName} from './Products'
 import {Nojaproducts,Lucyproducts,Replproducts} from '../../components/data/data'
 function Products(props) {
     useEffect(() => {

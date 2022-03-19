@@ -4,7 +4,7 @@ import { loginFailure, loginStart, loginSuccess} from "./AuthActions"
 export const login = async (user, dispatch) => {
     dispatch(loginStart);
     try {
-        const res = await axios({
+        await axios({
                 method: "post",
                 url: "https://fixontime.herokuapp.com/auth/login",
                 data: {
@@ -16,8 +16,6 @@ export const login = async (user, dispatch) => {
                 console.log(response)
                 dispatch(loginSuccess(response.data));
             })
-            // console.log(user)
-            // console.log(res.data)
     }catch(err){
         dispatch(loginFailure)
     }

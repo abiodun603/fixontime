@@ -1,13 +1,12 @@
-import React,{useState,useEffect, useContext} from 'react';
+import React,{useState, useContext} from 'react';
 import './App.css';
-import { BrowserRouter as Router, NavLink, Route,Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import GlobalStyles from './components/GlobalStyled';
 import Description from './container/Description';
 import Products from './container/Products';
 import Elearning from './container/e-learning';
 import Home from './container/Home';
 import Service from './container/Service';
-import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Blog from './container/blog/Blog';
@@ -18,14 +17,13 @@ import Layout from "./components/c-layout/Layout"
 import "./assets/css/grid.css"
 import {AuthContext} from "./context/authContext/AuthContext"
 import Signup from "./screens/signup/Signup"
-import { Reset } from "./screens"
 
 
 
 function App() 
         {
             const [sidebar, setSidebar] = useState(false);   
-          	const {user, isFetching} = useContext(AuthContext)
+          	const {user} = useContext(AuthContext)
      
             return (
                <>

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import Header from "../../components/header/Header"
-import TableData from "../../components/mui-table/TableData"
 import axios from "axios"
 import { DataGrid } from '@mui/x-data-grid';
 import { ButtonDelete, ButtonDownload ,ButtonAction} from '../../components/mui-table/StyledTable';
@@ -28,7 +27,6 @@ const Contact = () => {
             }
         ).then((res) => {
             console.log(res.data)
-            // values.title = res.data.title
             setData(res.data.items)
         }) 
     }, [])

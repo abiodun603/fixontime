@@ -1,8 +1,6 @@
-import React from "react"
 import axios from "axios"
 import { createBlogFailure, createBlogStart, createBlogSuccess, getBlogFailure, getBlogStart, getBlogSuccess, deleteBlogSuccess,deleteBlogStart, deleteBlogFailure } from "./BlogActions";
 import swal from "sweetalert"
-import {useHistory} from "react-router-dom"
 
 // get staff
 export const getBlog = async(dispatch)=> {
@@ -32,9 +30,6 @@ export const createBlog = async(blog, dispatch)=> {
             {
                 headers: {
                     "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token,
-                    // "Access-Control-Allow-Headers": "*",
-                    // "Access-Control-Allow-Origin": "*",
-                    // "Access-Control-Allow-Methods": "*" 
                 }
             }
         )
@@ -63,7 +58,7 @@ export const deleteBlog = async (id, dispatch) => {
     dispatch(deleteBlogStart());
 
     try{
-        const res = await axios.delete("https://fixontime.herokuapp.com/posts/" + id, 
+        await axios.delete("https://fixontime.herokuapp.com/posts/" + id, 
         {
             headers: {
                 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
@@ -75,11 +70,9 @@ export const deleteBlog = async (id, dispatch) => {
             text: "Blog post have been de;eted successfully",
             icon: "success",
             confirmButtonColor: '#030762',
-            // buttons: true,
             dangerMode: true,
           }).then((willDelete) => {
             if (willDelete) {
-                // history.push("/blog")
             } else {
               swal("Your imaginary file is safe!");
             }

@@ -7,8 +7,6 @@ const INITIAL_STATE = {
     error: false
 }
 
-
-
 export const LearnContext = createContext(INITIAL_STATE);
 
 export const LearnContextProvider = ({ children }) => {

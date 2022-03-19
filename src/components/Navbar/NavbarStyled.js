@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { FaArrowLeft, FaArrowRight, FaBars, FaClock, FaMailBulk, FaMailchimp, FaPhone, FaPhoneAlt, FaSearch } from 'react-icons/fa'
+import {FaBars, FaClock,FaPhoneAlt } from 'react-icons/fa'
 import { Link } from "react-router-dom";
-import { MdArrowForward, MdKeyboardArrowRight, MdMail, MdSubdirectoryArrowRight } from 'react-icons/md'
+import {MdMail } from 'react-icons/md'
 import { COLORS,SIZES } from "../../constant";
-import { IoIosArrowForward, IoMdArrowForward } from 'react-icons/io'
 
 export const NavContainer = styled.div`
     height:110px;

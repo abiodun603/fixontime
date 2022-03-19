@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS, SIZES } from "../../constant";
+import { SIZES } from "../../constant";
 export const ServiceContainer = styled.div`
     position: relative;
 `;

@@ -1,6 +1,4 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaInstagramSquare, FaTimes, FaTwitter } from 'react-icons/fa';
-import {} from 'react-icons/md';
 import {FiX} from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 import {NavContainer,Nav,NavTopHeader,CompanyInfo,ComNo,FontPhone,

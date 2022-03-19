@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonCancel, ButtonContainer, ButtonSubmit } from './StyledButton';
+import { ButtonContainer } from './StyledButton';
 
 const CardButton = ({children}) => {
   return (

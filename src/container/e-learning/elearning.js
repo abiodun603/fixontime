@@ -1,4 +1,3 @@
-import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
 import {SIZES,COLORS} from '../../constant/index';
 

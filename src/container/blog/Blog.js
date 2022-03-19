@@ -1,21 +1,15 @@
-import React, {useState, useEffect, useContext } from 'react'
-import { BlogContainer, BlogLand } from './StyledBlog'
-import One from "../../assets/image/blog/1.svg"
-import Two from "../../assets/image/blog/2.svg"
-import Three from "../../assets/image/blog/3.svg"
+import React, {useEffect, useContext } from 'react'
+import {BlogLand } from './StyledBlog'
 import HeadFoot from '../../components/HeadFoot';
 import { Input } from '../contact/StyledContact';
 import { FiSearch } from 'react-icons/fi';
-import BCard from '../../components/blog-card/BCard'
-import { useHistory } from 'react-router-dom'
+import BCard from '../../components/blogcard/BCard'
 import { BlogContext } from '../../context/blogContext/BlogContext'
 import { getBlog } from '../../context/blogContext/apiCalls'
 
 function Blog(props) {
-    const [getBlogPost, setGetBlogPost] = useState([])
     const {blogs, dispatch} = useContext(BlogContext)
 
-    const history = useHistory()
     const formatter = new Intl.DateTimeFormat("en-GB", {
         year: 'numeric',
         month: "long",
@@ -24,7 +18,6 @@ function Blog(props) {
 
     useEffect(() => { 
         getBlog(dispatch)
-        // setGetBlogPost(blogs);
     },[dispatch]) 
     
     useEffect(() => {

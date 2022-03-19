@@ -1,21 +1,17 @@
-import React, {useEffect, useState, useReducer, useContext} from "react"
+import React, { useState, useContext} from "react"
 import Header from "../../components/header/Header"
-import {FromBx, Input, LoginForm } from "../login/Login__element"
+import {FromBx, Input } from "../login/Login__element"
 import { useForm } from '../../hooks/useForm';
-// import
-import {useHistory} from "react-router-dom"
 import {FormWrapper } from "../blog/StyledBlog"
 import File from "../../components/browserFile/File"
 import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
 import { BlogContext } from "../../context/blogContext/BlogContext";
 import { createBlog } from "../../context/blogContext/apiCalls";
-import swal from 'sweetalert';
 import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton";
 import CardButton from "../../components/card-button/CardButton";
 
-const AddPost = (props) => {
-    const history = useHistory();
+const AddPost = () => {
     const [values, handleChange] = useForm({
         title: "",
         content: ""
@@ -79,11 +75,6 @@ const AddPost = (props) => {
                         />
                     </FromBx>
                     <div style={{marginTop: 40}}></div>
-                    {/* <CardButton
-                        cancel = "Cancel"
-                        submit= "Save"
-                        onCancel = {() => history.push("/blog")}
-                    />  */}
                      <CardButton>
                         <ButtonCancel>
                             <span>

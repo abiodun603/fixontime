@@ -12,7 +12,6 @@ const ScrollTextArea = (props) => {
                 cols = "37"
                 value = {props.value}
                 onChange={props.onChange}
-                // maxLength="100"
             >
 
             </textarea>
