@@ -177,7 +177,8 @@ export const ElearningCard = styled.div`
 `;
 
 export const ElearningImage = styled.div`
-    max-width: 500px;
+    max-width: 392px;
+    height: 225px;
     position: relative;
     @media screen and (max-width: 1310px){
         width: 300px;

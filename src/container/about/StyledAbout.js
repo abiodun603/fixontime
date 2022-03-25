@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import pole from "../../assets/image/about/pole.svg"
+import pole from "../../assets/image/about/always-the-first-min.png"
 
 export const TransWrapper = styled.div `
     display: flex;
