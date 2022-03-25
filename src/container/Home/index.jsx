@@ -148,13 +148,13 @@ function Home(props) {
                             We are distribution network contractors and power system automation professionals. 
                         </HomeAboutTitle>
                         <HomeAboutSubTitle>
-                            FixOnTime is a leading engineering, procurement, and construction company approved to carry 
+                            FixOnTime is a leading Engineering, Procurement, and Construction company approved to carry 
                             out electrical engineering works and use our solutions within the Nigerian Electricity Supply Industry. We have  strong design experience, and 
                             we are leaders in sourcing equipment that brings solutions to electrical challenges. 
                         </HomeAboutSubTitle>
                         <WFE>
                             <div className="wfe_title">
-                                Why FixOnTime Electric? 
+                                WHY FIXONTIME ELECTRIC? 
                             </div>
                             <div className='wfe_body'>
                                 <div className='wfe_left_section'>
@@ -163,7 +163,7 @@ function Home(props) {
                                             Efficient and excellent service
                                         </div>
                                         <div className='wfe_subheader'>
-                                            Our technicians are professionals trained 
+                                            Our Engineers are professionals trained 
                                             to give you quality services. Enjoy prompt services and solutions. 
                                         </div> 
                                     </div>

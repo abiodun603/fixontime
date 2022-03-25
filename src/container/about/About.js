@@ -39,24 +39,23 @@ const About = (props) => {
             <HeadFoot {...props}>
                 {/* Landing */}
                 <ContactLand>
-                    <h1>About Us</h1>
+                    <h1>ABOUT US</h1>
                     <p>"fix Nigeria, fix Africa"</p>
                 </ContactLand>
 
                 {/* About Us */}
                 <TransWrapper>
                     <TransContainer>
-                        <h2>We are a leading engineering, procurement, and construction company. </h2>
+                        <h2>We are a leading Engineering, Procurement, and Construction company. </h2>
                         <p>
-                            FixOnTme is certified to carry out electrical engineering works 
+                            FixOnTime is certified to carry out electrical engineering works 
                             and deploy its products within the Nigerian Electricity Supply Industry. 
-                            We have strong design experience, and we are leaders in sourcing equipment that brings solutions to electrical challenges. 
+                            We have strong design experience, and we are one of the leaders in sourcing equipment that brings solutions to electrical challenges. 
                         </p>
                         <p>
                             We are distribution network contracts and power automation professionals. 
                             We provide electrical power solutions through equipment procurement, contracting, 
-                            and maintenance.  We offer global standard electrical services for utilities, contractors, and
-                            electrical SME manufacturers. 
+                            and maintenance.  We offer global standard electrical services for utilities, contractors, and electrical SME manufacturers. 
 
                         </p>
                     </TransContainer>
@@ -66,7 +65,7 @@ const About = (props) => {
                 </TransWrapper>
                 {/* Core Value */}
                 <CoreWrapper>
-                    <h2>Our core values</h2>
+                    <h2>OUR CORE VALUES</h2>
                     <CoreContainer>
                         <CoreDescCon>
                             <ImageContainer>
@@ -74,7 +73,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Best Pratices</span>
-                                <p>We abide by the ethics of a profession, and<br/>we are approved by NESI</p>
+                                <p>We abide by the ethics of a profession, and<br/>we are approved by NEMSA</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -83,7 +82,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Safety</span>
-                                <p> Our technicains adhere to the highest<br/>safely standards</p>
+                                <p> Our team of engineers adhere to the highest<br/>safely standards</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -104,29 +103,24 @@ const About = (props) => {
                         {/* <img src={pole} /> */}
                     </DescBanner>
                     <DescView>
-                        <h2>Always the first</h2>
+                        <h2>ALWAYS THE FIRST</h2>
 
                         <p>
-                            We are Nigeria's first energy solutions company to 
-                            be appointed distributor to notable Equipment 
-                            Manufacturers. We don't take this privilege for
-                            granted. Our Principal Engineers and Technical 
-                            Partners are seasoned engineers. 
+                            We are Nigeria's foremost energy and distribution network automation company. Equally been appointed as an exclusive distributor to notable power equipment manufacturers up to 33kv. We have a team of professionals with vast industry experience. 
                         </p>
 
                         <p>
                             We have carried out power construction and EPC 
                             projects of up to 330KV locally and internationally. 
-                            Our qualified technicians adhere to the highest standards 
+                            Our qualified Engineers adhere to the highest standards 
                             of practice and offer services such as 11kV to 33kV medium 
                             voltage power substation works, low voltage, and electrical
                             and instrumentation work for industries. 
                         </p>
 
                         <p>
-                            Our electricians are available for L.V substation power 
-                            works, H.T facilities maintenance, large substation 
-                            construction, and maintenance.
+                            we available for LV and MV substation works, 
+                            H.T facilities,construction, and maintenance.
                         </p>
                     </DescView>
                 </DescWrapper>

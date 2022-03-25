@@ -14,7 +14,7 @@ function Service(props) {
                     <div className='hero_section'>
                         <h4 className='hero_title'>Solutions just for you</h4>
                         <div className='hero_subtitle'>
-                            you can select from a variety of our medium voltage solutions.
+                            you can select from a variety of our Medium Voltage solutions.
                         </div>
                     </div>
                     <div className='service_bottom_section'>
@@ -24,7 +24,7 @@ function Service(props) {
                                 <h3>Engineering procurement</h3>
                                 <div>
                                     Are you ready to buy state-of-the-art products from original equipment 
-                                    manufacturers? As accredited vendors, we help you purchase electrical power 
+                                    manufacturers? As an exclusive distributor, we help you purchase electrical power 
                                     and distribution equipment  up to 330KV to automate your distribution network.  
                                 </div>
                                 <div>
@@ -61,17 +61,17 @@ function Service(props) {
                                     great hands. Our professionals handle your power distribution assets 
                                     and provide full after-sales support,  training, and maintenance.
                                 </div>
-                                <div>
+                                {/* <div>
                                     It is one thing to have the best energy equipment. It is another to maintain
                                     it so that it continues to provide value. Our maintenance 
                                     services help to improve the efficiency and reliability of electricity. 
-                                </div>
+                                </div> */}
                                 <div>
                                     Our vendors are ready to deploy items required for corrective maintenance within record time.
                                 </div>
                                 <div>
-                                    Fix onTime is the choice electrical maintenance company for high-profile 
-                                    estates across the country. We provide complete sales support 
+                                    FixOnTime is the choice electrical maintenance company for high-profile 
+                                    estates across the country. We provide after-sale support 
                                     and training on all the equipment we supply or install.
                                 </div>
                                 <button>
@@ -86,14 +86,14 @@ function Service(props) {
                         <div className='card_section'>
                             <div className='left_section'>
                                 <img src={process.env.PUBLIC_URL + `/Image/services/training_equip.jpg`} />
-                                <h3>Training on Equipment</h3>
+                                <h3>Training</h3>
                                 <div>
                                 We offer offshore and local training to our customers on their equipment. 
-                                This service comes with direct support from the manufacturers. 
+                                This service comes with after-sales support from the manufacturer. 
                                 </div>
                                 <div>
                                 We also arrange factory acceptance test 
-                                visits with OEMs for EPC (Meaning) &#38; special projects.
+                                visits with OEMs for Engineering, Procurement and Construction (EPC) &#38; special projects.
                                 </div>
                                 <button>
                                     Speak To Us <IoIosArrowForward />
@@ -106,11 +106,11 @@ function Service(props) {
                                 Enjoy zero power equipment and distribution-related problems. 
                                 </div>
                                 <div>
-                                    We provide skilled technicians and engineering services to corporate
+                                    We provide skilled technical and engineering services to corporate
                                     organizations so your business can continue running.  
                                 </div>
                                 <div>
-                                    Want us to become technical partners and 
+                                    Do you Want us to become technical partner and excellently
                                     execute your electrical projects?  
                                 </div>
                                 <button>
