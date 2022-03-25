@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {SIZES,COLORS} from '../../constant/index';
-
+import rImg from "../../assets/image/homepage/header_image-min.png"
 export const HomeContainer = styled.div`
     position: relative;  
 `;
@@ -47,7 +47,7 @@ export const LeftSection = styled.div`
     margin-right: 80px;
     max-width: 1240px;
     height: 100%;
-    background:url(${process.env.PUBLIC_URL + `/Image/home/wire.png`});
+    background:url(${rImg});
     background-repeat:no-repeat;
     background-size: cover;
     @media screen and (max-width:1120px){

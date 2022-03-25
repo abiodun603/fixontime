@@ -6,13 +6,7 @@ import swal from "sweetalert"
 export const getBlog = async(dispatch)=> {
     dispatch(getBlogStart());
     try {
-        const res = await axios.get("https://fixontime.herokuapp.com/posts",
-            {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        )
+        const res = await axios.get("https://fixontime.herokuapp.com/posts")
         dispatch(getBlogSuccess(res.data.items)) 
         console.log(res.data)
     }catch(err) {

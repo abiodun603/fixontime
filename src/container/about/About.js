@@ -3,7 +3,7 @@ import HeadFoot from '../../components/HeadFoot'
 import { Answer, ContactLand, Faq, Question, Wrap } from '../contact/StyledContact'
 import transformer from "../../assets/image/about/transformer.svg"
 import safety from "../../assets/image/about/safety.svg"
-import best from "../../assets/image/about/best.svg"
+import best from "../../assets/image/about/about-header-image-min.png"
 import innovation from "../../assets/image/about/innovation.svg"
 import One from "../../assets/image/about/icon/1.svg"
 import Two from "../../assets/image/about/icon/2.svg"

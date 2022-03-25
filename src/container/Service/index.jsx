@@ -2,6 +2,12 @@ import React, { useEffect } from 'react'
 import HeadFoot from '../../components/HeadFoot';
 import {IoIosArrowForward} from 'react-icons/io'
 import {ServiceContainer,ServiceContent} from './Service';
+import procurement from "../../assets/image/servicepage/engineering-procurement-min.png"
+import installation from "../../assets/image/servicepage/electrical-installation-min.png"
+import maintainance from "../../assets/image/servicepage/maintainance-ht-mgt-min.png"
+import training from "../../assets/image/servicepage/training-min.png"
+import source from "../../assets/image/servicepage/source-skilled-personnel-min.png"
+
 function Service(props) {
     useEffect(() => {
         props.setSidebar(false);
@@ -20,7 +26,7 @@ function Service(props) {
                     <div className='service_bottom_section'>
                         <div className='card_section'>
                             <div className='left_section'>
-                                <img src={process.env.PUBLIC_URL + `/Image/services/engProcurement.svg`} />
+                                <img src={procurement} alt =" "/>
                                 <h3>Engineering procurement</h3>
                                 <div>
                                     Are you ready to buy state-of-the-art products from original equipment 
@@ -35,7 +41,7 @@ function Service(props) {
                                 </button>
                             </div>
                             <div className='right_section'>
-                                <img src={process.env.PUBLIC_URL + `/Image/services/enginstallation.svg`} />
+                                <img src={installation} alt =""/>
                                 <h3>Electrical Installations </h3>
                                 <div>
                                     You cannot afford to have installations done wrong. 
@@ -79,13 +85,13 @@ function Service(props) {
                                 </button>
                             </div>
                             <div className='image'>
-                                <img src={process.env.PUBLIC_URL + `/Image/services/maintenance.svg`} />
+                                <img src={maintainance}  alt= ""/>
                             </div>
                         </div>
 
                         <div className='card_section'>
                             <div className='left_section'>
-                                <img src={process.env.PUBLIC_URL + `/Image/services/training_equip.jpg`} />
+                                <img src={training} alt="" />
                                 <h3>Training on Equipment</h3>
                                 <div>
                                 We offer offshore and local training to our customers on their equipment. 
@@ -100,7 +106,7 @@ function Service(props) {
                                 </button>
                             </div>
                             <div className='right_section'>
-                                <img src={process.env.PUBLIC_URL + `/Image/services/source_skilled.jpg`} />
+                                <img src={source} />
                                 <h3>Source Skilled Personnel </h3>
                                 <div>
                                 Enjoy zero power equipment and distribution-related problems. 

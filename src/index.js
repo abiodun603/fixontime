@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-// import "./styles/index.css"
 import "./styles/index.css"
 import { AuthContextProvider } from './context/authContext/AuthContext';
 import { BlogContextProvider } from './context/blogContext/BlogContext';
 import { LearnContextProvider } from './context/learningContext/LearnContext';
 
-document.title = "candidsolutionlimited"
+document.title = "FixOnTime"
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>

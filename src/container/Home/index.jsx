@@ -18,6 +18,12 @@ import 'swiper/scss/pagination'
 import { useForm } from '../../hooks/useForm';
 import axios from "axios"
 import swal from "sweetalert";
+import npower from "../../assets/image/homepage/noja_power_logo-min.png"
+import lucy from "../../assets/image/homepage/lucy_electric_logo-min.png"
+import repl from "../../assets/image/homepage/repl_logo-min.png"
+import team from "../../assets/image/homepage/team_support-min.png"
+import install from "../../assets/image/homepage/electrical_installation-min.png"
+
 
 
 SwiperCore.use([Autoplay,Navigation,Pagination]);
@@ -139,9 +145,9 @@ function Home(props) {
                         </RightSection>
                     </HomePage>
                     <HomeCompanyLogo>
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/nojapower.svg`} alt=""/>
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/lucyelect.svg`} alt=""/>
-                        <img src={process.env.PUBLIC_URL + `/Image/companylogo/repl.svg`} alt=""/>
+                        <img src={npower} alt=""/>
+                        <img src={lucy} alt=""/>
+                        <img src={repl} alt=""/>
                     </HomeCompanyLogo>
                     <HomeAbout>
                         <HomeAboutTitle>
@@ -187,7 +193,7 @@ function Home(props) {
                                     </div>
                                 </div>
                                 <div className='wfe_right_section'>
-                                    <img src={process.env.PUBLIC_URL + `/Image/home/team_support.svg`} alt=""/>
+                                    <img src={team} alt=""/>
                                 </div>
                             </div>
                         </WFE>
@@ -200,7 +206,7 @@ function Home(props) {
                             <img src={process.env.PUBLIC_URL + `/Image/home/thunder.svg`} alt=""/>
                         </div>
                         <div className='solution_info'>
-                            <img src={process.env.PUBLIC_URL + `/Image/home/servicepic.svg`} alt=""/>
+                            <img src={install} alt=""/>
                             <Swiper 
                             pagination={true} 
                             modules={[Pagination,Autoplay]} 
