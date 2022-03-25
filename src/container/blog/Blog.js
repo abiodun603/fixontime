@@ -44,7 +44,7 @@ function Blog(props) {
                                     title= {item.title}
                                     content = {item.content}
                                     date= {formatter.format(new Date(item.created_at))}
-                                    />
+                                />
                            </div>
                        )
                    )

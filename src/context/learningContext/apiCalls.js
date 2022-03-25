@@ -5,13 +5,7 @@ import swal from "sweetalert"
 export const getLearn = async(dispatch)=> {
     dispatch(getLearnStart());
     try {
-        const res = await axios.get("https://fixontime.herokuapp.com/learnings",
-            {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        )  
+        const res = await axios.get("https://fixontime.herokuapp.com/learnings")  
         console.log(res.data)
         dispatch(getLearnSuccess(res.data.items)) 
     }catch(err) {

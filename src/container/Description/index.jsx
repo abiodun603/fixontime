@@ -1,21 +1,37 @@
 import React, { useEffect } from 'react'
 import HeadFoot from '../../components/HeadFoot';
+import {useRouteMatch, useHistory} from "react-router-dom"
 import {DesContainer,Container,DescPic,Image,DesContent,DesHeader,SubHeader,SubText,
     NojaImage,DescDownload,FontDownload,DownloadText,DescBody,Ptag,DesContactBtn,ContactText,FontArrow} from './DesStyle';
+import {Nojaproducts,Lucyproducts,Replproducts} from '../../components/data/data'
 function Description(props) {
     useEffect(() => {
         props.setSidebar(false);
     },[]);
+    const history = useHistory();
+    const {params: { id },} = useRouteMatch("/productsDetails/:id");
+    console.log(id);
+
+    const names = Lucyproducts.map(function(id) {
+        return id.image;
+      });
+
+    var t = Nojaproducts.filter(function (obj) { 
+        return obj.id==id; 
+    })[0];
+
+      console.log(t)
     return (
+        
         <>
             <HeadFoot {...props}>
                 <DesContainer>
                     <Container>
                         <DescPic>
-                            <Image  src={process.env.PUBLIC_URL + `/Image/description/osm_recloser.svg`} />
+                            <Image  src={process.env.PUBLIC_URL + `/Image/${t.image}`} />
                         </DescPic>
                         <DesContent>
-                            <DesHeader>OSM Recloser</DesHeader>
+                            <DesHeader>{t.name}</DesHeader>
                             <SubHeader><SubText>Manufacturer:</SubText> <NojaImage src={process.env.PUBLIC_URL + `/Image/description/NojaPower.svg`}/></SubHeader>
                             <DescDownload>
                                 <FontDownload src={process.env.PUBLIC_URL + `/Image/Icon/download.png`} />
