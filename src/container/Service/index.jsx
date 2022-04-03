@@ -18,7 +18,7 @@ function Service(props) {
             <ServiceContainer>
                 <ServiceContent>
                     <div className='hero_section'>
-                        <h4 className='hero_title'>Solutions just for you</h4>
+                        <h4 className='hero_title'>Standard Engineering and Custom Built Solutions</h4>
                         <div className='hero_subtitle'>
                             you can select from a variety of our Medium Voltage solutions.
                         </div>
@@ -91,15 +91,10 @@ function Service(props) {
 
                         <div className='card_section'>
                             <div className='left_section'>
-<<<<<<< HEAD
-                                <img src={process.env.PUBLIC_URL + `/Image/services/training_equip.jpg`} />
-                                <h3>Training</h3>
-=======
                                 <img src={training} alt="" />
-                                <h3>Training on Equipment</h3>
->>>>>>> 4af1ed32fa74d7d392ef298eed78e6fc3589c44f
+                                <h3>Training and Skills Devellopment</h3>
                                 <div>
-                                We offer offshore and local training to our customers on their equipment. 
+                                We offer offshore and local training to our customers on their equipment as well as specialised skill areas that are in dare in power transmission and distribution industries such as Cable Jointers, Switchgears Installers, Linesmen, Protection Engineers and Smart Grid Enthusiasts. 
                                 This service comes with after-sales support from the manufacturer. 
                                 </div>
                                 <div>

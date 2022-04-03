@@ -82,7 +82,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Safety</span>
-                                <p> Our team of engineers adhere to the highest<br/>safely standards</p>
+                                <p> Our Engineers and technicians adhere to the highest<br/> safety standard</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -91,7 +91,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Innovation</span>
-                                <p>We are committed to providing<br/>f7oo6 automated products and<br/>innovative</p>
+                                <p>We are <u>committed</u> to being a leader in providing<br/>f7oo6 power automation solutions for the power sector <br/>and bring Nigeria grid to smart state</p>
                             </CoreDesc>
                         </CoreDescCon>
                     </CoreContainer>  
@@ -103,10 +103,10 @@ const About = (props) => {
                         {/* <img src={pole} /> */}
                     </DescBanner>
                     <DescView>
-                        <h2>ALWAYS THE FIRST</h2>
+                        <h2>Always the First</h2>
 
                         <p>
-                            We are Nigeria's foremost energy and distribution network automation company. Equally been appointed as an exclusive distributor to notable power equipment manufacturers up to 33kv. We have a team of professionals with vast industry experience. 
+                            We are the leading Power Automation Comapny in Nigeria, offering innovative solutions and alternatives to a conventional electrical power substation and distribution approaches. Through our partnership with renowned OEM as well as our subject expert engineers, we are always providing cost-saving, enviromentally friendly and more reliable solutions to our customers and the Nigerian Electricity Supply Industry at large.
                         </p>
 
                         <p>
