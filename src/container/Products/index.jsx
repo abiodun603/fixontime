@@ -17,10 +17,10 @@ function Products(props) {
                         <PlandingPage>
                             <LeftSection>
                                 <LandingTitle>
-                                    Products from our trusted partners
+                                    Products from Our Trusted Partners
                                 </LandingTitle>
                                 <LandingSubTitle>
-                                    Nigeria’s first partners for notable manufacturers
+                                    Nigeria’s Foremost Partner for Notable Manufacturers
                                 </LandingSubTitle>
                                 <LandingPartner>
                                     <PartnerText>Partners</PartnerText>

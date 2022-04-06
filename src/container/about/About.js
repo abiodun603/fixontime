@@ -39,24 +39,23 @@ const About = (props) => {
             <HeadFoot {...props}>
                 {/* Landing */}
                 <ContactLand>
-                    <h1>About Us</h1>
-                    <p>We are a leading Engineering, Procurement, and Construction company.</p>
+                    <h1>ABOUT US</h1>
+                    <p>"fix Nigeria, fix Africa"</p>
                 </ContactLand>
 
                 {/* About Us */}
                 <TransWrapper>
                     <TransContainer>
-                        <h2>We are a leading engineering, procurement, and construction company. </h2>
+                        <h2>We are a leading Engineering, Procurement, and Construction company. </h2>
                         <p>
-                            FixOnTme is certified to carry out electrical engineering works 
+                            FixOnTime is certified to carry out electrical engineering works 
                             and deploy its products within the Nigerian Electricity Supply Industry. 
-                            We have strong design experience, and we are leaders in sourcing equipment that brings solutions to electrical challenges. 
+                            We have strong design experience, and we are one of the leaders in sourcing equipment that brings solutions to electrical challenges. 
                         </p>
                         <p>
                             We are distribution network contracts and power automation professionals. 
                             We provide electrical power solutions through equipment procurement, contracting, 
-                            and maintenance.  We offer global standard electrical services for utilities, contractors, and
-                            electrical SME manufacturers. 
+                            and maintenance.  We offer global standard electrical services for utilities, contractors, and electrical SME manufacturers. 
 
                         </p>
                     </TransContainer>
@@ -66,15 +65,15 @@ const About = (props) => {
                 </TransWrapper>
                 {/* Core Value */}
                 <CoreWrapper>
-                    <h2>Our core values</h2>
+                    <h2>OUR CORE VALUES</h2>
                     <CoreContainer>
                         <CoreDescCon>
                             <ImageContainer>
                                 <img src= {best} alt=""/>
                             </ImageContainer>
                             <CoreDesc>
-                                <span>Best practices</span>
-                                <p>We abide by the ethics of a profession, and<br/>we are approved by NESI</p>
+                                <span>Best Pratices</span>
+                                <p>We abide by the ethics of a profession, and<br/>we are approved by NEMSA</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -83,7 +82,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Safety</span>
-                                <p> Our technicains adhere to the highest<br/>safely standards</p>
+                                <p> Our Engineers and technicians adhere to the highest<br/> safety standard</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -92,7 +91,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Innovation</span>
-                                <p>We are committed to providing<br/>fully automated products and<br/>innovative</p>
+                                <p>We are <u>committed</u> to being a leader in providing<br/>f7oo6 power automation solutions for the power sector <br/>and bring Nigeria grid to smart state</p>
                             </CoreDesc>
                         </CoreDescCon>
                     </CoreContainer>  
@@ -104,29 +103,24 @@ const About = (props) => {
                         {/* <img src={pole} /> */}
                     </DescBanner>
                     <DescView>
-                        <h2>Always the first</h2>
+                        <h2>Always the First</h2>
 
                         <p>
-                            We are Nigeria's first energy solutions company to 
-                            be appointed distributor to notable Equipment 
-                            Manufacturers. We don't take this privilege for
-                            granted. Our Principal Engineers and Technical 
-                            Partners are seasoned engineers. 
+                            We are the leading Power Automation Comapny in Nigeria, offering innovative solutions and alternatives to a conventional electrical power substation and distribution approaches. Through our partnership with renowned OEM as well as our subject expert engineers, we are always providing cost-saving, enviromentally friendly and more reliable solutions to our customers and the Nigerian Electricity Supply Industry at large.
                         </p>
 
                         <p>
                             We have carried out power construction and EPC 
                             projects of up to 330KV locally and internationally. 
-                            Our qualified technicians adhere to the highest standards 
+                            Our qualified Engineers adhere to the highest standards 
                             of practice and offer services such as 11kV to 33kV medium 
                             voltage power substation works, low voltage, and electrical
                             and instrumentation work for industries. 
                         </p>
 
                         <p>
-                            Our electricians are available for L.V substation power 
-                            works, H.T facilities maintenance, large substation 
-                            construction, and maintenance.
+                            we available for LV and MV substation works, 
+                            H.T facilities,construction, and maintenance.
                         </p>
                     </DescView>
                 </DescWrapper>
