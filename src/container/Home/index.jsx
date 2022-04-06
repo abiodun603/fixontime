@@ -145,9 +145,9 @@ function Home(props) {
                         </RightSection>
                     </HomePage>
                     <HomeCompanyLogo>
-                        <img src={npower} alt=""/>
-                        <img src={lucy} alt=""/>
-                        <img src={repl} alt=""/>
+                        <a href="www.nojapower.com.au" target="_blank"> <img src={npower} alt="nodja power"/> </a>
+                        <a href="www.lucyelectric.com" target="_blank"> <img src={lucy} alt="lucy electric"/> </a>
+                        <a href="www.repl.com" target="_blank"> <img src={repl} alt="repl"/> </a>
                     </HomeCompanyLogo>
                     <HomeAbout>
                         <HomeAboutTitle>
@@ -166,10 +166,10 @@ function Home(props) {
                                 <div className='wfe_left_section'>
                                     <div className='wfe_text'>
                                         <div className='wfe_header'>
-                                            Efficient and excellent service
+                                            Efficient and Excellent Service
                                         </div>
                                         <div className='wfe_subheader'>
-                                            Our Engineers are professionals trained 
+                                            Our departmental staffs are professionals trained 
                                             to give you quality services. Enjoy prompt services and solutions. 
                                         </div> 
                                     </div>
