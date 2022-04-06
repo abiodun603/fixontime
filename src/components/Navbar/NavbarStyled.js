@@ -246,7 +246,7 @@ export const NavBottomHeader = styled.div`
     padding-right: 0;
 
     @media screen and (max-width: 698px){
-        padding-left: 65px;  
+        padding-left: 25px;  
     }
     
     

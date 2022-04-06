@@ -81,7 +81,7 @@ const ContactPage = (props) => {
 
                 <BlogWrapper>
                     <BlogBanner>
-                        <p>Let's work together; we'd love<br/> to hear from you</p>
+                        <p>Let's work together, we'd love<br/> to hear from you</p>
                         <Contact>
                             <ContactDesc>
                                 <span>
@@ -221,7 +221,7 @@ const Work = () => {
                     
                     <WorkTitle>
                         <h2>Work Hours</h2>
-                        <p>lorem pisum dolar sit amet, connecttur adipising <br/>elit, Preltium non amet lcoreet volupat nih <br/> rutrum pretium</p>
+                        {/* <p>lorem pisum dolar sit amet, connecttur adipising <br/>elit, Preltium non amet lcoreet volupat nih <br/> rutrum pretium</p> */}
                     </WorkTitle>
 
                     <WorkHourContainer>

@@ -58,6 +58,9 @@ export const LeftSection = styled.div`
 
     @media screen and (max-width:475px){
         padding:0 20px;
+        height: 80vh;
+        display: flex;
+        
     }
     
 
@@ -71,6 +74,12 @@ export const LeftText = styled.div`
 
     @media screen and (max-width: 477px){
         padding:10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+        backgroun: black;
     }
     
 `;
@@ -89,6 +98,7 @@ export const LandingTitle = styled.div`
         justify-self: center;
         flex-wrap:wrap;
         margin-left:0px;
+        font-size: 24px;
     }
 
   
@@ -99,7 +109,7 @@ export const LandingSubTitle = styled.div`
     color: ${COLORS.white};
     margin-bottom: 36px;
     @media screen and (max-width: 890px){
-        font-size: 24px;
+        font-size: 18px;
     }
     @media screen and (max-width: 475px){
         max-width: 350px;
@@ -160,17 +170,29 @@ export const HomeCompanyLogo = styled.div`
     background:#F9F9F9;
     justify-content:center;
     padding: 22px 0;
+    // .npower{
+    //     height: 17px;
+    // }
     img{
+        // width: auto;
         @media screen and (max-width: 600px){
             width:100px;
         }
         @media screen and (max-width: 455px){
-            width:50px;
+            width:15%;
+            height: 10px;
         }
     }
     img:nth-child(2) {
         margin:0 67px;
-        
+    }
+
+    img:nth-child(1) {
+        margin:0 67px;
+    }
+
+    img:nth-child(3) {
+        margin:0 67px;
     }
 
 
@@ -186,6 +208,11 @@ export const HomeAbout = styled.div`
     @media screen and (max-width:660px){
         padding-right: 50px;
         padding-left: 50px;
+    }
+
+    @media screen and (max-width:468px){
+        padding-right: 20px;
+        padding-left: 20px;
     }
 `;
 
@@ -222,6 +249,10 @@ export const WFE = styled.div`
         font-weight: 600;
         font-size: ${SIZES.h4};
         color: ${COLORS.blue};
+
+        @media screen and (max-width: 468px){
+            font-size: 24px;
+        }
     }
 
 
@@ -248,32 +279,25 @@ export const WFE = styled.div`
 
     .wfe_text{
         padding-left: 63px;
-        border-left: 2px solid #F0F0F0;
+        border-left: 2px solid ${COLORS.red};
         padding-top: 10px;
         padding-bottom: 20px;
         @media screen and (max-width:415px){
             padding-left: 30px;
         }
-        &:hover {
-            border-left: 2px solid ${COLORS.red};
-            .wfe_header{
-                color: ${COLORS.blue};
-            }
-            .wfe_subheader{
-                color: ${COLORS.lightgray};
-            }
-        }
+
+
     }
 
     .wfe_header{
         font-weight: bold;
         font-size: 18px;
-        color: #A8A8A8;
+        color:${COLORS.blue};
     }
 
     .wfe_subheader {
         font-size: 18px;
-        color: #A8A8A8;
+        color:${COLORS.lightgray}
     }
 
     .wfe_right_section{
@@ -281,6 +305,16 @@ export const WFE = styled.div`
         img {
             width: 100%;
         }
+
+        @media screen and (max-width: 468px){
+            margin-top: 1rem;
+            max-width: 100%;
+            img{
+                height: 300px;
+                margin-left: -30px;
+            }
+        }
+
     }
 
 `;
@@ -288,6 +322,9 @@ export const WFE = styled.div`
 export const HomeService = styled.div`
     display:flex;
     flex-direction:column;
+
+   
+
     .home_service_title {
         display:flex;
         flex-direction:row;
@@ -307,6 +344,10 @@ export const HomeService = styled.div`
         @media screen and (max-width: 600px){
             font-size: 36px;
         }
+
+        @media screen and (max-width: 468px){
+            font-size: 24px;
+        }
        
     }
     .home_service_title img {
@@ -317,6 +358,10 @@ export const HomeService = styled.div`
 
         @media screen and (max-width: 759px){
             bottom -10%;
+        }
+
+        @media screen and (max-width: 468px){
+            bottom -100%;
         }
 
     }
@@ -349,7 +394,8 @@ export const HomeService = styled.div`
         }
 
         @media screen and (max-width: 500px){
-            width: 90%;
+            width: 100%;
+            margin: 0 20px !important;
 
         }
 
@@ -388,6 +434,11 @@ export const HomeService = styled.div`
         font-size: 36px;
         color: #030762;
 
+        @media screen and (max-width: 468px){
+           font-size: 24px;
+           margin-top: 1rem;
+           margin-bottom: .5rem;
+        }
     }
     .btn_touch {
         width: 150px;
@@ -429,8 +480,8 @@ export const HomeTest = styled.div`
             font-size: 36px;
         }
 
-        @media screen and (max-width:370px){
-            font-size: 30px;
+        @media screen and (max-width:4680px){
+            font-size: 24px;
         }
     }
     .home_test_subtitle {
@@ -533,6 +584,11 @@ export const HomeQuoteWrapper = styled.div `
     align-items: center;
     justify-content:center;
 
+    @media screen and (max-width: 468px){
+        width: 90%;
+
+    }
+
 `;
 export const HomeQuoteContainer = styled.div `
     width: 100%;
@@ -546,7 +602,7 @@ export const HomeQuoteContainer = styled.div `
         color: #FFFFFF;
         font-size: 36px;
         font-weight: 600;
-        margin-bottom: .5rem;
+        margin-bottom: .8rem !important;
 
         @media screen and (max-width: 500px) {
             font-size: 20px;
@@ -559,6 +615,10 @@ export const HomeQuoteContainer = styled.div `
         font-weight: 400;
         margin-bottom: .5rem;
         text-align: center;
+    }
+
+    @media screen and (max-width: 468px){
+        padding:0 15px;
     }
 `;
 
@@ -594,7 +654,14 @@ export const HomeConnected  = styled.div`
         font-size: 36px;
         font-weight: 600;
         color: ${COLORS.darkblue};
+
+        @media screen and (max-width: 468px){
+           font-size: 24px;
+           margin-bottom: .5rem !important;
+        }
     }
+
+    
 
     p{
         text-align:center;
@@ -637,8 +704,8 @@ export const HomeConnected  = styled.div`
     }
 
     button {
-        
         height: 38px;
+        width: 100px;
         background: #070E4A;
         border-radius: 4px;
         color: #fff;

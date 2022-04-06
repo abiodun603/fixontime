@@ -31,6 +31,7 @@ export const TransContainer = styled.div `
     }
 
     @media screen and (max-width: 468px){
+        padding-right: 1rem;
         h2{
             font-size: 24px;
         }
@@ -47,6 +48,7 @@ export const TransImage = styled.div   `
     @media screen and (max-width: 468px){
         img{
             width: 300px;
+            margin-left: -30px;
         }
     }
 `
@@ -67,8 +69,10 @@ export const CoreWrapper = styled.div `
     }
 
     @media screen and (max-width: 468px){
+        margin: 4rem 1rem;
         h2{
             margin-bottom: unset !important;
+            font-size: 24px;
         }
     }
 `
@@ -169,6 +173,10 @@ export const DescView = styled.div `
     @media screen and (max-width: 468px){
         padding-left: 2.5rem;
         padding-right: 1rem;
+
+        h2{
+            font-size: 24px;
+        }
     }
 `
 // Accordion
@@ -223,6 +231,14 @@ export const Brand = styled.div `
     div{
         margin-top:2.5rem;
         width: 70%;
+    }
+
+    @media screen and (max-width: 468px){
+        margin: 4rem 2rem;
+
+        h3{
+            font-size: 24px; 
+        }
     }
 
 ` 

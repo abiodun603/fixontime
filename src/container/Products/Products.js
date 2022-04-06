@@ -40,6 +40,7 @@ export const PlandingPage = styled.div`
     @media screen and (max-width: 475px){
         padding-left: 0px;
         padding-right: 0px;
+        heighht: 100vh !important;
      }
 
     
@@ -65,7 +66,8 @@ export const LeftSection = styled.div`
     }
 
     @media screen and (max-width:400px){
-        width: 300px;
+        width: 100%;
+        padding:0 2rem;
       }
 
     
@@ -84,13 +86,12 @@ export const LandingTitle = styled.div`
     }
 
     @media screen and (max-width: 475px){
-        font-size: 29px;   
-       
+        font-size: 24px;   
         max-width: 350px;
         display: flex;
         justify-self: center;
         flex-wrap:wrap;
-        margin-left:40px;
+        // margin-left:40px;
     }
 
   
@@ -233,6 +234,9 @@ export const FindPro = styled.div`
      flex-direction: row;
      margin-bottom: 15px;
      align-self:flex-end;
+     @media screen and (max-width: 468px){
+        width: 100%;
+    }
 `;
 
 export const SearchPro = styled.div`
@@ -243,6 +247,10 @@ export const SearchPro = styled.div`
      align-items: center;
      background: #F9F9F9;
      border-radius: 6px;
+
+     @media screen and (max-width: 468px){
+        width: 100%;
+    }
 `;
 
 export const SearchInput = styled.input`
@@ -255,6 +263,13 @@ export const SearchInput = styled.input`
      &::placeholder {
          font-size: 14px;
      }
+
+     @media screen and (max-width: 468px){
+        margin-left: 0;
+         margin-right: 0;
+         padding: 0 1rem;
+         width: 100% !important;
+    }
      
 `;
 
@@ -262,6 +277,10 @@ export const SearchImg = styled(FaSearch)`
     width: 18.62px;
     height: 18.62px;
     color: ${COLORS.lightgray};
+
+    @media screen and (max-width: 468px){
+         margin-right: 1rem;
+    }
 
 `;
 export const Line = styled.div`
@@ -294,6 +313,10 @@ export const ProductName = styled.div`
      color: ${COLORS.blue};
      margin-bottom: 25px;
      font-weight: 600;
+
+     @media screen and (max-width: 468px){
+        font-size: 24px;
+    }
 `;
 
 export const ProductItems = styled(Link)`

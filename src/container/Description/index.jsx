@@ -9,18 +9,28 @@ function Description(props) {
         props.setSidebar(false);
     },[]);
     const history = useHistory();
-    const {params: { id },} = useRouteMatch("/productsDetails/:id");
-    console.log(id);
+    const {params: { query, id },} = useRouteMatch("/productsDetails/:query/:id");
+    
+    const table = query;
+    console.log(table + id);
 
-    const names = Lucyproducts.map(function(id) {
-        return id.image;
-      });
+    if(query === "Nojaproducts"){
+        var t = Nojaproducts.filter(function (obj) { 
+            return obj.id==id; 
+        })[0];
+    }else if(query === "Replproducts"){
+        var t = Replproducts.filter(function (obj) { 
+            return obj.id==id; 
+        })[0];
+    }else if(query === "Lucyproducts") {
+        var t = Lucyproducts.filter(function (obj) { 
+            return obj.id==id; 
+        })[0];
+    }
 
-    var t = Nojaproducts.filter(function (obj) { 
-        return obj.id==id; 
-    })[0];
+    
 
-      console.log(t)
+    console.log(t)
     return (
         
         <>
@@ -32,14 +42,24 @@ function Description(props) {
                         </DescPic>
                         <DesContent>
                             <DesHeader>{t.name}</DesHeader>
-                            <SubHeader><SubText>Manufacturer:</SubText> <NojaImage src={process.env.PUBLIC_URL + `/Image/description/NojaPower.svg`}/></SubHeader>
+                            <SubHeader><SubText>Manufacturer:</SubText> <p>{t.manufacturer}</p></SubHeader>
                             <DescDownload>
                                 <FontDownload src={process.env.PUBLIC_URL + `/Image/Icon/download.png`} />
                                 <DownloadText>Download brochure</DownloadText>
                             </DescDownload>
                             <DescBody>
-                                <Ptag>The World’s Only Arc Fault Vented Solid Dielectric Recloser</Ptag>
-                                <Ptag>» Designed for a maintenance free life</Ptag>
+                                <Ptag>{t.desc}</Ptag>
+
+                                {
+                                    t.add && t.add.length > 0 ?
+                                    t.add.map(item => 
+                                     <Ptag>» {item}</Ptag>
+                                    ) : ""
+                                }
+                                <Ptag>
+                                    
+                                </Ptag>
+                                {/* <Ptag>» Designed for a maintenance free life</Ptag>
                                 <Ptag>» Supported by an international network of Technical Staff</Ptag>
                                 <Ptag>» Ganged ultra-fast magnetic actuators to provide additional operator safety</Ptag>
                                 <Ptag>» Hot Line Tag functionality and Mechanical trip interlock directly connected to the OSM tank’s oper-ating mechanism</Ptag>
@@ -50,10 +70,10 @@ function Description(props) {
                                 <Ptag>» Grey powder coated tank to prevent drivers from being blinded by the sunlight reflecting on
                                 the tank</Ptag>
                                 <Ptag>» Only 3 electronic modules in total that can be replaced within 5 minutes with a simple screwdriver » Remote and quick firmware 
-                                upgrades to keep up with the industry changes over time</Ptag>
+                                upgrades to keep up with the industry changes over time</Ptag> */}
                             </DescBody>
-                            <DesContactBtn>
-                                <ContactText>Contact Us</ContactText>
+                            <DesContactBtn to= "/contact">
+                                <ContactText >Contact Us</ContactText>
                                 <FontArrow />
                             </DesContactBtn>
                         </DesContent>

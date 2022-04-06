@@ -1,7 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { COLORS, SIZES } from "../../constant";
-
+import { Link } from "react-router-dom";
 export const DesContainer = styled.div`
     position: relative;
     z-index:1;
@@ -214,10 +214,9 @@ export const Ptag = styled.p`
     color: ${COLORS.lightgray};
 `;
 
-export const DesContactBtn = styled.div`
+export const DesContactBtn = styled(Link)`
+    width: fit-content;
     display: flex;
-    flex-direction: row;
-    width: 201px;
     height: 50px;
     background: #E6E6EF;
     margin-top: 27px;

@@ -4,7 +4,7 @@ import {ProductsContainer,ProductsContent,PlandingPage,LeftSection,LandingTitle,
 LandingPartner,PartnerText,PartnerLogo,NojaImage,LucyElectImage,ReplImage,RightSection,ElectricPic,ProductsCat,GetProduct,FindPro,SearchPro,
 SearchInput,SearchImg,Line,ShowProduct,EachProduct,ProductName,ProductStore,ProductItems,ProCard,
 ProductImage,ProImg,ItemName,ManufactName} from './Products'
-import {Nojaproducts,Lucyproducts,Replproducts} from '../../components/data/data'
+import {Nojaproducts,Lucyproducts,Replproducts, Moreproducts} from '../../components/data/data'
 function Products(props) {
     useEffect(() => {
         props.setSidebar(false);
@@ -60,7 +60,7 @@ function Products(props) {
                                         <ProductStore>
                                             {Nojaproducts.map((item,index) => {
                                                 return (
-                                                        <ProductItems to={`/productsDetails/${item.id}`}>
+                                                        <ProductItems to={`/productsDetails/Nojaproducts/${item.id}`}>
                                                             <ProCard>
                                                                 <ProductImage>
                                                                     <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
@@ -82,7 +82,7 @@ function Products(props) {
                                         <ProductStore>
                                             {Lucyproducts.map((item,index) => {
                                                 return (
-                                                        <ProductItems to={`/productsDetails/${item.id}`}>
+                                                        <ProductItems to={`/productsDetails/Lucyproducts/${item.id}`}>
                                                             <ProCard>
                                                                 <ProductImage>
                                                                     <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
@@ -104,14 +104,34 @@ function Products(props) {
                                         <ProductStore>
                                             {Replproducts.map((item,index) => {
                                                 return (
-                                                        <ProductItems to={`/productsDetails/${item.id}`}>
+                                                        <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
                                                             <ProCard>
                                                                 <ProductImage>
                                                                     <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
                                                                 </ProductImage>
                                                                 <ItemName>{item.name}</ItemName>
                                                                 <ManufactName>
-                                                                    {/* Manufacturer: <SpanText>{item.manufacturer}</SpanText> */}
+                                                                </ManufactName>
+                                                            </ProCard>
+                                                        </ProductItems>
+                                                    )
+                                            })}
+                                        </ProductStore>  
+                                    </EachProduct>
+
+                                    <Line></Line>
+                                    <EachProduct>
+                                        <ProductName>More product</ProductName>
+                                        <ProductStore>
+                                            {Moreproducts.map((item,index) => {
+                                                return (
+                                                        <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
+                                                            <ProCard>
+                                                                <ProductImage>
+                                                                    <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
+                                                                </ProductImage>
+                                                                <ItemName>{item.name}</ItemName>
+                                                                <ManufactName>
                                                                 </ManufactName>
                                                             </ProCard>
                                                         </ProductItems>

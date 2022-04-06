@@ -6,6 +6,7 @@ import { FiSearch } from 'react-icons/fi';
 import BCard from '../../components/blogcard/BCard'
 import { BlogContext } from '../../context/blogContext/BlogContext'
 import { getBlog } from '../../context/blogContext/apiCalls'
+import { CircularProgress } from '@mui/material';
 
 function Blog(props) {
     const {blogs, dispatch} = useContext(BlogContext)
@@ -28,7 +29,7 @@ function Blog(props) {
         <>
             <HeadFoot {...props}>
                 <BlogLand>
-                    <h1>The FixOnTimeBlog</h1>
+                    <h1>The FixOnTime Blog</h1>
                     <p>Actionable tips. Curated for you.</p>
                     <div className='searchContainer'>
                         <Input type="text" placeholder="Search" style={{background: "#F9F9F9"}}/>
@@ -36,7 +37,8 @@ function Blog(props) {
                     </div>
                 </BlogLand>
                 <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}>
-                {
+                {   
+                    blogs && blogs.length > 0 ?
                     blogs.map((item, index) => (
                             <div key = {index}>
                                 <BCard
@@ -47,7 +49,7 @@ function Blog(props) {
                                 />
                            </div>
                        )
-                   )
+                   ) : <CircularProgress color="inherit"  sx={{ display: 'flex' }}/> 
                 }
             </div>
             </HeadFoot>

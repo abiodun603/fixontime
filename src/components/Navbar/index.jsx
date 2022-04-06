@@ -6,6 +6,7 @@ import {NavContainer,Nav,NavTopHeader,CompanyInfo,ComNo,FontPhone,
     SocialInfo,SocialIcon,FacebookImg,InstagramImg,TwitterImg,NavBottomHeader,
     NavSection,NavHamBar,LogoBar,LogoImage,NavList,NavLinks,NavReq,ReqText,FontArrow} from './NavbarStyled';
 import { DarkBg } from '../../container/e-learning/elearning';
+import FacebookPlayer from 'react-player/facebook';
 function Navbar(props) {
     return (
         <> 
@@ -64,9 +65,9 @@ function Navbar(props) {
                     </CompanyInfo>
                     <SocialInfo>
                         <SocialIcon>
-                            <FacebookImg src={process.env.PUBLIC_URL + `/Image/Icon/facebook.png`} />
-                            <InstagramImg src={process.env.PUBLIC_URL + `/Image/Icon/instagram.png`} style={{margin: '0 31px'}}/>
-                            <TwitterImg src={process.env.PUBLIC_URL + `/Image/Icon/twitter.png`} />
+                            <FacebookImg src={process.env.PUBLIC_URL + `/Image/icon/facebook.png`} />
+                            <InstagramImg src={process.env.PUBLIC_URL + `/Image/icon/instagram.png`} style={{margin: '0 31px'}}/>
+                            <TwitterImg src={process.env.PUBLIC_URL + `/Image/icon/twitter.png`} />
                         </SocialIcon>
                     </SocialInfo>
                 </NavTopHeader>
@@ -108,7 +109,7 @@ function Navbar(props) {
                 </NavBottomHeader> 
             </Nav>
             {
-                props.sidebar && <DarkBg className="side_darkbg"></DarkBg>
+                // props.sidebar && <DarkBg className="side_darkbg"></DarkBg>
             }  
         </NavContainer>
         </>

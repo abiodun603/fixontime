@@ -8,6 +8,7 @@ export const ContactLand = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 1rem;
 
     h1{
         font-weight: 600;
@@ -20,6 +21,15 @@ export const ContactLand = styled.div `
         color: #505050;
         font-size: 16px
     }
+
+    @media screen and (max-width: 468px){
+        h1{
+            font-size: 36px;
+        }
+       P{
+           text-align: center;
+       }
+     }
 `
 
 
@@ -66,10 +76,11 @@ export const Contact = styled.div `
     margin-top: 2rem;
 
     p{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400 !important;
-        color: #FFFFFF;
+        color: rgba(255,255,255, 0.7);
         margin-left: 5px !important;
+        margin-top: 5px !important;
     }
 
 `
@@ -83,6 +94,7 @@ export const ContactDesc = styled.div `
         color: #FFFFFF;
         font-weight: 400;
         font-size: 16px;
+        margin-top: 8px;
     }
 
     
@@ -267,7 +279,7 @@ export const WorkHour = styled.div `
 
     p{
         color: #FFFFFF;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     @media screen and (max-width: 468px){

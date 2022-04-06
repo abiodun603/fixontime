@@ -3,7 +3,7 @@ import HeadFoot from '../../components/HeadFoot'
 import { Answer, ContactLand, Faq, Question, Wrap } from '../contact/StyledContact'
 import transformer from "../../assets/image/about/transformer.svg"
 import safety from "../../assets/image/about/safety.svg"
-import best from "../../assets/image/about/about-header-image-min.png"
+import best from "../../assets/image/about/best.svg"
 import innovation from "../../assets/image/about/innovation.svg"
 import One from "../../assets/image/about/icon/1.svg"
 import Two from "../../assets/image/about/icon/2.svg"
@@ -40,7 +40,7 @@ const About = (props) => {
                 {/* Landing */}
                 <ContactLand>
                     <h1>About Us</h1>
-                    <p>"fix Nigeria, fix Africa"</p>
+                    <p>We are a leading Engineering, Procurement, and Construction company.</p>
                 </ContactLand>
 
                 {/* About Us */}
@@ -73,7 +73,7 @@ const About = (props) => {
                                 <img src= {best} alt=""/>
                             </ImageContainer>
                             <CoreDesc>
-                                <span>Best Pratices</span>
+                                <span>Best practices</span>
                                 <p>We abide by the ethics of a profession, and<br/>we are approved by NESI</p>
                             </CoreDesc>
                         </CoreDescCon>
@@ -92,7 +92,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Innovation</span>
-                                <p>We are committed to providing<br/>f7oo6 automated products and<br/>innovative</p>
+                                <p>We are committed to providing<br/>fully automated products and<br/>innovative</p>
                             </CoreDesc>
                         </CoreDescCon>
                     </CoreContainer>  

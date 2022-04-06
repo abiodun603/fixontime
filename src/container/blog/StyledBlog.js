@@ -31,6 +31,25 @@ export const BlogLand = styled.div `
         top: 10px;
         color: #A8A8A8;
     }
+
+    @media screen and (max-width: 468px){
+        h1{
+            font-size: 24px;
+        }
+
+        .searchContainer{
+            padding: 0 2rem;
+            position: relative
+        }
+
+        .searchIcon{
+            position: absolute;
+            right: 40px;
+            top: 8px;
+            color: #A8A8A8;
+        }
+    }
+ 
 `
 
 export const BlogContainer = styled.div `

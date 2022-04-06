@@ -145,7 +145,7 @@ function Home(props) {
                         </RightSection>
                     </HomePage>
                     <HomeCompanyLogo>
-                        <img src={npower} alt=""/>
+                        <img src={npower} alt="" className='npower' height="17"/>
                         <img src={lucy} alt=""/>
                         <img src={repl} alt=""/>
                     </HomeCompanyLogo>
@@ -163,12 +163,12 @@ function Home(props) {
                                 Why FixOnTime Electric? 
                             </div>
                             <div className='wfe_body'>
-                                <div className='wfe_left_section'>
-                                    <div className='wfe_text'>
-                                        <div className='wfe_header'>
+                                <div className='wfe_left_section '>
+                                    <div className='wfe_text active'>
+                                        <div className='wfe_header '>
                                             Efficient and excellent service
-                                        </div>
-                                        <div className='wfe_subheader'>
+                                        </div> 
+                                        <div className='wfe_subheader '>
                                             Our technicians are professionals trained 
                                             to give you quality services. Enjoy prompt services and solutions. 
                                         </div> 
@@ -243,7 +243,7 @@ function Home(props) {
                                         We have comprehensive training on how to install 
                                         state-of-the-art electrical equipment. 
                                     </div>
-                                    <button className='btn_touch'>Get intouch</button>
+                                    <button className='btn_touch'>Get in touch</button>
                                 </SwiperSlide>
                                 <SwiperSlide className='solution_body'>
                                     <div className='solution_title'>Electrical Installations</div>
@@ -358,8 +358,7 @@ function Home(props) {
                     <HomeConnected>
                         <h3>Stay Connected</h3>
                         <p>
-                            Be the first to know when we release new episode of Blog<br/>
-                            post, add new product and News letter
+                            Be the first to know when we release new blogposts, add new products and send out newsletters.
                         </p>
                         <form onSubmit={handleSubmit}>
                             <div className='subscribe'>

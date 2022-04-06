@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material'
 import React, { useContext, useEffect } from 'react'
 import HeadFoot from '../../components/HeadFoot'
 import Learn from '../../components/user-learn/Learn'
@@ -41,7 +42,7 @@ function Elearning(props) {
                                 Learn and Understand how to use some of our products
                             </LandingTitle>
                             <LandingSubTitle>
-                                Learn and understand how to use some of our products, Short videos,
+                                Learn and understand how to use some of our products, short videos,
                                 explicit lessons, visible results.
                             </LandingSubTitle>
                         </LeftSection>
@@ -51,7 +52,9 @@ function Elearning(props) {
                     </ElandingPage>
                     <ElearningCat>
                         <ElearningStore>
-                            {learns.map((item,index) => {
+                            {
+                            learns && learns.length > 0 ?
+                            learns.map((item,index) => {
                                 return (
                                     <Learn
                                         image = {item.thumbnail}
@@ -60,7 +63,7 @@ function Elearning(props) {
                                         url = {item.url}
                                     /> 
                                 )
-                            })}
+                            }):  <CircularProgress color="inherit"  sx={{ display: 'flex' , textAlign: "center", justifyContent: "center", width: "100%"}}/>}
                         </ElearningStore>  
                     </ElearningCat>
                 </ElearnContent>

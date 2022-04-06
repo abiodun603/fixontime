@@ -19,6 +19,11 @@ export const ElearnContent = styled.div`
         padding-left: 60px;
         padding-right: 60px;
     }
+
+    @media screen and (max-width: 468px){
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 `;
 
 export const ElandingPage = styled.div`
@@ -63,6 +68,12 @@ export const LandingTitle = styled.div`
   
     @media screen and (max-width: 1320px){
         font-size:${SIZES.h4};
+    }
+
+    @media screen and (max-width: 468px){
+       font-size: 26px;
+       font-weight: 600;
+       margin-bottom: .7rem;
     }
 `;
 
