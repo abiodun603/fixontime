@@ -9,7 +9,7 @@ export const COLORS = {
 }
 
 export const SIZES = {
-    h3: "48px",
+    h3: "40px",
     h4: "36px",
     h5: "16px",
     h6: "14px",

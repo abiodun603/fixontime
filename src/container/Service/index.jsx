@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import {Link} from "react-router-dom"
 import HeadFoot from '../../components/HeadFoot';
 import {IoIosArrowForward} from 'react-icons/io'
 import {ServiceContainer,ServiceContent} from './Service';
@@ -20,7 +21,7 @@ function Service(props) {
                     <div className='hero_section'>
                         <h4 className='hero_title'>Standard Engineering and Custom Built Solutions</h4>
                         <div className='hero_subtitle'>
-                            you can select from a variety of our Medium Voltage solutions.
+                            You can select from a variety of our Medium Voltage solutions.
                         </div>
                     </div>
                     <div className='service_bottom_section'>
@@ -36,16 +37,18 @@ function Service(props) {
                                 <div>
                                     Save up to 40 percent of the cost when you buy through us. 
                                 </div>
-                                <button>
-                                    Buy Now <IoIosArrowForward />
-                                </button>
+                                <Link to="/contact">
+                                    <button>
+                                        Buy Now <IoIosArrowForward />
+                                    </button> 
+                                </Link>
                             </div>
                             <div className='right_section'>
                                 <img src={installation} alt =""/>
                                 <h3>Electrical Installations </h3>
                                 <div>
                                     You cannot afford to have installations done wrong. 
-                                    Do not put your personnel, equipment, and entire 
+                                    Do not put your personnel, equipment and entire 
                                     distribution network in the hands of amateurs. Work with
                                     our experts to carry out low voltage to 330KV Substation 
                                     installations. 
@@ -55,9 +58,11 @@ function Service(props) {
                                     We have comprehensive training on how to install
                                     state-of-the-art electrical equipment. 
                                 </div>
-                                <button>
-                                Work With Us <IoIosArrowForward />
-                                </button>
+                                <Link to="/contact">
+                                    <button>
+                                        Work With Us <IoIosArrowForward />
+                                    </button> 
+                                </Link>
                             </div>
                         </div>
                         <div className='full_section'>
@@ -65,7 +70,7 @@ function Service(props) {
                                 <h3>Maintenance &#38; H.T Asset Management</h3>
                                 <div>Increase the lifespan of your electrical equipment by putting them in 
                                     great hands. Our professionals handle your power distribution assets 
-                                    and provide full after-sales support,  training, and maintenance.
+                                    and provide full after-sales support,  training and maintenance.
                                 </div>
                                 {/* <div>
                                     It is one thing to have the best energy equipment. It is another to maintain
@@ -80,9 +85,11 @@ function Service(props) {
                                     estates across the country. We provide after-sale support 
                                     and training on all the equipment we supply or install.
                                 </div>
-                                <button>
-                                Get Intouch <IoIosArrowForward />
-                                </button>
+                                <Link to="/contact">
+                                    <button>
+                                        Get In touch <IoIosArrowForward />
+                                    </button> 
+                                </Link>
                             </div>
                             <div className='image'>
                                 <img src={maintainance}  alt= ""/>
@@ -92,18 +99,21 @@ function Service(props) {
                         <div className='card_section'>
                             <div className='left_section'>
                                 <img src={training} alt="" />
-                                <h3>Training and Skills Devellopment</h3>
+                                <h3>Training and Skills Development</h3>
                                 <div>
                                 We offer offshore and local training to our customers on their equipment as well as specialised skill areas that are in dare in power transmission and distribution industries such as Cable Jointers, Switchgears Installers, Linesmen, Protection Engineers and Smart Grid Enthusiasts. 
                                 This service comes with after-sales support from the manufacturer. 
                                 </div>
                                 <div>
                                 We also arrange factory acceptance test 
-                                visits with OEMs for Engineering, Procurement and Construction (EPC) &#38; special projects.
+                                visits with OEMs for Engineering, Procurement and Construction (EPC) Contracts and special projects.
                                 </div>
-                                <button>
-                                    Speak To Us <IoIosArrowForward />
-                                </button>
+                                <Link to="/contact">
+                                    <button>
+                                        Speak To Us <IoIosArrowForward />
+                                    </button> 
+                                </Link>
+
                             </div>
                             <div className='right_section'>
                                 <img src={source} />
@@ -116,12 +126,14 @@ function Service(props) {
                                     organizations so your business can continue running.  
                                 </div>
                                 <div>
-                                    Do you Want us to become technical partner and excellently
+                                    Do you want us to become technical partner and excellently
                                     execute your electrical projects?  
                                 </div>
-                                <button>
-                                    Speak To Us <IoIosArrowForward />
-                                </button>
+                                <Link to="/contact">
+                                    <button>
+                                        Speak To Us <IoIosArrowForward />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

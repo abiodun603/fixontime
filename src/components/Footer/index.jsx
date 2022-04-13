@@ -10,7 +10,7 @@ function Footer() {
                 <TopContent>
                     <FooterNav>
                         <FooterLogo>
-                            <Image src={process.env.PUBLIC_URL + `/Image/footer/fixtime_white.svg`} />
+                            <Image src={process.env.PUBLIC_URL + `/Image/description/FOT-White.svg`} />
                         </FooterLogo>
                         <FooterNavList>
                             <FooterNavLink to="/">Home</FooterNavLink>
@@ -23,14 +23,18 @@ function Footer() {
                         </FooterNavList>
                     </FooterNav>
                     <FooterSocialLink>
+                    <a href='https://www.facebook.com/fixontime' target="_blank">
                         <FaFacebook width="16px" height="16px" />
+                    </a>
                         <FaInstagram width="16px" height="16px" style={{margin: '0 38px'}}/>
+                    <a  href='https://twitter.com/fixontime' target="_blank">
                         <FaTwitter width="16px" height="16px" />
+                    </a>
                     </FooterSocialLink>
                 </TopContent>
                 <BottomContent>
                     <FooterCopyRight>
-                        Copyright © 2021 FixontimeTechnologies .
+                        Copyright © 2021 Fixontime Technologies .
                     </FooterCopyRight>
                 </BottomContent>
             </FooterContent>

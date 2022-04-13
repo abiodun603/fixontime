@@ -2,15 +2,15 @@
 export const landingCarousel = [
     {
         id: 1,
-        image: "pole.png"
+        image: "3.jpg",
     },
     {
         id: 2,
-        image: "pole.png"
+        image: "1.jpg",
     },
     {
         id:3,
-        image: "pole.png"
+        image: "2.jpg"
     }
 ];
 

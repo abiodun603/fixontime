@@ -380,12 +380,13 @@ export const NavLinks = styled(Link)`
   
 `;
 
-export const NavReq = styled.div`
+export const NavReq = styled(Link)`
     height: 100%;
     display: flex;
     flex-direction: row;
     background: ${COLORS.red};
     padding: 25px 22px;
+    cursor: pointer;
 
     @media screen and (max-width: 1172px){
         display: none;

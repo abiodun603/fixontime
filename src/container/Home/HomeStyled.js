@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {SIZES,COLORS} from '../../constant/index';
+import {Link} from "react-router-dom"
 import rImg from "../../assets/image/homepage/header_image-min.png"
 export const HomeContainer = styled.div`
     position: relative;  
@@ -85,7 +86,7 @@ export const LeftText = styled.div`
 `;
 
 export const LandingTitle = styled.div`
-    font-size: ${SIZES.h3};
+    font-size: ${SIZES.h4};
     font-weight: 600;
     color: ${COLORS.white};
     max-width: 610px;
@@ -169,6 +170,7 @@ export const HomeCompanyLogo = styled.div`
     display:flex;
     background:#F9F9F9;
     justify-content:center;
+    align-items: center;
     padding: 22px 0;
     // .npower{
     //     height: 17px;
@@ -179,8 +181,21 @@ export const HomeCompanyLogo = styled.div`
             width:100px;
         }
         @media screen and (max-width: 455px){
-            width:15%;
-            height: 10px;
+            width:50%;
+            height: auto;
+            margin:0 auto !important;
+
+            img{
+                margin: 0 !important;
+            }
+
+            img:nth-child(1) {
+                margin-left: 1rem !important;
+             }
+        }
+
+        img:nth-child(2) {
+           height: auto;
         }
     }
     img:nth-child(2) {
@@ -463,6 +478,7 @@ export const HomeTest = styled.div`
     background: url(${process.env.PUBLIC_URL + `/Image/home/testimonialBg.svg`});
     display:flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 
     @media screen and (max-width:502px){
         padding-bottom: 30px;

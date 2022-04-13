@@ -118,9 +118,15 @@ const ContactPage = (props) => {
                                 </span>
                                 <p>Customer Support</p>
                             </ContactDesc>  
-                            <Button style={{background: "white", color: "#030762", width: 170, borderRadius: 10}}>
-                                Open live chat
-                            </Button>
+                            <a 
+                                href="https://wa.me/08035328274"
+                                target = "_blank"
+                                rel = "nooperner noreferrer"
+                            >
+                                <Button style={{background: "white", color: "#030762", width: 170, borderRadius: 10}}>
+                                    Open live chat
+                                </Button>
+                            </a>
                         </Contact>
                     </BlogBanner>
                     <FormWrapper onSubmit={handleSubmit}>

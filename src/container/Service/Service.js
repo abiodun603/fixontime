@@ -11,10 +11,12 @@ export const ServiceContent = styled.div`
     height: 100%;
 
     .hero_section{
-        align-self:center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-self:center;
         margin: 93px 0;
-        
-
+        width: 100%;
     } 
     .hero_title{
         font-weight: 600;
@@ -28,6 +30,7 @@ export const ServiceContent = styled.div`
     }
 
     .hero_subtitle{
+        align-self: center;
         font-size: 24px;
         text-align: center;
         color: #505050;

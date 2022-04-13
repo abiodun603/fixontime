@@ -5,8 +5,7 @@ import {NavContainer,Nav,NavTopHeader,CompanyInfo,ComNo,FontPhone,
     PhoneText,ComEmail,FontEmail,EmailText,ComTime,FontClock,ClockText,
     SocialInfo,SocialIcon,FacebookImg,InstagramImg,TwitterImg,NavBottomHeader,
     NavSection,NavHamBar,LogoBar,LogoImage,NavList,NavLinks,NavReq,ReqText,FontArrow} from './NavbarStyled';
-import { DarkBg } from '../../container/e-learning/elearning';
-import FacebookPlayer from 'react-player/facebook';
+
 function Navbar(props) {
     return (
         <> 
@@ -65,9 +64,15 @@ function Navbar(props) {
                     </CompanyInfo>
                     <SocialInfo>
                         <SocialIcon>
-                            <FacebookImg src={process.env.PUBLIC_URL + `/Image/icon/facebook.png`} />
-                            <InstagramImg src={process.env.PUBLIC_URL + `/Image/icon/instagram.png`} style={{margin: '0 31px'}}/>
-                            <TwitterImg src={process.env.PUBLIC_URL + `/Image/icon/twitter.png`} />
+                            <a href='https://www.facebook.com/fixontime' target="_blank">
+                                <FacebookImg src={process.env.PUBLIC_URL + `/Image/icon/facebook.png`} />
+                            </a>
+                            {/* <a target="_blank"> */}
+                                <InstagramImg src={process.env.PUBLIC_URL + `/Image/icon/instagram.png`} style={{margin: '0 31px'}}/>
+                            {/* </a> */}
+                            <a  href='https://twitter.com/fixontime' target="_blank">
+                                <TwitterImg src={process.env.PUBLIC_URL + `/Image/icon/twitter.png`} />
+                            </a>
                         </SocialIcon>
                     </SocialInfo>
                 </NavTopHeader>
@@ -75,7 +80,7 @@ function Navbar(props) {
                     <NavSection>
                         <NavHamBar onClick={() => props.setSidebar(true)}/>
                         <LogoBar>
-                            <LogoImage src={process.env.PUBLIC_URL + `/Image/description/fixLogo.svg`} />
+                            <LogoImage src={process.env.PUBLIC_URL + `/Image/description/logo.svg`} />
                         </LogoBar>
                         <NavList>
                             <NavLinks to='/'>
@@ -102,9 +107,10 @@ function Navbar(props) {
                         </NavList>
                     </NavSection>
                     
-                    <NavReq>
+                    
+                    <NavReq to="/contact">
                         <ReqText>Request a Service</ReqText>
-                        <FontArrow src={process.env.PUBLIC_URL + `/Image/Icon/forward.png`}/>
+                        <FontArrow src={process.env.PUBLIC_URL + `/Image/icon/forward.png`}/>
                     </NavReq>
                 </NavBottomHeader> 
             </Nav>

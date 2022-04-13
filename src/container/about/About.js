@@ -40,7 +40,7 @@ const About = (props) => {
                 {/* Landing */}
                 <ContactLand>
                     <h1>ABOUT US</h1>
-                    <p>"fix Nigeria, fix Africa"</p>
+                    <p>Fix Nigeria, Fix Africa</p>
                 </ContactLand>
 
                 {/* About Us */}
@@ -73,7 +73,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Best Pratices</span>
-                                <p>We abide by the ethics of a profession, and<br/>we are approved by NEMSA</p>
+                                <p>Approved by NEMSA</p>
                             </CoreDesc>
                         </CoreDescCon>
                         <CoreDescCon>
@@ -91,7 +91,7 @@ const About = (props) => {
                             </ImageContainer>
                             <CoreDesc>
                                 <span>Innovation</span>
-                                <p>We are <u>committed</u> to being a leader in providing<br/>f7oo6 power automation solutions for the power sector <br/>and bring Nigeria grid to smart state</p>
+                                <p>We are <u>committed</u> to being a leader in providing<br/>power automation solutions for the power sector <br/>and bring Nigeria grid to smart state</p>
                             </CoreDesc>
                         </CoreDescCon>
                     </CoreContainer>  
@@ -106,9 +106,7 @@ const About = (props) => {
                         <h2>Always the First</h2>
 
                         <p>
-                            We are the leading Power Automation Comapny in Nigeria, offering innovative solutions and alternatives to a conventional electrical power substation and distribution approaches. Through our partnership with renowned OEM as well as our subject expert engineers, we are always providing cost-saving, enviromentally friendly and more reliable solutions to our customers and the Nigerian Electricity Supply Industry at large.
-                        </p>
-
+                            We are the leading power Automation Company in Nigeria, offering innovative solutions and alternatives to a conventional electrical power substation and distribution approaches.  Through our partnership with renowned OEM as well as our subject expert engineers, we are always providing cost-saving, environmentally friendly and more reliable solutions to our customers and the Nigerian Electricity Supply Industry at large.                        </p>
                         <p>
                             We have carried out power construction and EPC 
                             projects of up to 330KV locally and internationally. 
@@ -119,7 +117,7 @@ const About = (props) => {
                         </p>
 
                         <p>
-                            we available for LV and MV substation works, 
+                            We are available for LV and MV substation works, 
                             H.T facilities,construction, and maintenance.
                         </p>
                     </DescView>

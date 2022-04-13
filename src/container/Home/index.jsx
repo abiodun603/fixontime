@@ -4,6 +4,7 @@ import {HomeContainer,HomeContent,HomePage,
     LeftSection,LeftText,ButtonTouch,LandingTitle,LandingSubTitle,RightSection,HomePic,
     HomeCompanyLogo,HomeAbout,HomeAboutTitle,HomeAboutSubTitle,WFE,HomeService,HomeTest,HomeConnected} from './HomeStyled'
 import Slider from 'react-slick';
+import {Link} from "react-router-dom"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './carousel.css';
@@ -126,8 +127,10 @@ function Home(props) {
                                 </LandingTitle> 
                                 <LandingSubTitle>
                                     Reduce trippings and outages on your electricity network.
-                                </LandingSubTitle> 
-                                <ButtonTouch>Get In touch</ButtonTouch>
+                                </LandingSubTitle>
+                                <Link to="/contact">
+                                    <ButtonTouch>Get In touch</ButtonTouch>
+                                </Link> 
                             </LeftText>
                         </LeftSection>
                         <RightSection>
@@ -136,7 +139,7 @@ function Home(props) {
                                 <Slider {...setCarousel}>
                                     
                                         {landingCarousel.map((item) => (
-                                            <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`} alt = ""/>
+                                                <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`} alt = ""/>
                                         ))}
                                     
                                 </Slider>
@@ -145,9 +148,9 @@ function Home(props) {
                         </RightSection>
                     </HomePage>
                     <HomeCompanyLogo>
-                        <a href="www.nojapower.com.au" target="_blank"> <img src={npower} alt="nodja power"/> </a>
-                        <a href="www.lucyelectric.com" target="_blank"> <img src={lucy} alt="lucy electric"/> </a>
-                        <a href="www.repl.com" target="_blank"> <img src={repl} alt="repl"/> </a>
+                        <a href="https://www.nojapower.com.au" target="_blank" rel="noopener noreferrer"> <img src={npower} alt="nodja power"/> </a>
+                        <a href="https:/www.lucyelectric.com" target="_blank" rel="noopener noreferrer"> <img src={lucy} alt="lucy electric"/> </a>
+                        <a href="https:/www.repl.com" rel="noopener noreferrer"> <img src={repl} alt="repl"/> </a>
                     </HomeCompanyLogo>
                     <HomeAbout>
                         <HomeAboutTitle>
@@ -169,7 +172,7 @@ function Home(props) {
                                             Efficient and Excellent Service
                                         </div>
                                         <div className='wfe_subheader'>
-                                            Our departmental staffs are professionals trained 
+                                            Our departmental staff members and field workers are professionals trained 
                                             to give you quality services. Enjoy prompt services and solutions. 
                                         </div> 
                                     </div>
@@ -229,35 +232,35 @@ function Home(props) {
                                         We have comprehensive training on how to install 
                                         state-of-the-art electrical equipment. 
                                     </div>
-                                    <button className='btn_touch'>Get intouch</button>
-                                </SwiperSlide>
+                                    <Link to="/contact">
+                                        <button className='btn_touch'>Get in touch</button>
+                                    </Link>                                </SwiperSlide>
                                 <SwiperSlide className='solution_body'>
-                                    <div className='solution_title'>Electrical Installations</div>
+                                    <div className='solution_title'>Engineering procurement</div>
                                     <div className='solution_subtitle'>
-                                        You cannot afford to have installations done wrong. Do not put your 
-                                        personnel, equipment, and entire distribution network in the hands of 
-                                        amateurs. Work with our experts to implement your projects up to 330KV 
-                                        Substation installations. 
+                                    Are you ready to buy state-of-the-art products from original equipment 
+                                    manufacturers? As an exclusive distributor, we help you purchase electrical power 
+                                    and distribution equipment  up to 330KV to automate your distribution network.  
                                     </div>
                                     <div className='solution_subtitle' style={{marginTop:'20px'}}>
-                                        We have comprehensive training on how to install 
-                                        state-of-the-art electrical equipment. 
+                                        Save up to 40 percent of the cost when you buy through us. 
                                     </div>
-                                    <button className='btn_touch'>Get in touch</button>
-                                </SwiperSlide>
+                                    <Link to="/contact">
+                                        <button className='btn_touch'>Get in touch</button>
+                                    </Link>                                </SwiperSlide>
                                 <SwiperSlide className='solution_body'>
-                                    <div className='solution_title'>Electrical Installations</div>
+                                    <div className='solution_title'>Maintenance &#38; H.T Asset Management</div>
                                     <div className='solution_subtitle'>
-                                        You cannot afford to have installations done wrong. Do not put your 
-                                        personnel, equipment, and entire distribution network in the hands of 
-                                        amateurs. Work with our experts to implement your projects up to 330KV 
-                                        Substation installations. 
+                                        Increase the lifespan of your electrical equipment by putting them in 
+                                        great hands. Our professionals handle your power distribution assets 
+                                        and provide full after-sales support,  training and maintenance. 
                                     </div>
                                     <div className='solution_subtitle' style={{marginTop:'20px'}}>
-                                        We have comprehensive training on how to install 
-                                        state-of-the-art electrical equipment. 
+                                        Our vendors are ready to deploy items required for corrective maintenance within record time. 
                                     </div>
-                                    <button className='btn_touch'>Get intouch</button>
+                                    <Link to="/contact">
+                                        <button className='btn_touch'>Get in touch</button>
+                                    </Link>
                                 </SwiperSlide>
 
                             </Swiper>
@@ -282,64 +285,47 @@ function Home(props) {
                             <SwiperSlide className='card_item'>
                                 <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt =""/>
                                     <div className='card_center'>
-                                        <div className='testimony'>Are you ready to buy state-of-the-art products from 
-                                            original equipment manufacturers? As accredited vendors, 
-                                            we help you purchase electrical power. 
+                                        <div className='testimony'>
+                                            Our 11kV H.T panels have been badly installed before we took over the Estate, we have to work on them every now and then. Fixontime was invited and we have not had the first interruption in several months.
                                         </div>
-                                        <div className="person_img">
+                                        {/* <div className="person_img">
                                             <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  alt =""/>
-                                        </div>
+                                        </div> */}
                                         <div className='person_detail'>
-                                            <p>Ayomide Akinyemi</p>
-                                            <span>CEO Kedco</span>
+                                            {/* <p></p> */}
+                                            <span  style={{marginTop: 30}}>Ovie, Lagos</span>
+
+                                            {/* <span>CEO Kedco</span> */}
                                         </div>
                                     </div>
                             </SwiperSlide>
                             <SwiperSlide className='card_item'>
                                 <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} alt="" width="20px" className='comment_icon'/>
                                     <div className='card_center'>
-                                        <div className='testimony'>Are you ready to buy state-of-the-art products from 
-                                            original equipment manufacturers? As accredited vendors, 
-                                            we help you purchase electrical power. 
+                                        <div className='testimony'>
+                                            Fixontime team is made up of smart and energetic team who are skillful in what they do. They installed 11kV RMU for us and it's the neatest job I have seen in a long time. 
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `} alt="" />
+                                            {/* <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `} alt="" /> */}
                                         </div>
                                         <div className='person_detail'>
-                                            <p>Ayomide Akinyemi</p>
-                                            <span>CEO Kedco</span>
+                                            {/* <p></p> */}
+                                            <span  style={{marginTop: 30}}> Engr. Stanley</span>
                                         </div>
                                     </div>
                             </SwiperSlide>
                             <SwiperSlide className='card_item'>
                                 <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt=""/>
                                     <div className='card_center'>
-                                        <div className='testimony'>Are you ready to buy state-of-the-art products from 
-                                            original equipment manufacturers? As accredited vendors, 
-                                            we help you purchase electrical power. 
+                                        <div className='testimony'>
+                                            We are happy to know we can buy REPL cable joints and termination from you. We have known the brand for long.
                                         </div>
                                         <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}   alt=""/>
+                                            {/* <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}   alt=""/> */}
                                         </div>
                                         <div className='person_detail'>
-                                            <p>Ayomide Akinyemi</p>
-                                            <span>CEO Kedco</span>
-                                        </div>
-                                    </div>
-                            </SwiperSlide>
-                            <SwiperSlide className='card_item'>
-                                <img src={process.env.PUBLIC_URL + `/Image/home/comment.svg`} width="20px" className='comment_icon' alt=""/>
-                                    <div className='card_center'>
-                                        <div className='testimony'>Are you ready to buy state-of-the-art products from 
-                                            original equipment manufacturers? As accredited vendors, 
-                                            we help you purchase electrical power. 
-                                        </div>
-                                        <div className="person_img">
-                                            <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}   alt=""/>
-                                        </div>
-                                        <div className='person_detail'>
-                                            <p>Ayomide Akinyemi</p>
-                                            <span>CEO Kedco</span>
+                                            <span style={{marginTop: 30}}>  Disco Rep</span>
+                                            {/* <span>CEO Kedco</span> */}
                                         </div>
                                     </div>
                             </SwiperSlide>
@@ -350,9 +336,12 @@ function Home(props) {
                         <HomeQuoteContainer>
                             <h3>Get quotation for free</h3>
                             <p>Work with our experts and save up to 40% when you get your<br/>electrical equipment</p>
-                            <Button style={{display:"flex",alignItems:'center',justifyContent:'center',background: "white", color: "#030762", width: 170, borderRadius: 10}}>
-                                Get in touch
-                            </Button>
+                            <Link to="/contact">
+                                <Button style={{display:"flex",alignItems:'center',justifyContent:'center',background: "white", color: "#030762", width: 170, borderRadius: 10}}>
+                                    Get in touch
+                                </Button>                            
+                            </Link>
+                            
                         </HomeQuoteContainer>                       
                     </HomeQuoteWrapper>
                     <HomeConnected>
