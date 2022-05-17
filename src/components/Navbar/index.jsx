@@ -7,6 +7,7 @@ import {NavContainer,Nav,NavTopHeader,CompanyInfo,ComNo,FontPhone,
     NavSection,NavHamBar,LogoBar,LogoImage,NavList,NavLinks,NavReq,ReqText,FontArrow} from './NavbarStyled';
 
 function Navbar(props) {
+
     return (
         <> 
         <NavContainer>

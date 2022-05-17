@@ -9,7 +9,7 @@ const ScrollTextArea = (props) => {
                 id="textarea"
                 name ="content"
                 rows= "6"
-                cols = "37"
+                // cols = "37"
                 value = {props.value}
                 onChange={props.onChange}
             >

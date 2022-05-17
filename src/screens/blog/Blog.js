@@ -30,6 +30,8 @@ const Blog = () => {
         history.push(`/editPost/${id}`)
     }
 
+    console.log(blogs)
+
 
     return (
         <>
@@ -41,17 +43,17 @@ const Blog = () => {
 
             <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
                 {
-                    blogs.map((item, index) => (
-                            <div key = {index}>
-                                <BCard
-                                    src = {item.image}
-                                    title= {item.title}
-                                    date= {formatter.format(new Date(item.created_at))}
-                                    onDelete = {()  => handleDelete(item.id)}
-                                    onEdit = {() => handleUpdate(item.id)}
-                                />
-                           </div>
-                       )
+                  blogs?.data?.data?.map((item, index) => (
+                      <div key = {index}>
+                        <BCard
+                          src = {item.image}
+                          title= {item.title}
+                          date= {formatter.format(new Date(item.created_at))}
+                          onDelete = {()  => handleDelete(item.id)}
+                          onEdit = {() => handleUpdate(item.id)}
+                        />
+                      </div>
+                      )
                    )
                 }
             </div>

@@ -38,6 +38,10 @@ export const LoginBanner = styled.div `
         font-weight: var(--fw-thin);
         font-size: var(--body1)
     }
+
+    @media screen and (max-width: 468px){
+      display : none;
+    }
 `
 
 export const BannerLogo = styled.img `
@@ -55,6 +59,10 @@ export const FormWrapper = styled.form `
     width: 50%;
     height: 100%;
     background: #E5E5E5;
+
+    @media screen and (max-width: 468px){
+      width: 100%;
+    }
 `
 
 export const LoginForm = styled.div `
@@ -79,6 +87,15 @@ export const LoginForm = styled.div `
         font-weight: normal;
         color: #505050;
         margin-bottom: .5rem
+    }
+
+
+    @media screen and (max-width: 468px){
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 `
 

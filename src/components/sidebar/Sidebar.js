@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {SidebarWrapper, SidebarLogo, SideBarItemWrapper,
         SideBarItemInner,
         SideBarIcon,
@@ -8,10 +8,12 @@ import {Link} from 'react-router-dom'
 import authLogo from "../../assets/image/auth/authLogo.svg"
 import { BannerLogo } from '../../screens/login/Login__element.js'
 const SideBarItem = props => {
-    const active = props.active ? "active" : ""
+    const active  = props.active ? "active" : ""
     return (
         <>
             <SideBarItemWrapper>
+                        {/* <SideBarItemWrapper className={sidebar ? "sidebar active" : sidebar } > */}
+
                 <SideBarItemInner className = {active}>
                     <SideBarIcon>
                         {props.icon}
@@ -25,26 +27,31 @@ const SideBarItem = props => {
     )
 }
 
-const Sidebar = props => {
+const Sidebar = ({sidebar, ...props}) => {
+
     const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
+    console.log(sidebar)
+
     return (
         <>
-            <SidebarWrapper>
-                <SidebarLogo>
-                    <img src = {authLogo} alt="" style={{width: "120px", marginTop: 20}}/>
-                </SidebarLogo>
-                {
-                    sidebar_items.map((item, index) => (
-                        <Link to ={item.route} key={index}>
-                            <SideBarItem
-                                title = {item.display_name}
-                                icon = {item.icon}
-                                active = {index === activeItem}
-                            />
-                        </Link>
-                    ))
-                }
-            </SidebarWrapper>
+          <SidebarWrapper>
+            <div className= {sidebar ? "sidebar active" : "sidebar"} >
+            <SidebarLogo>
+              <img src = {authLogo} alt="" style={{width: "120px", marginTop: 20}}/>
+              </SidebarLogo>
+              {
+                sidebar_items.map((item, index) => (
+                  <Link to ={item.route} key={index}>
+                    <SideBarItem
+                      title = {item.display_name}
+                      icon = {item.icon}
+                      active = {index === activeItem}
+                    />
+                  </Link>
+                ))
+              }
+            </div>
+          </SidebarWrapper>
         </>
     )
 }

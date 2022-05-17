@@ -16,6 +16,14 @@ export const HeaderContainer = styled.div `
         font-size: 24px;
         color: var(--kBlue);
     }
+
+    @media screen and (max-width: 468px){
+      flex-direction: column;
+      padding: .5rem 0 ;
+      height: 150px;
+      justify-content:center;
+
+    }
 `
 
 export const HeaderButton = styled.button `
@@ -29,5 +37,10 @@ export const HeaderButton = styled.button `
 
     span{
         margin-left: 1rem
+    }
+
+    @media screen and (max-width: 468px){
+      margin-top: .5rem;
+      margin-bottom: 1rem;
     }
 `

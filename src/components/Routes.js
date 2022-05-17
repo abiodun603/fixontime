@@ -7,7 +7,7 @@ import {Dashboard, Blog, Contact, Learn, Subscribe, AddPost, EditLearn, EditPost
 function DRoutes() {
     return (
         <Switch>
-            <Route path="/" exact  component = {Dashboard}/>
+            <Route path="/admin" exact  component = {Dashboard}/>
             <Route path ="/blog" >
                 <Blog/>
             </Route>

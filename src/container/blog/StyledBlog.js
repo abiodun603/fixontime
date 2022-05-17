@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import BlogDetails from './blogDetails'
 
 export const BlogLand = styled.div `
     height: 250px;
@@ -215,4 +216,39 @@ export const BlogContainer = styled.div `
     color: var(--kLightGrey);
     border-radius: 6px;
 }
+`
+export const BlogDetailsContainer = styled.div `
+    margin: 0 auto;
+    max-width: 714px;
+    
+    .blog__image{
+        min-height: 386px;
+        border-radius: 6px;
+        margin: 3rem auto;
+
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 6px;
+        }
+    } 
+    
+    .blog__text{
+        word-wrap: break-word;
+    }
+
+    p{
+        width: 100%;
+    }
+
+    .addComment {
+        .commentDiv {
+            width: 100%;
+            height: 366px;
+            background: #F9F9F9;
+            border: 0.5px solid #D0D0D0;
+            border-radius: 6px;
+            padding: 1rem;
+        }
+    }
 `

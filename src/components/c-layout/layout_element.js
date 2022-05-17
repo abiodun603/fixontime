@@ -7,6 +7,10 @@ export const LayoutContent = styled.div `
     padding-left: var(--sidebar-width);
     background: var(--kWhite);
     min-height: 100vh;
+
+    @media screen and (max-width: 1065px){
+      padding-left: unset !important;
+    }
 `
 
 export const LayoutContentMain = styled.div `

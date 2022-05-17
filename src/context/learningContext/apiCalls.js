@@ -5,9 +5,9 @@ import swal from "sweetalert"
 export const getLearn = async(dispatch)=> {
     dispatch(getLearnStart());
     try {
-        const res = await axios.get("https://fixontime.herokuapp.com/learnings")  
+        const res = await axios.get("https://v1.api.seenergysolutions.org/api/learnings")  
         console.log(res.data)
-        dispatch(getLearnSuccess(res.data.items)) 
+        dispatch(getLearnSuccess(res.data.data)) 
     }catch(err) {
         dispatch(getLearnFailure());
     }
@@ -15,19 +15,21 @@ export const getLearn = async(dispatch)=> {
 // create staff
 export const createLearn = async(learn, dispatch)=> {
     dispatch(createLearnStart());
-    // console.log(blog)
+    const at = JSON.parse(localStorage.getItem("user")).data.token;
+
+    console.log(at)
     try {
-        const res = await axios.post("https://fixontime.herokuapp.com/learnings", learn ,
+        const res = await axios.post("https://v1.api.seenergysolutions.org/api/learnings", learn ,
             {
                 headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
                 }
             }
         )
             //                 setGetBlogPost(res.data.items)
             //             })
             console.log(res.data)
-        dispatch(createLearnSuccess(res.data))
+        // dispatch(createLearnSuccess(res.data))
         swal({
             title: "Are you sure?",
             text: "Video post have been added up successfully",
@@ -54,7 +56,7 @@ export const deleteLearn = async (id, dispatch) => {
     dispatch(deleteLearnStart());
 
     try{
-        const res = await axios.delete("https://fixontime.herokuapp.com/learnings/" + id, 
+        const res = await axios.delete("https://v1.api.seenergysolutions.org/api/learnings/" + id, 
         {
             headers: {
                 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token

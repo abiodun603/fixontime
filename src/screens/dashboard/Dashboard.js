@@ -9,6 +9,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { ButtonDelete, ButtonDownload ,ButtonAction} from '../../components/mui-table/StyledTable';
 import {MdOutlineDeleteForever} from "react-icons/md"
 import {AiOutlineDownload} from "react-icons/ai"
+import { DashboardCard } from "./StyledGuards"
 
 
 const columns = [
@@ -30,68 +31,48 @@ const Dashboard = (props) => {
 
 
     useEffect(() => {
-        axios.get("https://fixontime.herokuapp.com/contacts",
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        ).then((res) => {
-            setData(res.data.items)
-            console.log(res.data.items)
-        }) 
+      const accesstokem = JSON.parse(localStorage.getItem("user")).data.token;
+      console.log(accesstokem)
+      axios.get("https://v1.api.seenergysolutions.org/api/analytics",
+              {
+              headers: {
+                  "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+              }
+          }
+      ).then((res) => {
+          setData(res.data.data)
+      }) 
 
-        axios.get("https://fixontime.herokuapp.com/posts/status/count",
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        ).then((res) => {
-            // console.log(res.data);
-            setBlog(res.data.count)
-        }) 
-
-        axios.get("https://fixontime.herokuapp.com/learnings/status/count",
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        ).then((res) => {
-            console.log(res.data.count);
-            setLearn(res.data.count)
-        }) 
-
-        axios.get("https://fixontime.herokuapp.com/contacts/status/count",
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
-            }
-        ).then((res) => {
-            // console.log(res.data);
-            setContact(res.data.count)
-        }) 
-    }, [setData])
+      axios.get("https://v1.api.seenergysolutions.org/api/contacts",
+              {
+              headers: {
+                  "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+              }
+          }
+      ).then((res) => {
+        setContact(res.data.data)
+      }) 
+    }, [setData, setContact])
 
     const handleDelete = async(ids,e) =>  {
         e.preventDefault();
         console.log(selectionModel)
 
-        await axios.delete("https://fixontime.herokuapp.com/contacts/" + [ids],
+        await axios.delete("https://v1.api.seenergysolutions.org/api/contacts/" + [ids],
                 {
                 headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                  "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
                 }
             }
         ).then((res) => {
             console.log(res.data);
         }) 
     }
+
+    console.log(contact)
     return (
         <>
-        <div style = {{display: "flex"}}>
+        <DashboardCard>
             {/* Welcome Admin */}
             <Card
                 style={{
@@ -186,7 +167,7 @@ const Dashboard = (props) => {
                             fontSize: 40,
                             marginTop: - 5
                         }}
-                    >{contact}</p>
+                    >{data.newContact_count}</p>
                 </div>
             </Card>
             {/* Total Blog */}
@@ -248,7 +229,7 @@ const Dashboard = (props) => {
                             marginTop: - 5
                         }}
                     >
-                        {blog}
+                        {data.post_count}
                     </p>
                 </div>
             </Card>
@@ -309,10 +290,10 @@ const Dashboard = (props) => {
                             fontSize: 40,
                             marginTop: - 5
                         }}
-                    >{learn}</p>
+                    >{data.learning_count}</p>
                 </div>
             </Card>
-        </div>
+        </DashboardCard>
             {/* <TableData
                 rows = {data}
                 columns = {columns} */}

@@ -14,7 +14,8 @@ import CardButton from "../../components/card-button/CardButton";
 const AddPost = () => {
     const [values, handleChange] = useForm({
         title: "",
-        content: ""
+        content: "",
+        cat: ""
     })
     const [selectedFile, setSelectedFile] = useState(null)
 
@@ -26,7 +27,7 @@ const AddPost = () => {
         const formData = new FormData();
         formData.append("title", values.title);
         formData.append("content", values.content);
-        formData.append("categoryId", "4");
+        formData.append("category_id", "2");
         formData.append("image", selectedFile);
         e.preventDefault();
 

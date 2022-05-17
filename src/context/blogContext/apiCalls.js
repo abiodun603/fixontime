@@ -6,8 +6,8 @@ import swal from "sweetalert"
 export const getBlog = async(dispatch)=> {
     dispatch(getBlogStart());
     try {
-        const res = await axios.get("https://fixontime.herokuapp.com/posts")
-        dispatch(getBlogSuccess(res.data.items)) 
+        const res = await axios.get("https://v1.api.seenergysolutions.org/api/posts")
+        dispatch(getBlogSuccess(res)) 
         console.log(res.data)
     }catch(err) {
         dispatch(getBlogFailure());
@@ -20,11 +20,11 @@ export const createBlog = async(blog, dispatch)=> {
     dispatch(createBlogStart());
     console.log(blog)
     try {
-        const res = await axios.post("https://fixontime.herokuapp.com/posts", blog ,
+        const res = await axios.post("https://v1.api.seenergysolutions.org/api/posts", blog ,
             {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token,
-                }
+              headers: {
+                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token,
+              }
             }
         )
         console.log(res)
@@ -52,10 +52,10 @@ export const deleteBlog = async (id, dispatch) => {
     dispatch(deleteBlogStart());
 
     try{
-        await axios.delete("https://fixontime.herokuapp.com/posts/" + id, 
+        await axios.delete("https://v1.api.seenergysolutions.org/api/posts/" + id, 
         {
             headers: {
-                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
             }
         })
         dispatch(deleteBlogSuccess(id));

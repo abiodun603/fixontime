@@ -15,6 +15,14 @@ export const CardWrapper =  styled.div `
 export const Card = styled.div `
     width: 55%;
     align-self: center;
+
+    @media screen and (max-width: 468px) {
+      width: 100%;
+      margin-bottom: .8rem;
+    }
+
+
+    
 `
 export const CardHeader = styled.div   `
     height: 60px;

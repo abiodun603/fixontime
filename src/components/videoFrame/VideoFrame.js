@@ -6,7 +6,7 @@ import {MdEdit, MdDeleteForever} from "react-icons/md"
 import Backdrop from '@mui/material/Backdrop';
 import ReactPlayer from 'react-player'
 
-const VideoFrame = (props) => {
+const VideoFrame = (...props) => {
 	const [open, setOpen] = React.useState(false);
 	const handleClose = () => {
         setOpen(false);
@@ -22,7 +22,7 @@ const VideoFrame = (props) => {
 			<ElearningCard>
 				<ElearningImage>
 					<PlayImg onClick = {handleToggle} src={playIcon} />
-					<EImg src={props.image}/>
+					<EImg src={props.image} alt="image"/>
 					<div className="hidden-child">
 						<ButtonAction>
 							<DeleteButton

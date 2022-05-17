@@ -532,8 +532,13 @@ export const HomeTest = styled.div`
 
     .comment_icon {
         position: absolute;
-        top:-5%;
+        top:-10%;
         right:75%;
+
+        @media screen and (max-width: 500px){
+            top:-10%;
+            right:90%;
+        }
     }
     
     .card_center{

@@ -1,13 +1,21 @@
 import styled from "styled-components"
 
 export const SidebarWrapper = styled.div `
-    min-width: var(--sidebar-width);
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0; 
-    background: var(--kBlue);
-    z-index: 100;
+   
+
+    .sidebar{
+      position: fixed;
+      left: -100%;
+      top: 0; 
+      min-width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--kBlue);
+      z-index: 100;
+
+      &.active{
+        left: 0;
+      }
+    }
 `
 
 export const SidebarLogo = styled.div `

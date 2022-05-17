@@ -81,7 +81,7 @@ const ContactPage = (props) => {
 
                 <BlogWrapper>
                     <BlogBanner>
-                        <p>Let's work together, we'd love<br/> to hear from you</p>
+                        <p>Let's work together, we'd love to hear from you</p>
                         <Contact>
                             <ContactDesc>
                                 <span>
@@ -119,7 +119,7 @@ const ContactPage = (props) => {
                                 <p>Customer Support</p>
                             </ContactDesc>  
                             <a 
-                                href="https://wa.me/08035328274"
+                                href="https://wa.me/+234 8035328274"
                                 target = "_blank"
                                 rel = "nooperner noreferrer"
                             >

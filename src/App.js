@@ -17,6 +17,7 @@ import Layout from "./components/c-layout/Layout"
 import "./assets/css/grid.css"
 import {AuthContext} from "./context/authContext/AuthContext"
 import Signup from "./screens/signup/Signup"
+import BlogDetails from './container/blog/blogDetails';
 
 function App() 
    {
@@ -30,6 +31,9 @@ function App()
                {/* <Switch></Switch> */}
                <Route path="/productsDetails/:id">
                   <Description sidebar={sidebar} setSidebar={setSidebar} />
+               </Route>
+               <Route path="/blogDetails">
+                  <BlogDetails sidebar={sidebar} setSidebar={setSidebar} />
                </Route>
                <Route path="/products">
                   <Products sidebar={sidebar} setSidebar={setSidebar} />

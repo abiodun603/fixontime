@@ -31,11 +31,12 @@ const EditPost = (props) => {
     const handleSubmit =  (e) => {
         e.preventDefault();
         console.log(value);
-		const url =  "https://fixontime.herokuapp.com/posts/" + id;
+	    	const url =  "https://v1.api.seenergysolutions.org/api/posts/" + id;
         const formData = new FormData();
         formData.append("title", value.title);
         formData.append("content", value.content);
-        formData.append("categoryId", "4");
+        formData.append("category_id", "2");
+        formData.append("slug", "post updated");
         formData.append("image", selectedFile);
 
         axios.put(
@@ -43,7 +44,7 @@ const EditPost = (props) => {
             formData,
 			{
 				headers: {
-				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
 			}}
         ).then(response => {
             swal({
@@ -66,10 +67,10 @@ const EditPost = (props) => {
     }
 
     useEffect(() => {
-            axios.get("https://fixontime.herokuapp.com/posts/" + id,
+            axios.get("https://v1.api.seenergysolutions.org/api/posts/" + id,
                 {
                     headers: {
-                        "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                        "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
                     }
                 }
             ).then((res) => {

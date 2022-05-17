@@ -39,6 +39,8 @@ const Learn = () => {
         setOpen(!open);
     };
 
+    console.log(learns)
+
     return (
         <>
            <Header
@@ -48,7 +50,7 @@ const Learn = () => {
             />
             <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
                 {
-                    learns.map((item, index) => (
+                  learns.length > 0 ?  learns.map((item, index) => (
                         <div key = {index}>
                             <VideoFrame
                                 image = {item.thumbnail}
@@ -57,10 +59,11 @@ const Learn = () => {
                                 date = {formatter.format(new Date(item.created_at))}
                                 onEdit = {() => handleUpdate(item.id)}
                                 onDelete = {()  => handleDelete(item.id)}
-                                // onClick = {handleToggle}
                             />
                         </div>
-                    ))
+                    )) : (
+                      <div><h1>No Data</h1></div>
+                    )
                 }
                 {/* <VideoFrame/> */}
             </div>

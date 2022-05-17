@@ -1,90 +1,41 @@
-import React, {useContext} from 'react'
-import DropDown from "../dropdown/DropDown"
-import {Link} from 'react-router-dom'
-import {TopNavWrapper, TopNavSearch, TopNavRight, TopNavRightItem, NotificationItem,TopNavRightUser, TopNavRightUserImage, TopNavRightUsername} from './topnav_element'
-import user_image from "../../assets/image/about.jpg"
-// import notifications from "../../assets/JsonData/notification"
-import user_menu from '../../assets/JsonData/user_menus.js'
-// import {IoMdNotificationsOutline} from "react-icons/io"
-// import {FiSearch} from "react-icons/fi"
+import React, {useContext, useState, useEffect} from 'react'
+import {TopNavWrapper, TopNavRight, TopNavRightItem} from './topnav_element'
 import { AuthContext } from '../../context/authContext/AuthContext'
 import { logOut } from '../../context/authContext/AuthActions'
-import authLogo from "../../assets/image/auth/authLogo.svg"
-
-const curr_user = {
-    display_name: "candid security",
-    image: user_image
-}
-
+import {AiOutlineMenu} from "react-icons/ai"
+import {FaTimes} from "react-icons/fa"
+import Sidebar from '../sidebar/Sidebar'
+const TopNav = (props) => {
+  const {user, dispatch} = useContext(AuthContext);
 
 
-const renderUserProfile = (item, index) => (
-    <Link to="/" key={index}>
-        <NotificationItem>
-            {item.icon}
-            <span style={{marginLeft: 10}}>{item.content}</span>
-        </NotificationItem>
-    </Link>
-)
-
-const renderNoticationItem = (item, index) => (
-    <NotificationItem key ={index}>
-        <i className = {item.icon}></i>
-        <span>{item.content}</span>
-    </NotificationItem>
-)
-const TopNav = () => {
-
-    const {user, dispatch} = useContext(AuthContext);
-
-    const renderUserToggle = () => (
-        <TopNavRightUser>
-            <TopNavRightUserImage>
-                {/* <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png" alt=""/> */}
-            </TopNavRightUserImage>
-            <TopNavRightUsername>
-                {/* {user.user.name} */}
-            </TopNavRightUsername>
-        </TopNavRightUser>
-    )
-    // console.log(user)
-
-    const handleLogout = (e) => {
-        alert("good");
-        dispatch(logOut)
-    }
     return (
         <>
-            <TopNavWrapper>
-                <TopNavSearch>
-                    {/* <input type="text" placeholder="Search here..."/>
-                    <FiSearch style={{position: "absolute", fontSize: 20, right: 20, top: 15}}/> */}
-                </TopNavSearch>
-                <TopNavRight style = {{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                    <TopNavRightItem>
-                        {/* dropdown here */}
-                        <DropDown
-                            customToggle = {() => renderUserToggle(curr_user)}
-                            contentData = {user_menu}
+          <TopNavWrapper>
+            <div>
 
-                            renderData = {(item, index) => renderUserProfile(item, index)}
-                        />
-                    </TopNavRightItem>
-                    <TopNavRightItem style={{marginTop: -8}}>
-                        {/* <DropDown
-                            icon = {<IoMdNotificationsOutline/>}
-                            badge = "12"
-                            contentData = {notifications}
-                            renderData = {(item, index) => renderNoticationItem(item, index)}
-                            renderFooter = {()=><Link>View All</Link>}
-                        /> */}
-                        <p style = {{cursor: "pointer"}} onClick = {() => dispatch(logOut())} style={{color: "#455560"}}>Logout</p>
-                    </TopNavRightItem>
-                    <TopNavRightItem>
-                        {/* Theme here */}
-                    </TopNavRightItem>
-                </TopNavRight>
-            </TopNavWrapper>
+            </div>
+            <TopNavRight style = {{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <TopNavRightItem style={{marginTop: -8}}>
+                    <p style = {{cursor: "pointer", color: "#455560"}} onClick = {() => dispatch(logOut())} >Logout</p>
+                </TopNavRightItem>
+
+                {
+                  props.mobile && (
+                    <div className='sidebar-toggle'r>
+                      {
+                        props.sidebar ? 
+                        <AiOutlineMenu onClick={() => props.setSidebar(!props.sidebar)}/> 
+                        : 
+                        <FaTimes onClick={() => props.setSidebar(!props.sidebar)}/>
+                      }
+                    </div>
+
+                  )
+                }
+            </TopNavRight>
+          </TopNavWrapper>
+
         </>
     )
 }

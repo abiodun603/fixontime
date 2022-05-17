@@ -145,19 +145,18 @@ export const ElearningItems = styled.div`
         max-width: 250px;
     }
     @media screen and (max-width: 702px){
-        max-width: 200px;
+        max-width: 100%;
     }
     @media screen and (max-width: 602px){
-        width: 500px;
-        margin-right: 10px;
+        width: 100%;
     }
     @media screen and (max-width: 556px){
-        max-width: 490px;
+        max-width: 100%;
         margin-right: 5px;
        
     }
     @media screen and (max-width: 400px){
-        max-width: 250px;
+        max-width: 100%;
         margin-right: 0px;
        
     }

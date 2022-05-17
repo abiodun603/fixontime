@@ -8,7 +8,7 @@ import {useHistory} from "react-router-dom"
 export const getGuard = async(dispatch)=> {
     dispatch(getGuardStart());
     try {
-        const res = await axios.get("https://fixontime.herokuapp.com/posts",
+        const res = await axios.get("https://v1.api.seenergysolutions.org/posts",
             {
                 headers: {
                     "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
@@ -28,7 +28,7 @@ export const createGuard = async(guard, dispatch)=> {
     dispatch(createGuardStart());
     console.log(guard)
     try {
-        const res = await axios.post("https://fixontime.herokuapp.com/posts", guard ,
+        const res = await axios.post("https://v1.api.seenergysolutions.org/posts", guard ,
             {
                 headers: {
                     "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token,
