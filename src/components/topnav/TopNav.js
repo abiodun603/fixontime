@@ -78,7 +78,7 @@ const TopNav = () => {
                             renderData = {(item, index) => renderNoticationItem(item, index)}
                             renderFooter = {()=><Link>View All</Link>}
                         /> */}
-                        <p style = {{cursor: "pointer"}} onClick = {() => dispatch(logOut())} style={{color: "#455560"}}>Logout</p>
+                        <p style = {{cursor: "pointer",color: "#455560"}} onClick = {() => dispatch(logOut())}>Logout</p>
                     </TopNavRightItem>
                     <TopNavRightItem>
                         {/* Theme here */}
