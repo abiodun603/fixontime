@@ -9,7 +9,7 @@ import {FiUsers} from "react-icons/fi"
 export default [
     {
         "display_name": "Dashboard",
-        "route": "/",
+        "route": "/admin",
         "icon":<RiDashboardFill/>
     },
     {

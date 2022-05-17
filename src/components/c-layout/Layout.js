@@ -7,7 +7,7 @@ import {BrowserRouter as Router,Switch, Route} from "react-router-dom"
 
 const Layout = () => {
   const [mobile, setMobile] = useState(false);
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
   useEffect(() => {    
     const handleResize = () => {
       if(window.innerWidth < 1065) {

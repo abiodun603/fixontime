@@ -25,9 +25,9 @@ const TopNav = (props) => {
                     <div className='sidebar-toggle'r>
                       {
                         props.sidebar ? 
-                        <AiOutlineMenu onClick={() => props.setSidebar(!props.sidebar)}/> 
+                        <FaTimes onClick={() => props.setSidebar(!props.sidebar)}/> 
                         : 
-                        <FaTimes onClick={() => props.setSidebar(!props.sidebar)}/>
+                        <AiOutlineMenu onClick={() => props.setSidebar(!props.sidebar)}/>
                       }
                     </div>
 
