@@ -64,6 +64,9 @@ function App()
 
                <Route exact path = "/forget">
                   {!user ? <Signup/> : <Redirect to="/admin" />}
+               </Route> 
+               <Route exact path = "/forget">
+                  {!user ? <Signup/> : <Redirect to="/admin" />}
                </Route>  
             </Router>
          </>        

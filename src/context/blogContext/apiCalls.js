@@ -7,8 +7,8 @@ export const getBlog = async(dispatch)=> {
     dispatch(getBlogStart());
     try {
         const res = await axios.get("https://v1.api.seenergysolutions.org/api/posts")
-        dispatch(getBlogSuccess(res)) 
-        console.log(res.data)
+        dispatch(getBlogSuccess(res.data.data)) 
+        console.log(res.data.data)
     }catch(err) {
         dispatch(getBlogFailure());
     }
@@ -55,7 +55,11 @@ export const deleteBlog = async (id, dispatch) => {
         await axios.delete("https://v1.api.seenergysolutions.org/api/posts/" + id, 
         {
             headers: {
-                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+            },
+            validateStatus : status => {
+              return true;
             }
         })
         dispatch(deleteBlogSuccess(id));

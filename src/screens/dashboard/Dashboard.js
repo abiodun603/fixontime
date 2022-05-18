@@ -43,16 +43,20 @@ const Dashboard = (props) => {
           setData(res.data.data)
       }) 
 
+    }, [setData])
+
+    useEffect(() => {
       axios.get("https://v1.api.seenergysolutions.org/api/contacts",
-              {
-              headers: {
-                  "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
-              }
-          }
-      ).then((res) => {
-        setContact(res.data.data)
+        {
+        headers: {
+            "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+        }
+      }).then((res) => {
+          console.log(res.data)
+          setData(res.data.data)
       }) 
-    }, [setData, setContact])
+  }, [])
+
 
     const handleDelete = async(ids,e) =>  {
         e.preventDefault();
@@ -301,7 +305,7 @@ const Dashboard = (props) => {
          
             <div style={{ height: 400, width: '100%',marginTop: 100 }}>
                 <DataGrid
-                    rows={data}
+                    rows={contact}
                     columns={columns}
                     pageSize={5}
                     rowsPerPageOptions={[5]}

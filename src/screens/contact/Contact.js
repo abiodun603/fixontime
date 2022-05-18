@@ -19,15 +19,15 @@ const Contact = () => {
     const [selectionModel, setSelectionModel] = useState([]);
 
     useEffect(() => {
-        axios.get("https://fixontime.herokuapp.com/contacts",
+        axios.get("https://v1.api.seenergysolutions.org/api/contacts",
                 {
                 headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
                 }
             }
         ).then((res) => {
             console.log(res.data)
-            setData(res.data.items)
+            setData(res.data.data)
         }) 
     }, [])
 

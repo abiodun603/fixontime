@@ -27,7 +27,7 @@ const Blog = () => {
 
     const handleUpdate = (id) => {
         console.log(id)
-        history.push(`/editPost/${id}`)
+        history.push(`/admineditPost/${id}`)
     }
 
     console.log(blogs)
@@ -38,17 +38,17 @@ const Blog = () => {
              <Header
                 header= "Blog Post"
                 title = "New Blog Post"
-                onClick = {() => history.push("/addPost")}
+                onClick = {() => history.push("/adminaddPost")}
             />
 
             <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
                 {
-                  blogs?.data?.data?.map((item, index) => (
+                  blogs?.map((item, index) => (
                       <div key = {index}>
                         <BCard
                           src = {item.image}
                           title= {item.title}
-                          date= {formatter.format(new Date(item.created_at))}
+                          // date= {formatter.format(new Date(item.created_at))}
                           onDelete = {()  => handleDelete(item.id)}
                           onEdit = {() => handleUpdate(item.id)}
                         />

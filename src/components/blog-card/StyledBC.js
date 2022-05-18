@@ -193,6 +193,7 @@ export const DeleteButton = styled.button `
     justify-content: center;
     align-items: center;
     margin-right: .6rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
     span{
         margin-left: .5rem !important;

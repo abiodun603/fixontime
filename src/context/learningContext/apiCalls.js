@@ -59,7 +59,7 @@ export const deleteLearn = async (id, dispatch) => {
         const res = await axios.delete("https://v1.api.seenergysolutions.org/api/learnings/" + id, 
         {
             headers: {
-                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
             }
         })
         console.log(res)

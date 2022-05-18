@@ -53,8 +53,8 @@ function Elearning(props) {
                     <ElearningCat>
                         <ElearningStore>
                             {
-                            learns && learns.length > 0 ?
-                            learns.map((item,index) => {
+                              learns && learns.length > 0 ?
+                              learns.map((item,index) => {
                                 return (
                                     <Learn
                                         image = {item.thumbnail}
@@ -62,7 +62,7 @@ function Elearning(props) {
                                         date = {formatter.format(new Date(item.created_at))}
                                         url = {item.url}
                                     /> 
-                                )
+                              )
                             }):  <CircularProgress color="inherit"  sx={{ display: 'flex' , textAlign: "center", justifyContent: "center", width: "100%"}}/>}
                         </ElearningStore>  
                     </ElearningCat>

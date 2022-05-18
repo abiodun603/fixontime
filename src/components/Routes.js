@@ -6,23 +6,21 @@ import {Dashboard, Blog, Contact, Learn, Subscribe, AddPost, EditLearn, EditPost
 
 function DRoutes() {
     return (
-        <Switch>
-            <Route path="/admin" exact  component = {Dashboard}/>
-            <Route path ="/blog" >
-                <Blog/>
-            </Route>
-            <Route path ="/contact" component = {Contact}/>
-            <Route path ="/learn" component = {Learn}/>
-            <Route path = "/subscribe" component = {Subscribe} />
-            {/* <Route path = "/subscribe" component = {Subscribe} /> */}
-            <Route path = "/addPost" component = {AddPost} />
-            <Route path = "/editPost" component = {EditPost} />
+      <Switch>
+        <Route path="/admin" exact  component = {Dashboard}/>
+        <Route path ="/adminblog" component={Blog} >
+            
+        </Route>
+        <Route path ="/admincontact" component = {Contact}/>
+        <Route path ="/adminlearn" component = {Learn}/>
+        <Route path = "/adminsubscribe" component = {Subscribe} />
+        {/* <Route path = "/subscribe" component = {Subscribe} /> */}
+        <Route path = "/adminaddPost" component = {AddPost} />
+        <Route path = "/admineditPost" component = {EditPost} />
 
-            <Route path = "/addLearn" component = {AddLearn} />
-            <Route path = "/editLearn" component = {EditLearn} />
-
-
-        </Switch>        
+        <Route path = "/adminaddLearn" component = {AddLearn} />
+        <Route path = "/admineditLearn" component = {EditLearn} />
+      </Switch>        
     )
 }
 

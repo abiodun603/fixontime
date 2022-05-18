@@ -14,22 +14,22 @@ export default [
     },
     {
         "display_name": "Blog",
-        "route": "/blog",
+        "route": "/adminblog",
         "icon":<BiWorld/>
     },
     {
         "display_name": "Contact",
-        "route": "/contact",
+        "route": "/admincontact",
         "icon":<AiFillMessage/>
     },
     {
         "display_name": "E-Learning",
-        "route": "/learn",
+        "route": "/adminlearn",
         "icon":<AiFillYoutube/>
     },
     {
         "display_name": "Subcribe",
-        "route": "/subscribe",
+        "route": "/adminsubscribe",
         "icon":<FaEnvelope/>
     },
 ]

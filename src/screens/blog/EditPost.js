@@ -10,9 +10,16 @@ import ScrollTextArea from "../../components/scrollTextarea/ScrollTextArea"
 import FormCard from "../../components/form-card/FormCard"
 import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
 import swal from "sweetalert"
+import { useForm } from '../../hooks/useForm';
+
 
 const EditPost = (props) => {
     const [selectedFile, setSelectedFile] = useState(null)
+    const [values, handleChange] = useForm({
+      title: "",
+      content: ""
+  });
+    
     const [value , setValue] = useState({
         title: "",
         content: ""
@@ -20,7 +27,7 @@ const EditPost = (props) => {
     const history = useHistory();
     const {
       params: { id },
-    } = useRouteMatch("/editPost/:id");
+    } = useRouteMatch("/admineditPost/:id");
 
     function handle(e){
         const newValue = {...value}
@@ -28,25 +35,40 @@ const EditPost = (props) => {
         setValue(newValue)
     }
 
-    const handleSubmit =  (e) => {
+ 
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(value);
+        // console.log(values)
+
+        const token = JSON.parse(localStorage.getItem("user")).data.token;
 	    	const url =  "https://v1.api.seenergysolutions.org/api/posts/" + id;
         const formData = new FormData();
-        formData.append("title", value.title);
-        formData.append("content", value.content);
-        formData.append("category_id", "2");
-        formData.append("slug", "post updated");
+        formData.append("title", values.title);
+        formData.append("content", values.content);
+        formData.append("category_id", 2);
         formData.append("image", selectedFile);
+        formData.append("_method", "PUT")
 
-        axios.put(
+        // console.log(selectedFile);
+        for (var value of formData.values()) {
+          console.log(value);
+       }
+
+        await axios.post(
             url ,
             formData,
-			{
-				headers: {
-				 "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
-			}}
-        ).then(response => {
+        {
+          headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: "Bearer " + token
+        },
+        validateStatus : status => {
+          return true;
+        }
+      }
+        ).then(res => {
+          console.log(res)
             swal({
                 title: "Are you sure?",
                 text: "Blog post have been up successfully",
@@ -55,7 +77,7 @@ const EditPost = (props) => {
                 dangerMode: true,
               }).then((willDelete) => {
                 if (willDelete) {
-                    history.push("/blog")
+                    history.push("/adminblog")
                 } else {
                   swal("Your imaginary file is safe!");
                 }
@@ -66,18 +88,18 @@ const EditPost = (props) => {
             })
     }
 
-    useEffect(() => {
-            axios.get("https://v1.api.seenergysolutions.org/api/posts/" + id,
-                {
-                    headers: {
-                        "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
-                    }
-                }
-            ).then((res) => {
-                console.log(res.data)
-                setValue(res.data)
-            })        
-    }, [id])  //take note of this 
+    // useEffect(() => {
+    //         axios.get("https://v1.api.seenergysolutions.org/api/posts/" + id,
+    //             {
+    //                 headers: {
+    //                     "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+    //                 }
+    //             }
+    //         ).then((res) => {
+    //             console.log(res.data)
+    //             setValue(res.data)
+    //         })        
+    // }, [id])  
     return (
         <>
              <Header
@@ -97,8 +119,8 @@ const EditPost = (props) => {
                         placeholder = ""
                         name = "title"
                         required
-                        value = {value.title}
-                        onChange = {(e) => handle(e)}
+                        value = {values.title}
+                        onChange = {handleChange}
                         style={{background: "#FFFFFF"}}
                     />
                 </FromBx>
@@ -113,8 +135,8 @@ const EditPost = (props) => {
                 <FromBx>
                     <span>Blog text</span>
                     <ScrollTextArea
-                        value = {value.content}
-                        onChange = {(e) => handle(e)}
+                        value = {values.content}
+                        onChange = {handleChange}
                     />
                 </FromBx>
                 <div style={{marginTop: 40}}></div>

@@ -88,7 +88,7 @@ function Home(props) {
       const handleSubmit = (e) => {
         e.preventDefault();
          // const history = useHistory()
-        const url =  "https://fixontime.herokuapp.com/subscriptions"
+        const url =  "https://v1.api.seenergysolutions.org/api/subscriptions"
         const data = {
             email: values.email,
         }

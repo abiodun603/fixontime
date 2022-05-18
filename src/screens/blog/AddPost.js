@@ -15,7 +15,6 @@ const AddPost = () => {
     const [values, handleChange] = useForm({
         title: "",
         content: "",
-        cat: ""
     })
     const [selectedFile, setSelectedFile] = useState(null)
 

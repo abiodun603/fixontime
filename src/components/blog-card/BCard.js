@@ -29,7 +29,7 @@ const BCard = (props) => {
                         </div>
                         <div className="news__card__body">
                             <p className="news__card__title">{props.title}</p>
-                            <p className="news__card__time">{props.date}</p>
+                            {/* <p className="news__card__time">{props.date}</p> */}
                         </div>
                     </div>
                 </div>

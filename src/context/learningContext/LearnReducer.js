@@ -26,6 +26,7 @@ export const LearnReducer = (state, action) => {
             }
         case "DELETE_LEARN_SUCCESS": 
             return {
+                ...state,
                 learns: state.learns.filter((learn) => learn.id !== action.payload),
                 isFetching: false,
                 error: false

@@ -29,7 +29,7 @@ const Learn = () => {
 
     const handleUpdate = (id) => {
         console.log(id)
-        history.push(`/editLearn/${id}`)
+        history.push(`/admineditLearn/${id}`)
     }
 
     const handleClose = () => {
@@ -46,20 +46,20 @@ const Learn = () => {
            <Header
                 header = "E-Learning"
                 title = "Add New Post"
-                onClick = {() => history.push("/addLearn")}
+                onClick = {() => history.push("/adminaddLearn")}
             />
             <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
                 {
-                  learns.length > 0 ?  learns.map((item, index) => (
+                  learns && learns.length > 0 ?  learns.map((item, index) => (
                         <div key = {index}>
-                            <VideoFrame
-                                image = {item.thumbnail}
-                                url = {item.url}
-                                title= {item.title}
-                                date = {formatter.format(new Date(item.created_at))}
-                                onEdit = {() => handleUpdate(item.id)}
-                                onDelete = {()  => handleDelete(item.id)}
-                            />
+                          <VideoFrame
+                            image = {item.thumbnail}
+                            url = {item.url}
+                            title= {item.title}
+                            date = {formatter.format(new Date(item.created_at))}
+                            onEdit = {() => handleUpdate(item.id)}
+                            onDelete = {()  => handleDelete(item.id)}
+                          />
                         </div>
                     )) : (
                       <div><h1>No Data</h1></div>

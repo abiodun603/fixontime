@@ -6,7 +6,6 @@ import {SidebarWrapper, SidebarLogo, SideBarItemWrapper,
 import sidebar_items from "../../assets/JsonData/sidebar_routes"
 import {Link} from 'react-router-dom'
 import authLogo from "../../assets/image/auth/authLogo.svg"
-import { BannerLogo } from '../../screens/login/Login__element.js'
 const SideBarItem = props => {
     const active  = props.active ? "active" : ""
     return (

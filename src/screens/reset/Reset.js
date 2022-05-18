@@ -26,7 +26,7 @@ const Reset = () => {
         console.log(values.password)
         await axios({
             method: "post",
-            url: "https://fixontime.herokuapp.com/auth/reset-password",
+            url: "https://v1.api.seenergysolutions.org/api/forgot_password",
             data: {
                 email: emailReset,
                 token: resetToken,

@@ -23,18 +23,20 @@ const Subscribe = () => {
     }
 
     useEffect(() => {
-        axios.get("https://fixontime.herokuapp.com/subscriptions",
+        axios.get("https://v1.api.seenergysolutions.org/api/subscriptions",
                 {
                 headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
                 }
             }
         ).then((res) => {
             console.log(res.data)
             // values.title = res.data.title
-            setData(res.data)
+            setData(res.data.data)
         }) 
     }, [])
+
+    console.log(data)
 
     const handleDelete = async(ids,e) =>  {
         e.preventDefault();
@@ -47,7 +49,7 @@ const Subscribe = () => {
             }
         )
         setData(data.filter((item) => item.id !== ids));
-        // console.log(res.data);
+        console.log(data);
     }
     return (
         <>

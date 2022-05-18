@@ -12,8 +12,11 @@ const Layout = () => {
     const handleResize = () => {
       if(window.innerWidth < 1065) {
         setMobile(false);
+        setSidebar(false)
+      } else if(window.innerWidth > 1065) {
+        setSidebar(true)
       }else {
-       setMobile(false);
+      //  setMobile(false);
        setSidebar(false);
       }
     }

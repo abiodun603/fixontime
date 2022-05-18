@@ -18,7 +18,7 @@ const Signup = () => {
 
         await axios({
             method: "post",
-            url: "https://fixontime.herokuapp.com/auth/forgot-password",
+            url: "https://v1.api.seenergysolutions.org/api/forgot_password",
             data: {
                 email: values.email,
             }
@@ -34,6 +34,7 @@ const Signup = () => {
               }).then((willDelete) => {
                 if (willDelete) {
                     history.push("/learn")
+                    
                 } else {
                   swal("Your imaginary file is safe!");
                 }

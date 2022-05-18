@@ -8,6 +8,7 @@ export const BlogReducer = (state, action) => {
             };
         case "GET_BLOG_SUCCESS":
             return {
+                ...state,
                 blogs: action.payload,
                 isFetching:  false,
                 error: false
@@ -25,7 +26,10 @@ export const BlogReducer = (state, action) => {
                 error: false
             }
         case "DELETE_BLOG_SUCCESS": 
+           console.log(action.payload);
+
             return {
+                ...state,
                 blogs: state.blogs.filter((blog) => blog.id !== action.payload),
                 isFetching: false,
                 error: false
