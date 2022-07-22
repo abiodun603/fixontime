@@ -23,6 +23,7 @@ export const login = async (user, dispatch, setErrMsg,errRef, setSuccess) => {
         setSuccess(false)
     })
     }catch(err){
+      console.log(err);
       if(!err?.response){
           setErrMsg("No Server Response");
           setSuccess(false)
@@ -39,10 +40,13 @@ export const login = async (user, dispatch, setErrMsg,errRef, setSuccess) => {
       else if(err.response?.status === 422){
         setErrMsg("User with this email does not exist");
         setSuccess(false)
+        console.log(err);
+
 
       }else{
-        setErrMsg('Login Failed')
-        setSuccess(false)
+        // setErrMsg('Login Failed')
+        setSuccess(false);
+        console.log(err);
 
       }
       // errRef.current.focus();

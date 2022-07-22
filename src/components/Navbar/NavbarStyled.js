@@ -7,6 +7,7 @@ import { COLORS,SIZES } from "../../constant";
 export const NavContainer = styled.div`
     height:110px;
     position: sticky;
+    z-index:100;
     top: 0;
     z-index: 10;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 19.27%, rgba(255, 255, 255, 0.51) 100%);
@@ -30,7 +31,7 @@ export const NavContainer = styled.div`
         width: 250px;
         height: 100vh;
         background: ${COLORS.blue};
-        z-index: 1000;
+        z-index: 100000 !important;
         display:flex;
         flex-direction: column;
     }
@@ -218,10 +219,17 @@ export const ClockText = styled.div`
 export const SocialIcon = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
     color: #fff;
+    gap: 20px;
 
     @media screen and (max-width: 735px){
-        font-size: 14px;
+        font-size: 10px;
+    }
+
+    .insta{
+      display: block;
+      font-size: 1.3rem;
     }
 `;
 
@@ -257,14 +265,11 @@ export const NavSection = styled.div`
     display: flex;
     flex-direction: row;
     height: 100%;
+    width: 100%;
     @media screen and (max-width: 687px){
-        justify-content: space-between;
-
-        
+      justify-content: space-between;
     }
-    
-  
-    
+
 `;
 export const NavHamBar = styled(FaBars)`
     font-size: 20px;
@@ -272,6 +277,7 @@ export const NavHamBar = styled(FaBars)`
     margin-top: 20px;
     display: none;
     cursor:pointer;
+    z-index: 1000;
    
         @media screen and (max-width: 1172px){
                 display: block;
@@ -288,7 +294,19 @@ export const NavHamBar = styled(FaBars)`
 export const LogoBar = styled.div`
     margin-right: 89px;
     display:flex;
-    
+    @media screen and (max-width: 486px){
+      display :flex;
+      flex-grow: 1;
+      flex: 1;
+      align-items: center;
+      width: 100% !important;
+      justify-content: center;
+      justify-self: center;
+      align-self: center;
+      margin: 0 auto;
+      margin-left: -20px;
+
+    }
 
 
    
@@ -303,8 +321,10 @@ export const LogoImage = styled.img`
     height: 46px;
     margin-top: 9px;
     margin-bottom: 9px;
-    
 
+    @media screen and (max-width: 486px){
+      margin-left: -5px !important;
+    }
 `;
 
 export const NavList = styled.div`
@@ -382,11 +402,18 @@ export const NavLinks = styled(Link)`
 
 export const NavReq = styled(Link)`
     height: 100%;
+    width: 180px;
     display: flex;
     flex-direction: row;
     background: ${COLORS.red};
-    padding: 25px 22px;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+
+    .flex {
+      display: flex;
+      align-items: center;
+    }
 
     @media screen and (max-width: 1172px){
         display: none;
@@ -399,7 +426,7 @@ export const ReqText = styled.h5`
     color: #fff;
     font-family: Roboto;
     font-weight: bold;
-    margin-right: 20px;
+    margin-right: 15px;
     
 `;
 

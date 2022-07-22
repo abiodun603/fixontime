@@ -172,45 +172,19 @@ export const HomeCompanyLogo = styled.div`
     justify-content:center;
     align-items: center;
     padding: 22px 0;
-    // .npower{
-    //     height: 17px;
-    // }
+    gap: 60px;
+
     img{
-        // width: auto;
-        @media screen and (max-width: 600px){
-            width:100px;
-        }
-        @media screen and (max-width: 455px){
-            width:50%;
-            height: auto;
-            margin:0 auto !important;
+      width: 150px;
 
-            img{
-                margin: 0 !important;
-            }
-
-            img:nth-child(1) {
-                margin-left: 1rem !important;
-             }
-        }
-
-        img:nth-child(2) {
-           height: auto;
-        }
-    }
-    img:nth-child(2) {
-        margin:0 67px;
+      @media screen and (max-width: 468px){
+        gap: 10px !important;
+      }
     }
 
-    img:nth-child(1) {
-        margin:0 67px;
+    @media screen and (max-width: 468px){
+     padding: 22px 1rem;
     }
-
-    img:nth-child(3) {
-        margin:0 67px;
-    }
-
-
 `;
 
 export const HomeAbout = styled.div`
@@ -233,7 +207,7 @@ export const HomeAbout = styled.div`
 
 export const HomeAboutTitle = styled.div`
     font-weight: 600;
-    font-size: 48px;
+    font-size: 38px;
     max-width:990px;
     line-height: 132.69%;
     text-align: center;

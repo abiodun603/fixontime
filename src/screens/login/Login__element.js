@@ -136,6 +136,21 @@ export const Input = styled.input.attrs(props => ({
     background: transparent;
 `
 
+export const InputPassword = styled.input.attrs(props => ({
+  type: 'password',
+
+})) `
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 20px;
+  background: var(--kLightGrey);
+  border: 2px solid #D0D0D0;
+  outline: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background: transparent;
+`
+
 export const InputCheck = styled.input.attrs(props => ({
     type: "checkbox"
 }))` `

@@ -11,10 +11,12 @@ const Layout = () => {
   useEffect(() => {    
     const handleResize = () => {
       if(window.innerWidth < 1065) {
-        setMobile(false);
+        setMobile(true);
         setSidebar(false)
+
       } else if(window.innerWidth > 1065) {
         setSidebar(true)
+        // setMobile(false)
       }else {
       //  setMobile(false);
        setSidebar(false);
@@ -27,12 +29,17 @@ const Layout = () => {
       window.removeEventListener("resize", handleResize);
 
     }
-  }, [])
+  }, [setSidebar, setMobile])
 
   useEffect(() => {
-    if(window.innerWidth < 1065) {
+    if(window.innerWidth < 768) {
       setMobile(true);
     }
+
+    if(window.innerWidth > 1067) {
+      setSidebar(true);
+    }
+
   
   }, [])
     return (
@@ -58,3 +65,4 @@ const Layout = () => {
 }
 
 export default Layout
+// title: "Subscription Successfull",

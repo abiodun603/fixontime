@@ -1,12 +1,22 @@
 import styled from 'styled-components'
 import BlogDetails from './blogDetails'
+import glass from "../../assets/image/banner/blogglass.png"
+import blog from "../../assets/image/banner/blog.png"
+
 
 export const BlogLand = styled.div `
-    height: 250px;
+    height: 320px;
+    background-image: url(${glass}), url(${blog});
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 1rem;
+
+    .upanddown {
+      margin: 3rem 0;
+    }
+
 
     h1{
         font-weight: 600;
@@ -242,9 +252,11 @@ export const BlogDetailsContainer = styled.div `
     }
 
     .addComment {
-        .commentDiv {
+      height: 100% !important;
+        .commentDiv
+         {
             width: 100%;
-            height: 366px;
+            // height: 366px;
             background: #F9F9F9;
             border: 0.5px solid #D0D0D0;
             border-radius: 6px;

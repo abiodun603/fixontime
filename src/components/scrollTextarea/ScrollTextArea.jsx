@@ -8,6 +8,7 @@ const ScrollTextArea = (props) => {
                 className="textarea"
                 id="textarea"
                 name ="content"
+                placeholder= {props.placeholder}
                 rows= "6"
                 // cols = "37"
                 value = {props.value}

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import HeadFoot from '../../components/HeadFoot'
 import {ContactLand, BlogBanner, BlogForm, BlogWrapper,FormWrapper, FromBx, Input,Button, Textarea, Contact, ContactDesc, WorkContainer, WorkTitle, WorkHourContainer, WorkHour, WorkWrapper} from "./StyledContact"
 import address from "../../assets/image/contact/address.svg"
@@ -10,8 +10,11 @@ import {HiOutlineArrowNarrowRight} from "react-icons/hi";
 import { useForm } from '../../hooks/useForm';
 import axios from "axios"
 import swal from "sweetalert";
+import { Puff } from 'react-loading-icons'
+import contactBanner from "../../assets/image/banner/contact.png"
 
 const ContactPage = (props) => {
+  const [loading, setLoading] = useState(false)
     useEffect(() => {
         props.setSidebar(false);
     },[]);
@@ -25,10 +28,11 @@ const ContactPage = (props) => {
         message: ""
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
          // const history = useHistory()
-        const url =  "https://fixontime.herokuapp.com/contacts";
+        const url =  "https://v1.api.seenergysolutions.org/api/contacts";
         const data = {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -37,11 +41,16 @@ const ContactPage = (props) => {
             subject: values.subject,
             message: values.message,
         }
-         axios.post(
+        await axios.post(
              url ,
              data,
+             {
+               header: {
+                 "Content-Type": "application/json"
+               }
+             }
          ).then(response => {
- 
+            setLoading(false);
              console.log(response.data)
             //  alert("update successfully")
              swal({
@@ -60,15 +69,6 @@ const ContactPage = (props) => {
              .catch(err => {
                  console.log(err)
              })
-
-             swal({
-                title: "Message Recieved",
-                text: "We will get in touch with you as soon as possible",
-                icon: "success",
-                confirmButtonColor: '#030762',
-                buttons: true,
-                dangerMode: true,
-              })
     }
 
     return (
@@ -77,6 +77,7 @@ const ContactPage = (props) => {
                 <ContactLand>
                     <h1>Contact Us</h1>
                     <p>Need help with something? Reach out to us!</p>
+                    <img src={contactBanner} alt = "" className='contactBanner'/>
                 </ContactLand>
 
                 <BlogWrapper>
@@ -109,17 +110,17 @@ const ContactPage = (props) => {
                                 </span>
                                 <p>Email</p>
                             </ContactDesc>  
-                            <p>info@fixontime.com</p>
+                            <a  href = "mailto: info@fixontime.com" target="_blank" rel="noopener noreferrer" style={{cursor: "pointer"}}>info@fixontime.com</a>
                         </Contact>
                         <Contact>
                             <ContactDesc>
                                 <span>
                                     <img src={customer} alt="" />
                                 </span>
-                                <p>Customer Support</p>
+                                <a  href = "mailto: info@fixontime.com" target="_blank" rel="noopener noreferrer" style={{cursor: "pointer"}}>Customer Support</a>
                             </ContactDesc>  
                             <a 
-                                href="https://wa.me/+234 8035328274"
+                                href="https://wa.me/+2348035328274"
                                 target = "_blank"
                                 rel = "nooperner noreferrer"
                             >
@@ -202,8 +203,15 @@ const ContactPage = (props) => {
                             </FromBx>
 
                             <FromBx>
-                                <Button type = "submi">Submit Request
-                                    <HiOutlineArrowNarrowRight/>
+                                <Button type = "submi">
+                                  {!loading ? (
+                                    <>
+                                      Submit Request
+                                      <HiOutlineArrowNarrowRight/>
+                                    </>
+                                  ) : <Puff/>}
+
+                                    
                                 </Button>
                             </FromBx>
                         </BlogForm>
@@ -243,7 +251,7 @@ const Work = () => {
 
                         <WorkHour>
                             <span>Emergency on call basis</span>
-                            <p>24hr/7days</p>
+                            <p>24hrs/7days</p>
                         </WorkHour>
                     </WorkHourContainer>
                 </WorkContainer>

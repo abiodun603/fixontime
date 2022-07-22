@@ -1,8 +1,72 @@
 import styled from "styled-components";
-import { SIZES } from "../../constant";
+import { COLORS, SIZES } from "../../constant";
+import glass from "../../assets/image/banner/serviceglass.png"
+import service from "../../assets/image/banner/services__header.svg"
 export const ServiceContainer = styled.div`
     position: relative;
+
+    .gridCard {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 10px;
+    }
 `;
+
+export const ServiceLandingPage = styled.div `
+  display: flex;
+  height: 300px;
+  background-image: url(${service});
+  background-position: right bottom, left top;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  margin-bottom: 2rem;l
+  @media screen and (max-width: 1086px){
+      align-items: flex-end;
+  }
+
+  @media screen and (max-width:876px){
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  @media screen and (max-width:468px){
+    padding: 0 2rem;
+  }
+
+  .right{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    h4{
+      font-weight: 600;
+      color: ${COLORS.blue};
+      margin-bottom: 1rem;
+      font-size: 40px;
+    
+      @media screen and (max-width: 1320px){
+          font-size:${SIZES.h4};
+      }
+  
+      @media screen and (max-width: 468px){
+         font-size: 26px;
+         font-weight: 600;
+         margin-bottom: .7rem;
+      }
+    }
+
+    p{
+      font-size: 16px;
+      font-weight: 400;
+      color: ${COLORS.lightgray};
+      max-width: 604px;
+    }
+  }
+  
+
+`
 
 export const ServiceContent = styled.div`
     display: flex;
@@ -10,24 +74,8 @@ export const ServiceContent = styled.div`
     width: 100%;
     height: 100%;
 
-    .hero_section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // align-self:center;
-        margin: 93px 0;
-        width: 100%;
-    } 
-    .hero_title{
-        font-weight: 600;
-        font-size: 48px;
-        text-align: center;
-        color: #030762;
+    
 
-        @media screen and (max-width:600px){
-           font-size:36px;
-        }
-    }
 
     .hero_subtitle{
         align-self: center;

@@ -7,8 +7,9 @@ import BCard from '../../components/blogcard/BCard'
 import { BlogContext } from '../../context/blogContext/BlogContext'
 import { getBlog } from '../../context/blogContext/apiCalls'
 import { CircularProgress } from '@mui/material';
-
+import {useHistory} from "react-router-dom"
 function Blog(props) {
+  const history = useHistory();
     const {blogs, dispatch} = useContext(BlogContext)
 
     const formatter = new Intl.DateTimeFormat("en-GB", {
@@ -25,33 +26,48 @@ function Blog(props) {
         props.setSidebar(false);
     },[]);
 
+    const handleUpdate = (id) => {
+      history.push(`/blogDetails/${id}`)
+  }
+
     return (
         <>
             <HeadFoot {...props}>
                 <BlogLand>
-                    <h1>The FixOnTime Blog</h1>
-                    <p>Actionable tips. Curated for you.</p>
-                    <div className='searchContainer'>
-                        <Input type="text" placeholder="Search" style={{background: "#F9F9F9"}}/>
-                        <FiSearch className='searchIcon'/>
-                    </div>
+                  <h1>The FixOnTime Blog</h1>
+                  <p>Actionable tips. Curated for you.</p>
+                  <div className='searchContainer'>
+                    <Input type="text" placeholder="Search" style={{background: "#F9F9F9"}}/>
+                    <FiSearch className='searchIcon'/>
+                  </div>
                 </BlogLand>
-                <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}>
-                {   
-                    blogs && blogs.length > 0 ?
-                    blogs.map((item, index) => (
-                            <div key = {index}>
-                                <BCard
-                                    src = {item.image}
-                                    title= {item.title}
-                                    content = {item.content}
-                                    date= {formatter.format(new Date(item.created_at))}
-                                />
-                           </div>
-                       )
-                   ) : <CircularProgress color="inherit"  sx={{ display: 'flex' }}/> 
-                }
-            </div>
+                <div style={{margin: "3rem 0"}}>
+                  <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}>
+                    {   
+                        blogs && blogs.length > 0 ?
+                        blogs.map((item, index) => (
+                          <div key = {index}>
+                            <BCard
+                              src = {item.image}
+                              title= {item.title}
+                              content = {item.content}
+                              date= {formatter.format(new Date(item.created_at))}
+                              onClick = {()  => handleUpdate(item.id)}
+                            />
+                          </div>
+                        )
+                      ) :(
+                          // <CircularProgress color="inherit"  sx={{ display: 'flex' }}/>
+                          (
+                            <div className="no__post">
+                              Blog post coming soon
+                            </div>
+                          )
+                        )
+                    }
+                  </div>
+                </div>
+                
             </HeadFoot>
         </>   
     )

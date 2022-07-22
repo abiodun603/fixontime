@@ -9,6 +9,7 @@ import Learn from "./learn/Learn"
 import AddLearn from "./learn/AddLearn"
 import EditLearn from "./learn/EditLearning"
 import Contact from "./contact/Contact"
+import ContactView from "./contact/ContactView"
 import Subscribe from "./subscribe/Subscribe"
 
 export  {

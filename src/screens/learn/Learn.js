@@ -43,30 +43,31 @@ const Learn = () => {
 
     return (
         <>
-           <Header
-                header = "E-Learning"
-                title = "Add New Post"
-                onClick = {() => history.push("/adminaddLearn")}
-            />
-            <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
-                {
-                  learns && learns.length > 0 ?  learns.map((item, index) => (
-                        <div key = {index}>
-                          <VideoFrame
-                            image = {item.thumbnail}
-                            url = {item.url}
-                            title= {item.title}
-                            date = {formatter.format(new Date(item.created_at))}
-                            onEdit = {() => handleUpdate(item.id)}
-                            onDelete = {()  => handleDelete(item.id)}
-                          />
-                        </div>
-                    )) : (
-                      <div><h1>No Data</h1></div>
-                    )
-                }
-                {/* <VideoFrame/> */}
-            </div>
+          <Header
+            header = "E-Learning"
+            title = "Add New Post"
+            onClick = {() => history.push("/adminaddLearn")}
+          />
+          <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
+            {
+              learns && learns.length > 0 ?  learns.map((item, index) => (
+                <div key = {index}>
+                  <VideoFrame
+                    image = {item.thumbnail}
+                    url = {item.url}
+                    title= {item.title}
+                    date = {formatter.format(new Date(item.created_at))}
+                    onEdit = {() => handleUpdate(item.id)}
+                    onDelete = {()  => handleDelete(item.id)}
+                  />
+                </div>
+              )) : (
+                <div style={{display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto"}}>
+                  <h1> No e-learning post available</h1>
+                </div>
+              )
+            }
+          </div>
         </>
     )
 }

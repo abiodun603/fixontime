@@ -20,7 +20,8 @@ export const solutionCarousel = [
         image: "servicpic.svg",
         title: "Electrical Installations",
         subtitle: "You cannot afford to have installations done wrong. Do not put your personnel, equipment, and entire distribution network in the hands of amateurs. Work with our experts to implement your projects up to 330KV Substation installations. ",
-        subtitle2:'We have comprehensive training on how to install state-of-the-art electrical equipment.'    
+        subtitle2:'We have comprehensive training on how to install state-of-the-art electrical equipment.'    ,
+        link: ""
     }
 ]
 
@@ -31,17 +32,18 @@ export const Nojaproducts = [
         name: "OSM 38 Three Phase (33kV)",
         manufacturer: "Noja Power",
         image: "nojaproduct/osm_three.svg",
-        desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
-        add : ["The World’s Only Arc Fault Vented Solid Dielectric Recloser" , "Designed for a maintenance free life" , "Supported by an international network of Technical Staff" , "Ganged ultra-fast magnetic actuators to provide additional operator safety" , "Hot Line Tag functionality and Mechanical trip interlock directly connected to the OSM tank’s operating mechanism" ," Unique and seamless NOJA Power Android and iOS App enhances linesmen comfort and safety" , "Internal double pole position indicator micro switches for added reliability" , "Triple shielded, water blocked and metal conduit protected control cable with military grade IP65  rated connectors" , "Grey powder coated tank to prevent drivers from being blinded by the sunlight reflecting on  the tank" ," Only 3 electronic modules in total that can be replaced within 5 minutes with a simple screwdriver" , "Remote and quick firmware upgrades to keep up with the industry changes over time"]
-
+        desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
+        add : ["The World’s Only Arc Fault Vented Solid Dielectric Recloser" , "Designed for a maintenance free life" , "Supported by an international network of Technical Staff" , "Ganged ultra-fast magnetic actuators to provide additional operator safety" , "Hot Line Tag functionality and Mechanical trip interlock directly connected to the OSM tank’s operating mechanism" ," Unique and seamless NOJA Power Android and iOS App enhances linesmen comfort and safety" , "Internal double pole position indicator micro switches for added reliability" , "Triple shielded, water blocked and metal conduit protected control cable with military grade IP65  rated connectors" , "Grey powder coated tank to prevent drivers from being blinded by the sunlight reflecting on  the tank" ," Only 3 electronic modules in total that can be replaced within 5 minutes with a simple screwdriver" , "Remote and quick firmware upgrades to keep up with the industry changes over time"],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/noja/download"
     },
     {
         id: 2,
         name: "OSM 15 Three Phase (11kV)",
         manufacturer: "Noja Power",
         image: "nojaproduct/small.png",
-        desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
-        add: ["Class Defining Current and Voltage Sensors, included on both load and source side of the devi as standa" , "Full Automation, Logic and Synchronising Feeder Capability as stand" , "Over 100 different protection features, from the simplest Overcurrent and Earth Fault Protecti through to Admittance, Fault Locator and Harmonic Protect" , "No Active Electronics in the Recloser Tank – Providing exceptional surge immunity and reliability"]
+        desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
+        add: ["Class Defining Current and Voltage Sensors, included on both load and source side of the devi as standa" , "Full Automation, Logic and Synchronising Feeder Capability as stand" , "Over 100 different protection features, from the simplest Overcurrent and Earth Fault Protecti through to Admittance, Fault Locator and Harmonic Protect" , "No Active Electronics in the Recloser Tank – Providing exceptional surge immunity and reliability"],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/noja/download"
 
     },
     {
@@ -57,7 +59,9 @@ export const Nojaproducts = [
             , "The worlds’ highest resolution SEF feature at 200mA minimum pickup*"
             , "Advanced Voltage, Current and Composite Protection such as Broken Conductor, Admittance and Harmonic Protection"
             , "Complete suite of Power Quality Monitoring and logging tools included as Standard."
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/noja/download"
+
 
     },
     {
@@ -65,7 +69,8 @@ export const Nojaproducts = [
         name: "GMK-1000",
         manufacturer: "Noja Power",
         image: "nojaproduct/gmk_1000.svg",
-        desc: "The Compact GMK 1000 Series offers a protection solution for underground cables using Solid Dielectric Insulation and Vacuum Interruption, with zero SF6 gas. A comprehensive suite of protection functionality is equipped as standard, delivered by the NOJA Power RC10, RC15 or RC20 control system built into the arrangement. Factory tested, the compact GMK provides simple commissioning ensuring correct operation between Primary and Secondary systems with minimal wiring on site."
+        desc: "The Compact GMK 1000 Series offers a protection solution for underground cables using Solid Dielectric Insulation and Vacuum Interruption, with zero SF6 gas. A comprehensive suite of protection functionality is equipped as standard, delivered by the NOJA Power RC10, RC15 or RC20 control system built into the arrangement. Factory tested, the compact GMK provides simple commissioning ensuring correct operation between Primary and Secondary systems with minimal wiring on site.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/noja/download"
 
     },
     {
@@ -73,7 +78,9 @@ export const Nojaproducts = [
         name: "GMK-2000",
         manufacturer: "Noja Power",
         image: "nojaproduct/gmk_2000.svg",
-        desc: "The 2000 Series GMK is a modular switchgear platform, building on the core architecture of a NOJA Power OSM Recloser system with RC control for Ground Mount Applications. Custom options include Revenue Metering, Differential Protection, Interlocked Earth Switch or Power Quality Metering."
+        desc: "The 2000 Series GMK is a modular switchgear platform, building on the core architecture of a NOJA Power OSM Recloser system with RC control for Ground Mount Applications. Custom options include Revenue Metering, Differential Protection, Interlocked Earth Switch or Power Quality Metering.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/noja/download"
+
     }
 ];
 
@@ -84,7 +91,7 @@ export const Lucyproducts = [
         name: "Up to 24 kV Side & Rear Cable Entry RMU",
         manufacturer: "Lucy Electric",
         image: "lucyproduct/slide_rear_cable.svg",
-        
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
     },
     {
         id: 2,
@@ -107,7 +114,8 @@ export const Lucyproducts = [
             , "Integrated RTU for easy SCADA connection, with optional automatic transfer scheme (ATS)"
             , "Fully interlocked, anti-reflex mechanisms with padlocks"
             , "Maintenance free with 30 years life expectancy"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
 
     },
     {
@@ -131,7 +139,8 @@ export const Lucyproducts = [
             , "Integrated RTU for easy SCADA connection, with optional automatic transfer scheme (ATS)"
             , "Fully interlocked, anti-reflex mechanisms with padlocks"
             , "Maintenance free with 30 years life expectancy"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
 
     },
     {
@@ -154,7 +163,8 @@ export const Lucyproducts = [
             , "IP54 for outdoor installation without requiring a kiosk"
             , "Seamless integration with SCADA network  for remote operation and control"
             ," Maintenance free with 30 years life expectancy"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
 
     },
     {
@@ -176,7 +186,9 @@ export const Lucyproducts = [
         ," Seamless integration with SCADA network for remote operation and control"
         , "IP54 for outdoor installation without requiring a kiosk"
         ," Maintenance free with 30 years life expectancy"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -197,7 +209,9 @@ export const Lucyproducts = [
         ," Optional earth blades"
         ," Can be fitted with expulsion fuses (vertical mounting only)"
         , "Enhanced dielectric values"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -215,7 +229,9 @@ export const Lucyproducts = [
             , "Double side break"
             , "Optional integral earth blades either or both sides"
             , "Manual or motor operation"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
     },
     {
         id: 8,
@@ -228,7 +244,9 @@ export const Lucyproducts = [
             , "Current rating: 400A"
             , "Short time current: 16kA / 3sec at 12kV; 12.5kA / 3sec at 36kV"
             , "Integral connector terminals suitable for conductor sizes up to 19mm diameter"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
     },
     {
         id: 9,
@@ -241,8 +259,8 @@ export const Lucyproducts = [
              , "Current rating: 400A"
              , "Short time current: 16kA / 3sec at 12kV; 12.5kA / 3sec at 36kV"
              , "Integral connector terminals suitable for conductor sizes up to 19mm diameter"
-         ]
-
+         ],
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
     },
     {
         id: 10,
@@ -255,8 +273,9 @@ export const Lucyproducts = [
             , "Hookstick or motor operated"
             , "Suitable for single wood pole mounting (other arrangements available)"
             , "Independent spring operation ensuring consistent opening and closing times"
-        ]
-        
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
     },
     {
         id: 11,
@@ -269,7 +288,9 @@ export const Lucyproducts = [
         id: 12,
         name: "Insulated 10-way MSDB 3 phase 400 V 315 A rated",
          manufacturer: "Lucy Electric",
-         image: "lucyproduct/insulated_10way.svg"
+         image: "lucyproduct/insulated_10way.svg",
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -288,7 +309,9 @@ export const Lucyproducts = [
             , "Polyester powder coated steel enclosure"
             , "Suitable for 3C or 4C networks"
             ," Pre-drilled removable gland plates"
-         ]
+         ],
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -306,7 +329,8 @@ export const Lucyproducts = [
             ," Multi-functional digital meter with communication options"
             ," Veam Power Lock standby generator sockets with earth for emergency supply"
             , "IP34D protection for indoor and outdoor installation"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
 
     },
     {
@@ -325,13 +349,17 @@ export const Lucyproducts = [
             , "Two brass M8 pinching screws per conductor"
             , "Interlocked shrouds and covers with sealable fuse handle"
             , "Silver plated phase terminal block"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
     },
     {
         id: 16,
         name: "Three Phase Cut Outs 400V up to 100 A rated",
         manufacturer: "Lucy Electric",
-        image: "lucyproduct/horizontal_busbar.svg"
+        image: "lucyproduct/horizontal_busbar.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -351,7 +379,9 @@ export const Lucyproducts = [
         , "Sealable covers"
         , "Choice of shear off mechanical or lug incoming terminations"
         , "Choice of leader clamp, mechanical shear off or lug outgoing terminations"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -372,7 +402,9 @@ export const Lucyproducts = [
             , "Sealable covers and cable troughs with interlocked covers"
             , "Choice of shear off mechanical or lug incoming terminations"
             , "Choice of leader clamp, mechanical shear off or lug outgoing terminations"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -388,7 +420,9 @@ export const Lucyproducts = [
             , "Thumb screw operated fuse handle with brass clamps"
             , "Fixing via single coach screw"
             , "Closed cell foam cable grommets"
-         ]
+         ],
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -408,7 +442,9 @@ export const Lucyproducts = [
             , "Hinged door with restraint"
             , "Foam self-sealing cable entry gasket"
             , "Optional metal frame for mounting to concrete poles"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
@@ -426,28 +462,36 @@ export const Lucyproducts = [
             , "USB and HMI ports"
             , "Event memory – 6500 events in non-volatile memory"
             , "Optional flash SD memory card (factory fitted)"
-        ]
+        ],
+        link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
         id: 22,
         name: "Gemini 3 Mini",
          manufacturer: "Lucy Electric",
-         image: "lucyproduct/gemini_3_mini.svg"
+         image: "lucyproduct/gemini_3_mini.svg",
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
         id: 23,
         name: "Analogue Measurement Module",
          manufacturer: "Lucy Electric",
-         image: "lucyproduct/analogue_measurement.svg"
+         image: "lucyproduct/analogue_measurement.svg",
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     },
     {
         id: 24,
         name: "Package Substation",
          manufacturer: "Lucy Electric",
-         image: "lucyproduct/package_substation.svg"
+         image: "lucyproduct/package_substation.svg",
+         link: "https://v1.api.seenergysolutions.org/api/brochure/lucy-electric/download"
+
 
     }
 ];
@@ -458,7 +502,8 @@ export const Replproducts = [
         name: "RHLT (Heat Shrink Low Voltage Cable Termination)",
         manufacturer: "REPL",
         image: "replproduct/rhlt.svg",
-        desc: "For sealing and protection of indoor and outdoor low voltage 3 or 4 core cables with/without armouring"
+        desc: "For sealing and protection of indoor and outdoor low voltage 3 or 4 core cables with/without armouring",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
 
     },
     {
@@ -466,15 +511,16 @@ export const Replproducts = [
         name: "RHT-X (Heat Shrink Medium Voltage Polymeric Cable Termination up to 42kV)",
         manufacturer: "REPL",
         image: "replproduct/rht_x.svg",
-        desc: "For terminating polymeric insulated cables up to 42kV For terminating paper insulated cables up to 36kV Red anti-tracking tubes for excellent weathering protection Stress Control tubing for field control at screen cut Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs Fully tested to CENELEC HD 629 / IEC 60502-4"
-
+        desc: "For terminating polymeric insulated cables up to 42kV For terminating paper insulated cables up to 36kV Red anti-tracking tubes for excellent weathering protection Stress Control tubing for field control at screen cut Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs Fully tested to CENELEC HD 629 / IEC 60502-4",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
     },
     {
         id: 4,
         name: "RHTS (Heat Shrink Zinc Oxide Medium Voltage Cable Termination up to 24kV)",
         manufacturer: "REPL",
         image: "replproduct/rhts.svg",
-        desc: "For terminating polymeric insulated cables up to 24kV Single tube design with red anti-tracking tubes for excellent weathering protection with an internal zinc oxide (ZnO) coating providing stress control around screen cut Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs Fully tested to CENELEC HD 629"
+        desc: "For terminating polymeric insulated cables up to 24kV Single tube design with red anti-tracking tubes for excellent weathering protection with an internal zinc oxide (ZnO) coating providing stress control around screen cut Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs Fully tested to CENELEC HD 629",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
 
     },
     {
@@ -482,7 +528,8 @@ export const Replproducts = [
         name: "RCST (Cold Shrink Medium Voltage Cable Termination up to 36kV)",
         manufacturer: "REPL",
         image: "replproduct/rcst.svg",
-        desc: "For terminating polymeric insulated cables up to 36kV One piece silicon rubber body with moulded sheds and integrated stress cone Requires no heat or special tools for installation Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs"
+        desc: "For terminating polymeric insulated cables up to 36kV One piece silicon rubber body with moulded sheds and integrated stress cone Requires no heat or special tools for installation Kits can be supplied for single and three core cable designs with/without armouring Suitable for mechanical or compression cable lugs",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
 
     },
     {
@@ -490,7 +537,8 @@ export const Replproducts = [
         name: "RHSB / RHRB (Heat Shrink Insulating cable bushing boot kits)",
         manufacturer: "REPL",
         image: "replproduct/rhsb.svg",
-        desc: "Heat Shrink Insulating Boots can be used over medium voltage terminations to insulate bushings in cable boxes up to 36kV, particularly where the normal clearance between phase to phase and phase to earth is less than the required value. These boots provide protection against flashover in the event of any surge impulse, high humidity or rodent menace contact."
+        desc: "Heat Shrink Insulating Boots can be used over medium voltage terminations to insulate bushings in cable boxes up to 36kV, particularly where the normal clearance between phase to phase and phase to earth is less than the required value. These boots provide protection against flashover in the event of any surge impulse, high humidity or rodent menace contact.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
 
     },
     {
@@ -498,28 +546,36 @@ export const Replproducts = [
         name: "RCFB (Flexible Insulating cable bushing boot kits)",
         manufacturer: "REPL",
         image: "replproduct/rcfb.svg",
-        desc: "The RCFB flexible insulating boot is a cold applied system to provide increased insulation for medium voltage cable terminations. They are used in switchgear and transformer cable boxes where the air clearances are not sufficient to prevent electrical flashover due to high humidity or rodents. The boots are manufactured from a highly insulating and anti-track material with excellent weathering properties for a durable long life installation."
+        desc: "The RCFB flexible insulating boot is a cold applied system to provide increased insulation for medium voltage cable terminations. They are used in switchgear and transformer cable boxes where the air clearances are not sufficient to prevent electrical flashover due to high humidity or rodents. The boots are manufactured from a highly insulating and anti-track material with excellent weathering properties for a durable long life installation.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 8,
         name: "RSEK (Solderless Earth Kit for metallic screens)",
         manufacturer: "REPL",
         image: "replproduct/rsek.svg",
-        desc: "Sets of constant force springs and tinned copper braid to provide an earth connection from copper tape screened and armoured medium voltage cables. Kits can be used with all types of MV termination kits on single and three core cables."
+        desc: "Sets of constant force springs and tinned copper braid to provide an earth connection from copper tape screened and armoured medium voltage cables. Kits can be used with all types of MV termination kits on single and three core cables.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 9,
         name: "RBG (Bolted Cable Gland)",
         manufacturer: "REPL",
         image: "replproduct/rbg.svg",
-        desc: "The RBG range of glands are designed for use in conjunction with medium voltage terminations in cable boxes with entry hole flange stud spacing’s to BS2562. They provide a moisture seal and earth take off point and connection for the armours wires."
+        desc: "The RBG range of glands are designed for use in conjunction with medium voltage terminations in cable boxes with entry hole flange stud spacing’s to BS2562. They provide a moisture seal and earth take off point and connection for the armours wires.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 10,
         name: "RUSK (Unscreened cable termination adapter for GIS)",
         manufacturer: "REPL",
         image: "replproduct/rusk.svg",
-        desc: "The REPL Unscreened Separable Connector system is a right angled adapter designed to fit over standard MV Cable Terminations when used with equipment bushings to Type C according to EN 50180 and EN 50181. The RUSC can be easily disconnected for testing and then reconnected with standard tooling under dead break conditions"
+        desc: "The REPL Unscreened Separable Connector system is a right angled adapter designed to fit over standard MV Cable Terminations when used with equipment bushings to Type C according to EN 50180 and EN 50181. The RUSC can be easily disconnected for testing and then reconnected with standard tooling under dead break conditions",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
    
     {
@@ -527,7 +583,9 @@ export const Replproducts = [
         name: "RINS/RISB (Pole Mounted Bracket & Stand-Off Insulator Kit)",
         manufacturer: "REPL",
         image: "replproduct/rins_risb.svg",
-        desc: "The RINS and ISB are used to mount outdoor cable terminations onto poles or other suitable structures for connection onto overhead lines. RINS consist of a fibreglass core covered by a weatherproof silicone sleeve with alternative length sheds and mild steel caps at both ends with threaded mounting bars. They are used in conjunction with the RISB mounting bracket"
+        desc: "The RINS and ISB are used to mount outdoor cable terminations onto poles or other suitable structures for connection onto overhead lines. RINS consist of a fibreglass core covered by a weatherproof silicone sleeve with alternative length sheds and mild steel caps at both ends with threaded mounting bars. They are used in conjunction with the RISB mounting bracket",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
@@ -535,49 +593,63 @@ export const Replproducts = [
         name: "RPAE/RPAS (Outer Cone Screened Plug-in termination 12-24kV Interface A)",
         manufacturer: "REPL",
         image: "replproduct/rpae_rpas.svg",
-        desc : "Straight and Elbow connector for terminating polymeric insulated cables onto equipment such as transformers etc. which has standard bushing profile Type A according to the standards EN50180 & EN50181."
+        desc : "Straight and Elbow connector for terminating polymeric insulated cables onto equipment such as transformers etc. which has standard bushing profile Type A according to the standards EN50180 & EN50181.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 13,
         name: "RCL (Pre-assembled Medium Voltage Cable Loops",
         manufacturer: "REPL",
         image: "replproduct/rcl.svg",
-        desc: "The RCL pre-assembled cable loops are short lengths of medium voltage cables with a range of pre-installed termination options on both endswhich allow customers to provide permanent or temporary connections"
+        desc: "The RCL pre-assembled cable loops are short lengths of medium voltage cables with a range of pre-installed termination options on both endswhich allow customers to provide permanent or temporary connections",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 14,
         name: "RICP (Inner Cone Plug-in termination 12-36kV) ",
         manufacturer: "REPL",
         image: "replproduct/rhlt_heat.jpg",
-        desc: "Cable termination plugs for connecting medium voltage cables to equipment with inner cone bushings according to EN50180 & EN50181"
+        desc: "Cable termination plugs for connecting medium voltage cables to equipment with inner cone bushings according to EN50180 & EN50181",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 15,
         name: "RHLJ (Low Voltage Heat Shrink Cable Joints up to 3.3kV)",
         manufacturer: "REPL",
         image: "replproduct/rhlj.svg",
-        desc: "RHLJ range of joints use REPL heat shrink tubes for insulation and outer protection. Versions are available for flexible unarmoured and armoured cables in standard voltage ranges of 0.6/1kv and 1.9/3.3kV. The kits normally do not include connectors. A version for jointing paper cables to polymeric insulated cables is also available."
+        desc: "RHLJ range of joints use REPL heat shrink tubes for insulation and outer protection. Versions are available for flexible unarmoured and armoured cables in standard voltage ranges of 0.6/1kv and 1.9/3.3kV. The kits normally do not include connectors. A version for jointing paper cables to polymeric insulated cables is also available.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
         id: 16,
         name: "RHCE-P (Enclosures for pressurised telecom cable in-line joints)",
         manufacturer: "REPL",
-        image: "replproduct/rhce_p.svg"
+        image: "replproduct/rhce_p.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
         id: 17,
         name: "RHCE-NP (Enclosures for non-pressurised telecom cable in-line joints)",
         manufacturer: "REPL",
-        image: "replproduct/rhce_np.svg"
+        image: "replproduct/rhce_np.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
         id: 18,
         name: "RITTU / RITTA (Thin Wall, heat shrinkable tubing",
         manufacturer: "REPL",
-        image: "replproduct/rittu_ritta.svg"
+        image: "replproduct/rittu_ritta.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     
@@ -586,7 +658,9 @@ export const Replproducts = [
         name: " RIMTU / RIMTA (Medium Wall, heat shrinkable tubing)",
         manufacturer: "REPL",
         image: "replproduct/rimtu_rimta.svg",
-        desc: "Heat Shrinkable Medium Wall Tubes to provide environmental protection to the cable cores of plastic and paper insulated cable terminations, and insulation over the connector area in cable joints rated up to 1kV. The insulating tubes are made from thermally stabilized, crosslinked, weather resistant polymeric material.The tubes can be supplied internally coated with hot meltadhesive (RIMTA)."
+        desc: "Heat Shrinkable Medium Wall Tubes to provide environmental protection to the cable cores of plastic and paper insulated cable terminations, and insulation over the connector area in cable joints rated up to 1kV. The insulating tubes are made from thermally stabilized, crosslinked, weather resistant polymeric material.The tubes can be supplied internally coated with hot meltadhesive (RIMTA).",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
@@ -594,7 +668,9 @@ export const Replproducts = [
         name: "RIHTU / RIHTA (Heavy Wall, heat shrinkable tubing)",
         manufacturer: "REPL",
         image: "replproduct/rihtu_rihta.svg",
-        desc: "Heat Shrinkable Heavy Wall Tubes (RIHT) are used for environmental sealing of plastic and paper insulated cable joints rated up to 36kV.These tubes are made from thermally stabilized, cross linked, UV and weather resistant polymeric material and have a nominal shrink ratio of 3:1 and an unlimited shelf life when stored at normal warehouse temperatures. The tubes can be supplied internally coated with hot melt adhesive (RIHTA)."
+        desc: "Heat Shrinkable Heavy Wall Tubes (RIHT) are used for environmental sealing of plastic and paper insulated cable joints rated up to 36kV.These tubes are made from thermally stabilized, cross linked, UV and weather resistant polymeric material and have a nominal shrink ratio of 3:1 and an unlimited shelf life when stored at normal warehouse temperatures. The tubes can be supplied internally coated with hot melt adhesive (RIHTA).",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
@@ -602,14 +678,18 @@ export const Replproducts = [
         name: " RIBT / RIBT-T (Busbar Insulation heat shrinkable tubing",
         manufacturer: "REPL",
         image: "replproduct/ribt_ribt-t.svg",
-        desc: "Heat Shrinkable Busbar Insulating Tubing are used to insulate copper and aluminium busbars, preventing flashovers and accidentally induced discharge."
+        desc: "Heat Shrinkable Busbar Insulating Tubing are used to insulate copper and aluminium busbars, preventing flashovers and accidentally induced discharge.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 22,
         name: "RTBM (Busbar Insulation heat shrinkable tape)",
         manufacturer: "REPL",
         image: "replproduct/rtbm.svg",
-        desc: "Busbar Insulating Tape (RBTM) is a dual layer tape combining a heat shrinkable outer tape with excellent insulating and weathering properties with an inner hot melt adhesive, to provide moisture sealing. It is used to provide insulation enhancement and protection for copper or aluminium busbar sections where tube products cannot easily be applied. A single layer of RBTR applied at ⅔ overlap will provide AC withstand up to 17.5kV. Double layers will increase withstand level up to 36kV."
+        desc: "Busbar Insulating Tape (RBTM) is a dual layer tape combining a heat shrinkable outer tape with excellent insulating and weathering properties with an inner hot melt adhesive, to provide moisture sealing. It is used to provide insulation enhancement and protection for copper or aluminium busbar sections where tube products cannot easily be applied. A single layer of RBTR applied at ⅔ overlap will provide AC withstand up to 17.5kV. Double layers will increase withstand level up to 36kV.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
 
     {
@@ -617,7 +697,9 @@ export const Replproducts = [
         name: "RWRS/RTSF (Wraparound heat shrinkable repair sleeves)",
         manufacturer: "REPL",
         image: "replproduct/rwrs_rtsf.svg",
-        desc: "RWRS Heat Shrinkable Wrap-Around Sleeves are mainly used for repairing outer/inner sheath of cables. The Wrap-Around Sleeves are made from thermally stabilised, cross linked, weather resistant, polymeric material and is halogen free. The Sleeves are coated internally with hot melt adhesive. RTSF Reinforced Heat Shrink Splice Closure System is designed to provide excellent split resistance, environmental and mechanical protection for cable joints. The RTSF sleeves are made from a composite laminate material consisting of reinforcing glass fibres, polyethylene layers, an aluminium layer for moisture vapour transmission and hot melt adhesive on the inner surface. The outer surface of the sleeves have thermos-chromatic paint"
+        desc: "RWRS Heat Shrinkable Wrap-Around Sleeves are mainly used for repairing outer/inner sheath of cables. The Wrap-Around Sleeves are made from thermally stabilised, cross linked, weather resistant, polymeric material and is halogen free. The Sleeves are coated internally with hot melt adhesive. RTSF Reinforced Heat Shrink Splice Closure System is designed to provide excellent split resistance, environmental and mechanical protection for cable joints. The RTSF sleeves are made from a composite laminate material consisting of reinforcing glass fibres, polyethylene layers, an aluminium layer for moisture vapour transmission and hot melt adhesive on the inner surface. The outer surface of the sleeves have thermos-chromatic paint",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
@@ -625,7 +707,9 @@ export const Replproducts = [
         name: "EC / CEC (Heat Shrink Cable End Caps)",
         manufacturer: "REPL",
         image: "replproduct/ec_cec.svg",
-        desc: "EC Heat Shrinkable End Caps are used to provide a moisture tight seal on all types of cables. The caps are lined with a hot melt adhesive to provide a moisture seal. The end cap is made from thermally stabilised, cross linked polymer and are suitable for use in temperatures between -300C and +700C, and with internal pressures up to 0.05MPa. Other versions are available with conductive material (CEC series) or fitted with valves (ECV series) for pressurised cable applications"
+        desc: "EC Heat Shrinkable End Caps are used to provide a moisture tight seal on all types of cables. The caps are lined with a hot melt adhesive to provide a moisture seal. The end cap is made from thermally stabilised, cross linked polymer and are suitable for use in temperatures between -300C and +700C, and with internal pressures up to 0.05MPa. Other versions are available with conductive material (CEC series) or fitted with valves (ECV series) for pressurised cable applications",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     },
     {
@@ -633,20 +717,26 @@ export const Replproducts = [
         name: "RHCE-NP (Enclosures for non-pressurised telecom cable in-line joints)",
         manufacturer: "REPL",
         image: "replproduct/rhce_np_joint.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     {
         id: 26,
         name: " EB (Heat Shrink Low Voltage Cable Breakouts)",
         manufacturer: "REPL",
         image: "replproduct/eb_heat.svg",
-        desc: "Heat Shrinkable Cable Breakouts provide an environmental seal to the crutch of plastic and paper insulated cables, rated up to 1.1kV. The Breakout is made from thermally stabilised, cross linked, polymeric material. The Breakouts are internally coated with hot melt adhesive."
+        desc: "Heat Shrinkable Cable Breakouts provide an environmental seal to the crutch of plastic and paper insulated cables, rated up to 1.1kV. The Breakout is made from thermally stabilised, cross linked, polymeric material. The Breakouts are internally coated with hot melt adhesive.",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
     },
     
     {
         id: 27,
         name: " RIMTU / RIMTA (Medium Wall, heat shrinkable tubing)",
         manufacturer: "REPL",
-        image: "replproduct/rimtu_rimta.svg"
+        image: "replproduct/rimtu_rimta.svg",
+        link: "https://v1.api.seenergysolutions.org/api/brochure/repl/download"
+
 
     }
     
@@ -659,6 +749,7 @@ export const Moreproducts = [
         name: "Distribution Transformer between values of 25KVA  - 2500KVA",
         manufacturer: "Noja Power",
         image: "moreproduct/1.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
         // desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
         // add : ["The World’s Only Arc Fault Vented Solid Dielectric Recloser" , "Designed for a maintenance free life" , "Supported by an international network of Technical Staff" , "Ganged ultra-fast magnetic actuators to provide additional operator safety" , "Hot Line Tag functionality and Mechanical trip interlock directly connected to the OSM tank’s operating mechanism" ," Unique and seamless NOJA Power Android and iOS App enhances linesmen comfort and safety" , "Internal double pole position indicator micro switches for added reliability" , "Triple shielded, water blocked and metal conduit protected control cable with military grade IP65  rated connectors" , "Grey powder coated tank to prevent drivers from being blinded by the sunlight reflecting on  the tank" ," Only 3 electronic modules in total that can be replaced within 5 minutes with a simple screwdriver" , "Remote and quick firmware upgrades to keep up with the industry changes over time"]
 
@@ -668,6 +759,8 @@ export const Moreproducts = [
         name: "Power Transformer with a power capacity of 2500KVA - 100MVA at 11kV, 33kV, 132kV",
         manufacturer: "Noja Power",
         image: "moreproduct/2.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
         // desc: "The key interrupter architecture of the OSM Recloser can be deployed  in four different variants. Ganged three-phase for 3-wire distribution systems, Two phase for 2 Wire Single Phase applications, Single Phase for  Single Wire Earth Return (SWER) Applications, and un-ganged Three phase  (Single Triple) for 4-wire overhead distribution systems.",
         // add: ["Class Defining Current and Voltage Sensors, included on both load and source side of the devi as standa" , "Full Automation, Logic and Synchronising Feeder Capability as stand" , "Over 100 different protection features, from the simplest Overcurrent and Earth Fault Protecti through to Admittance, Fault Locator and Harmonic Protect" , "No Active Electronics in the Recloser Tank – Providing exceptional surge immunity and reliability"]
 
@@ -677,26 +770,33 @@ export const Moreproducts = [
         name: "AAC",
         manufacturer: "Noja Power",
         image: "moreproduct/3.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
 
     },
     {
         id: 4,
         name: "ACSR",
         manufacturer: "Noja Power",
-        image: "moreproduct/4.png"
+        image: "moreproduct/4.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
 
     },
     {
         id: 5,
         name: "ACCC",
         manufacturer: "Noja Power",
-        image: "moreproduct/5.png"
+        image: "moreproduct/5.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
     },
     {
         id: 6,
         name: "Solar Cable",
         manufacturer: "Noja Power",
         image: "moreproduct/6.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
         // desc: "The Compact GMK 1000 Series offers a protection solution for underground cables using Solid Dielectric Insulation and Vacuum Interruption, with zero SF6 gas. A comprehensive suite of protection functionality is equipped as standard, delivered by the NOJA Power RC10, RC15 or RC20 control system built into the arrangement. Factory tested, the compact GMK provides simple commissioning ensuring correct operation between Primary and Secondary systems with minimal wiring on site."
 
     },
@@ -705,6 +805,8 @@ export const Moreproducts = [
         name: "Medium & High Voltage Cable for 11kV, 33kV, 132kV, 330kV",
         manufacturer: "Noja Power",
         image: "moreproduct/7.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
         // desc: "The 2000 Series GMK is a modular switchgear platform, building on the core architecture of a NOJA Power OSM Recloser system with RC control for Ground Mount Applications. Custom options include Revenue Metering, Differential Protection, Interlocked Earth Switch or Power Quality Metering."
     },
     {
@@ -712,6 +814,8 @@ export const Moreproducts = [
         name: "Low Voltage Cable 1000V",
         manufacturer: "Noja Power",
         image: "moreproduct/8.png",
+        link:"https://v1.api.seenergysolutions.org/api/brochure/osm-guide/download"
+
         // desc: "The 2000 Series GMK is a modular switchgear platform, building on the core architecture of a NOJA Power OSM Recloser system with RC control for Ground Mount Applications. Custom options include Revenue Metering, Differential Protection, Interlocked Earth Switch or Power Quality Metering."
     }
 ];

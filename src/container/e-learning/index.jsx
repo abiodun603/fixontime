@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react'
 import HeadFoot from '../../components/HeadFoot'
 import Learn from '../../components/user-learn/Learn'
 import { getLearn } from '../../context/learningContext/apiCalls'
+import learn from "../../assets/image/banner/learn.png"
 import { LearnContext } from '../../context/learningContext/LearnContext'
 import {ElearnContainer,ElearnContent,ElandingPage,LeftSection,LandingTitle,
     LandingSubTitle,RightSection,ElearnPic,ElearningCat,ElearningStore,ElearningItems,ElearningCard,ElearningImage,PlayImg,EImg,ElearningName,ElearningView,ElearnDate,VideoArea,Cancel,ElearnVid,DarkBg} from './elearning'
@@ -47,23 +48,27 @@ function Elearning(props) {
                             </LandingSubTitle>
                         </LeftSection>
                         <RightSection>
-                            <ElearnPic src={process.env.PUBLIC_URL + `../../Image/elearn/elearn.png`}/>
+                            <ElearnPic src={learn} alt = ""/>
                         </RightSection>
                     </ElandingPage>
                     <ElearningCat>
                         <ElearningStore>
-                            {
-                              learns && learns.length > 0 ?
-                              learns.map((item,index) => {
-                                return (
-                                    <Learn
-                                        image = {item.thumbnail}
-                                        title= {item.title}
-                                        date = {formatter.format(new Date(item.created_at))}
-                                        url = {item.url}
-                                    /> 
-                              )
-                            }):  <CircularProgress color="inherit"  sx={{ display: 'flex' , textAlign: "center", justifyContent: "center", width: "100%"}}/>}
+                          {
+                            learns && learns.length > 0 ?
+                            learns.map((item,index) => {
+                              return (
+                                <Learn
+                                  image = {item.thumbnail}
+                                  title= {item.title}
+                                  date = {formatter.format(new Date(item.created_at))}
+                                  url = {item.url}
+                                /> 
+                            )
+                          }):  (
+                            <div className="no__post">
+                              <CircularProgress color="inherit"  sx={{ display: 'flex' }}/>
+                            </div>
+                          )}
                         </ElearningStore>  
                     </ElearningCat>
                 </ElearnContent>

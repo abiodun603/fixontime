@@ -85,25 +85,6 @@ export const FooterNavLink = styled(Link)`
         margin-left: 60px;
     }
 
-    @media screen and (max-width: 1021px){
-
-        &:nth-child(7){
-            display: none;
-        }
-    }
-
-    @media screen and (max-width: 977px){
-         &:nth-child(6){
-             display:none;
-         }
-    }
-
-    @media screen and (max-width: 810px){
-        &:nth-child(5) {
-            display:none;
-        }        
-
-   }
    @media screen and (max-width: 705px){
     margin-bottom:30px;
     
@@ -119,17 +100,45 @@ export const FooterSocialLink = styled.div`
     color: #fff;
     margin-top: 16px;
     justify-content: flex-end;
+
+    .insta {
+      // font-size: 2rem !important;
+      margin-left: 1.5rem;
+    }
+
+    @media screen and (max-width: 468px){
+      margin-bottom: 1rem;
+    }
+
 `;
 
 export const BottomContent = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 150px;
+    positon: relative;
+
+    .line{
+      width: 100%;
+      height: 2px;
+      background-color: white ;
+      position: absolute;
+    }
+
+    @media screen and (max-width: 468px){
+      flex-direction: column-reverse;
+    }
+
+
 `;
 
 export const FooterCopyRight = styled.div`
     font-size: ${SIZES.h6};
     color: #fff;
+    @media screen and (max-width: 468px){
+      margin-bottom: 1rem;
+    }
+
   
 `;

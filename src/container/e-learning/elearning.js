@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {SIZES,COLORS} from '../../constant/index';
+import glass from "../../assets/image/banner/learnglass.png"
 
 export const ElearnContainer = styled.div`
     position: relative;  
@@ -11,34 +12,37 @@ export const ElearnContent = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding-left: ${SIZES.padding};
-    padding-right: ${SIZES.padding};
     padding-bottom: 65px;
 
-    @media screen and (max-width: 990px){
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-    @media screen and (max-width: 468px){
-        padding-left: 25px;
-        padding-right: 25px;
-    }
 `;
 
 export const ElandingPage = styled.div`
     display: flex;
+    height: 400px;
+    max-width: 100%;
+    background-image: url(${glass});
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 5rem;
     padding-bottom: 104px;
     @media screen and (max-width: 1086px){
         align-items: flex-end;
     }
 
     @media screen and (max-width:876px){
-        flex-wrap: wrap;
         justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        margin: 0;
+        padding: 0 1rem;
     }
+
+  
+
    
 `;
 
@@ -62,9 +66,10 @@ export const LeftSection = styled.div`
 `;
 
 export const LandingTitle = styled.div`
-    font-size: ${SIZES.h3};
+    font-size: 35px;
     font-weight: 600;
     color: ${COLORS.blue};
+    margin-bottom: 1rem;
   
     @media screen and (max-width: 1320px){
         font-size:${SIZES.h4};
@@ -95,6 +100,7 @@ export const RightSection = styled.div`
 
 export const ElearnPic = styled.img`
     background-size: cover;
+    margin-bottom: -3rem;
    
     @media screen and (max-width:1207px){
         width: 100%;
@@ -113,24 +119,55 @@ export const ElearnPic = styled.img`
 export const ElearningCat = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100%;
     position: relative;
+    padding-left: ${SIZES.padding};
+    padding-right: ${SIZES.padding};
+
+    
+    @media screen and (max-width: 990px){
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media screen and (max-width: 468px){
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        margin-top: 4rem !important;
+    }
 `;
 
 export const ElearningStore = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 auto !important;
+    justify-self: center;
+    align-self: center;
+
+    .no__post{
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
 
     @media screen and (max-width: 1498px){
-        justify-content: space-between;
+      justify-content: space-between;
     }
     @media screen and (max-width: 556px){
-        align-items: center;
-       
-        padding-left:30px;
+      align-items: center;
+      padding-left:30px;
     }
     @media screen and (max-width: 470px){
-        padding-left:0;
+      padding-left:0;
+      flex-wrap: no-wrap;
+      flex-direction: column;
+      margin: 0 auto !important;
     }
 `;
 

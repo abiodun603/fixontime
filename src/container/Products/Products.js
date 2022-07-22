@@ -31,10 +31,10 @@ export const PlandingPage = styled.div`
     } 
     
     @media screen and (max-width: 890px){
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     @media screen and (max-width: 475px){
@@ -78,8 +78,9 @@ export const LandingTitle = styled.div`
     font-size: ${SIZES.h3};
     font-weight: 600;
     color: ${COLORS.blue};
-    height: 120px;
-    margin-bottom: 40px;
+    line-height: 1.2;
+    // height: 120px;
+    margin-bottom: 30px;
 
     @media screen and (max-width: 890px){
         font-size: 36px;
@@ -89,6 +90,7 @@ export const LandingTitle = styled.div`
         font-size: 24px;   
         max-width: 350px;
         display: flex;
+        align-self: center;
         justify-self: center;
         flex-wrap:wrap;
         // margin-left:40px;
@@ -128,7 +130,6 @@ export const PartnerText = styled.div`
     font-size: ${SIZES.h5};
     color: ${COLORS.lightgray};
     margin-top: 33px;
-    margin-bottom: 8px;
 `;
 
 export const PartnerLogo = styled.div`
@@ -136,21 +137,20 @@ export const PartnerLogo = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width:500px){
-        width: 100px
-        margin-left: 40px;
-       
+    gap: 30px;
+    margin-top: 2rem;
+
+    img{
+      width: 150px;
+
+      @media screen and (max-width: 468px){
+        gap: 0px !important;
+      }
     }
 
-
-    @media screen and (max-width: 475px){
-        width: 70px;
-        margin-left: 90px;
-     }
-
-     @media screen and (max-width:400px){
-        margin-left: 70px;
-      }
+    @media screen and (max-width: 468px){
+     padding: 22px 1rem;
+    }
 `;
 
 export const NojaImage = styled.img`

@@ -1,25 +1,37 @@
 import styled from "styled-components"
-import glass from "../../assets/image/contact/glass.png"
 
 export const ContactLand = styled.div `
-    height: 200px;
-    background-image: url(${glass});
+    height: 270px;
+    background: #02013F;
+    z-index: -120;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
+    position: relative;
+
+    .contactBanner {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+
+      @media screen and (max-width: 768px){
+        z-index: -100;
+     }
+    }
 
     h1{
         font-weight: 600;
         font-size: 48px;
         line-height: 64px;
-        color: #030762
+        color: #FFFFFF;
     }
 
     p{
-        color: #505050;
-        font-size: 16px
+        color: #FFFFFF;
+        font-size: 18px;
+        text-align: center;
     }
 
     @media screen and (max-width: 468px){
@@ -83,6 +95,14 @@ export const Contact = styled.div `
         margin-top: 5px !important;
     }
 
+    a{
+      font-size: 16px;
+      font-weight: 400 !important;
+      color: rgba(255,255,255, 0.7);
+      margin-left: 5px !important;
+      margin-top: 5px !important;
+    }
+
 `
 
 export const ContactDesc = styled.div `
@@ -90,7 +110,7 @@ export const ContactDesc = styled.div `
     flex-direction: row;
     align-items: center;
 
-    p{
+    a{
         color: #FFFFFF;
         font-weight: 400;
         font-size: 16px;

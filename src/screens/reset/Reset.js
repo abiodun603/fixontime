@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import { useForm } from '../../hooks/useForm';
-import {LoginBanner, LoginForm, LoginWrapper,FormWrapper, FromBx, Input, FromBxRem, InputCheck, Button, BannerLogo} from '../login/Login__element'
+import {LoginBanner, LoginForm, LoginWrapper,FormWrapper, FromBx, Input, FromBxRem, InputCheck, Button, BannerLogo, InputPassword} from '../login/Login__element'
 import {useHistory} from "react-router-dom"
 import axios from "axios"
 import authLogo from "../../assets/image/auth/authLogo.svg"
+import { Puff } from 'react-loading-icons';
+import swal from "sweetalert";
 
-const Reset = () => {
+const ResetLink = () => {
     const history = useHistory()
+    const [loading, setloading] = useState(false);
+
 
     const [values, handleChange] = useForm({
         password: "",
@@ -18,6 +22,8 @@ const Reset = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         console.log(values);
+        
+        setloading(true);
         const search = window.location.search;
         const params = new URLSearchParams(search);
         const emailReset = params.get("email")
@@ -33,9 +39,24 @@ const Reset = () => {
                 password: values.password,
                 passwordConfirmation: values.confirm_password
             }
-        }).then( res => {
-            console.log(res)
-        })
+        }).then(response => {
+          setloading(false);
+          console.log(response.data)
+          swal({
+            title: "Password Rest Successful",
+            icon: "success",
+            confirmButtonColor: '#030762',
+            dangerMode: true,
+          }).then((willDelete) => {
+            if (willDelete) {
+              history.push("/admin")
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });})
+          .catch(err => {
+              console.log(err)
+          })
     }
     return (
         <>
@@ -51,15 +72,14 @@ const Reset = () => {
                 </LoginBanner>
                 <FormWrapper onSubmit = {handleLogin}>
                     <LoginForm>
-                        <h2>Forget Password</h2>
+                        <h2>Reset Password</h2>
                         <p>
-                            Enter your email address and we'll send you a link to
-                            reset your password
+                          Enter you email address and we’ll send you a link to reset your password
                         </p>
                         <FromBx>
                             <span>New Password</span>
                             
-                            <Input
+                            <InputPassword
                                 type= "password" 
                                 // placeholder = "Enter Username"
                                 name = "password"
@@ -72,7 +92,7 @@ const Reset = () => {
                         <FromBx>
                             <span>Confirm New Password</span>
                             
-                            <Input
+                            <InputPassword
                                 type= "password" 
                                 // placeholder = "Enter Username"
                                 name = "confirm_password"
@@ -84,9 +104,7 @@ const Reset = () => {
 
                         <FromBx>
                             <Button type="submit" disabled = {values.isSubmitting}>
-                                {values.isSubmitting ? (
-                                    "Loading"
-                                ): "Reset Password"}
+                                {!loading  ? "Submit" : <Puff/> }
                             </Button>
                         </FromBx>
                     </LoginForm>
@@ -95,4 +113,4 @@ const Reset = () => {
         </>
     )
 }
-export default Reset;
+export default ResetLink;

@@ -16,6 +16,7 @@ import FormCard from "../../components/form-card/FormCard"
 import { LearnContext } from "../../context/learningContext/LearnContext"
 import { createLearn } from "../../context/learningContext/apiCalls"
 import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton"
+import { Puff } from "react-loading-icons"
 
 const AddLearn = (props) => {
     const [selectedFile, setSelectedFile] = useState(null)
@@ -27,7 +28,7 @@ const AddLearn = (props) => {
     })
 
     // useContext
-    const {dispatch} = useContext(LearnContext)
+    const {dispatch , isFetching} = useContext(LearnContext)
 
 
     const handleForm = (e) => {
@@ -88,13 +89,16 @@ const AddLearn = (props) => {
                     <div style={{marginTop: 40}}></div>
 
                     <CardButton>
-                        <ButtonCancel onClick ={() => history.push("/learn")} >
+                        <ButtonCancel onClick ={() => history.push("/adminlearn")} >
                             <span>
                                 Cancel
                             </span>
                         </ButtonCancel>
                         <ButtonSubmit type = "submit">
-                            Ok 
+                          {
+                            !isFetching ? "Ok" :  <Puff/>
+
+                          }
                         </ButtonSubmit>
                     </CardButton>
                     {/* <button type = "submit" >submit</button> */}

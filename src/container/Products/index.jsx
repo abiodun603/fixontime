@@ -5,148 +5,140 @@ LandingPartner,PartnerText,PartnerLogo,NojaImage,LucyElectImage,ReplImage,RightS
 SearchInput,SearchImg,Line,ShowProduct,EachProduct,ProductName,ProductStore,ProductItems,ProCard,
 ProductImage,ProImg,ItemName,ManufactName} from './Products'
 import {Nojaproducts,Lucyproducts,Replproducts, Moreproducts} from '../../components/data/data'
+import npower from "../../assets/image/brands/noja-power.svg"
+import lucy from "../../assets/image/brands/lucy-electric.svg"
+import repl from "../../assets/image/brands/repl.svg"
 function Products(props) {
     useEffect(() => {
         props.setSidebar(false);
     },[]);
     return (
-        <>
-            <HeadFoot {...props}>
-                <ProductsContainer>
-                    <ProductsContent>
-                        <PlandingPage>
-                            <LeftSection>
-                                <LandingTitle>
-                                    Products from Our Trusted Partners
-                                </LandingTitle>
-                                <LandingSubTitle>
-                                    Nigeria’s Foremost Partner for Notable Manufacturers
-                                </LandingSubTitle>
-                                <LandingPartner>
-                                    <PartnerText>Partners</PartnerText>
-                                    <PartnerLogo>
-                                        <NojaImage src={process.env.PUBLIC_URL + `/Image/companylogo/nojapower.svg`} />
-                                        <LucyElectImage src={process.env.PUBLIC_URL + `/Image/companylogo/lucyelect.svg`} />
-                                        <ReplImage src={process.env.PUBLIC_URL + `/Image/companylogo/repl.svg`} />
-                                    </PartnerLogo>
-                                </LandingPartner>
-                            </LeftSection>
-                            <RightSection>
-                                <ElectricPic src={process.env.PUBLIC_URL + `/Image/products/p_landingpic.svg`}/>
-                            </RightSection>
-                        </PlandingPage>
-                        <ProductsCat>
-                            <GetProduct>
-                                <FindPro>
-                                    <SearchPro>
-                                        <SearchInput type="text" placeholder="Search" />
-                                        <SearchImg src={process.env.PUBLIC_URL + `/Image/icon/searchicon.svg` }  />
-                                    </SearchPro>
-                                    {/* <FilterPro>
-                                        <FilterFont src={process.env.PUBLIC_URL +  `Image/icon/filtericon.svg`} />
+      <>
+        <HeadFoot {...props}>
+          <ProductsContainer>
+            <ProductsContent>
+              <PlandingPage>
+                <LeftSection>
+                  <LandingTitle>
+                    Products from Our Trusted Partners
+                  </LandingTitle>
+                  <LandingSubTitle>
+                    Nigeria’s Foremost Partner for Notable Manufacturers
+                  </LandingSubTitle>
+                  <LandingPartner>
+                    <PartnerText>Partners</PartnerText>
+                    <PartnerLogo>
+                      <a href="https://www.nojapower.com.au" target="_blank" rel="noopener noreferrer"> <img src={npower} alt="nodja power" /> </a>
+                      <a href="https://www.lucyelectric.com" target="_blank" rel="noopener noreferrer"> <img src={lucy} alt="lucy electric"/> </a>
+                      <a href="https://www.repl.com" rel="noopener noreferrer" target="_blank"> <img src={repl} alt="repl"/> </a>
+                    </PartnerLogo>
+                  </LandingPartner>
+                </LeftSection>
+                <RightSection>
+                  <ElectricPic src={process.env.PUBLIC_URL + `/Image/products/p_landingpic.svg`}/>
+                </RightSection>
+              </PlandingPage>
+              <ProductsCat>
+                <GetProduct>
+                  <FindPro>
+                    <SearchPro>
+                      <SearchInput type="text" placeholder="Search" />
+                      <SearchImg src={process.env.PUBLIC_URL + `/Image/icon/searchicon.svg` }  />
+                    </SearchPro>
+                  </FindPro>
+                  <ShowProduct>
+                      <Line></Line>
+                      <EachProduct>
+                          <ProductName>Noja Power</ProductName>
+                          <ProductStore>
+                              {Nojaproducts.map((item,index) => {
+                                return (
+                                  <ProductItems to={`/productsDetails/Nojaproducts/${item.id}`}>
+                                    <ProCard>
+                                      <ProductImage>
+                                        <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
+                                      </ProductImage>
+                                      <ItemName style={{marginRight: 20}}>{item.name}</ItemName>
+                                      <ManufactName>
+                                        {/* Manufacturer: <SpanText>{item.manufacturer}</SpanText> */}
+                                      </ManufactName>
+                                    </ProCard>
+                                  </ProductItems>
+                                )
+                              })}
+                          </ProductStore>  
+                      </EachProduct>
 
-                                    </FilterPro> */}
-                                </FindPro>
+                      <Line></Line>
+                      <EachProduct>
+                          <ProductName>Lucy Electric</ProductName>
+                          <ProductStore>
+                              {Lucyproducts.map((item,index) => {
+                                  return (
+                                          <ProductItems to={`/productsDetails/Lucyproducts/${item.id}`}>
+                                              <ProCard>
+                                                  <ProductImage>
+                                                      <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
+                                                  </ProductImage>
+                                                  <ItemName>{item.name}</ItemName>
+                                                  <ManufactName>
+                                                      {/* Manufacturer: <SpanText>{item.manufacturer}</SpanText> */}
+                                                  </ManufactName>
+                                              </ProCard>
+                                          </ProductItems>
+                                      )
+                              })}
+                          </ProductStore>  
+                      </EachProduct>
 
-                                
-                                {/* <HelpInfo>
-                                    <Fontwhatsapp />
-                                    <HelpText>Need Help?</HelpText>
-                                </HelpInfo> */}
-                                <ShowProduct>
-                                    <Line></Line>
-                                    <EachProduct>
-                                        <ProductName>Noja Power</ProductName>
-                                        <ProductStore>
-                                            {Nojaproducts.map((item,index) => {
-                                                return (
-                                                        <ProductItems to={`/productsDetails/Nojaproducts/${item.id}`}>
-                                                            <ProCard>
-                                                                <ProductImage>
-                                                                    <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
-                                                                </ProductImage>
-                                                                <ItemName style={{marginRight: 20}}>{item.name}</ItemName>
-                                                                <ManufactName>
-                                                                    {/* Manufacturer: <SpanText>{item.manufacturer}</SpanText> */}
-                                                                </ManufactName>
-                                                            </ProCard>
-                                                        </ProductItems>
-                                                    )
-                                            })}
-                                        </ProductStore>  
-                                    </EachProduct>
+                      <Line></Line>
+                      <EachProduct>
+                          <ProductName>REPL</ProductName>
+                          <ProductStore>
+                              {Replproducts.map((item,index) => {
+                                return (
+                                  <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
+                                      <ProCard>
+                                        <ProductImage>
+                                          <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
+                                        </ProductImage>
+                                        <ItemName>{item.name}</ItemName>
+                                        <ManufactName>
+                                        </ManufactName>
+                                      </ProCard>
+                                  </ProductItems>
+                                )
+                              })}
+                          </ProductStore>  
+                      </EachProduct>
 
-                                    <Line></Line>
-                                    <EachProduct>
-                                        <ProductName>Lucy Electric</ProductName>
-                                        <ProductStore>
-                                            {Lucyproducts.map((item,index) => {
-                                                return (
-                                                        <ProductItems to={`/productsDetails/Lucyproducts/${item.id}`}>
-                                                            <ProCard>
-                                                                <ProductImage>
-                                                                    <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
-                                                                </ProductImage>
-                                                                <ItemName>{item.name}</ItemName>
-                                                                <ManufactName>
-                                                                    {/* Manufacturer: <SpanText>{item.manufacturer}</SpanText> */}
-                                                                </ManufactName>
-                                                            </ProCard>
-                                                        </ProductItems>
-                                                    )
-                                            })}
-                                        </ProductStore>  
-                                    </EachProduct>
-
-                                    <Line></Line>
-                                    <EachProduct>
-                                        <ProductName>REPL</ProductName>
-                                        <ProductStore>
-                                            {Replproducts.map((item,index) => {
-                                                return (
-                                                        <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
-                                                            <ProCard>
-                                                                <ProductImage>
-                                                                    <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
-                                                                </ProductImage>
-                                                                <ItemName>{item.name}</ItemName>
-                                                                <ManufactName>
-                                                                </ManufactName>
-                                                            </ProCard>
-                                                        </ProductItems>
-                                                    )
-                                            })}
-                                        </ProductStore>  
-                                    </EachProduct>
-
-                                    <Line></Line>
-                                    <EachProduct>
-                                        <ProductName>More product</ProductName>
-                                        <ProductStore>
-                                            {Moreproducts.map((item,index) => {
-                                                return (
-                                                        <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
-                                                            <ProCard>
-                                                                <ProductImage>
-                                                                    <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
-                                                                </ProductImage>
-                                                                <ItemName>{item.name}</ItemName>
-                                                                <ManufactName>
-                                                                </ManufactName>
-                                                            </ProCard>
-                                                        </ProductItems>
-                                                    )
-                                            })}
-                                        </ProductStore>  
-                                    </EachProduct>
-                                </ShowProduct>
-                            </GetProduct>
-                        </ProductsCat>
-                    </ProductsContent>
-                </ProductsContainer>
-            </HeadFoot>
-        
-        </>
+                      <Line></Line>
+                    <EachProduct>
+                      <ProductName>More products</ProductName>
+                      <ProductStore>
+                        {Moreproducts.map((item,index) => {
+                          return (
+                            <ProductItems key={item.id} to={`/productsDetails/Replproducts/${item.id}`}>
+                              <ProCard>
+                                <ProductImage>
+                                  <ProImg src={process.env.PUBLIC_URL + `Image/${item.image}`} />
+                                </ProductImage>
+                                <ItemName>{item.name}</ItemName>
+                                <ManufactName>
+                                </ManufactName>
+                              </ProCard>
+                            </ProductItems>
+                          )
+                        })}
+                      </ProductStore>  
+                    </EachProduct>
+                  </ShowProduct>
+                </GetProduct>
+              </ProductsCat>
+            </ProductsContent>
+          </ProductsContainer>
+        </HeadFoot>
+      </>
     )
 }
 

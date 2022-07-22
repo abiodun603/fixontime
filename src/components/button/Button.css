@@ -1,14 +1,17 @@
 
 
 .btn{
-    font-weight: 600;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 28px;
-    transition: transform 0.3s ease;
-    height: 50px;
-    width: 100%;
-}
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+  height: 50px;
+  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+} 
 
 .btn:hover {
     transform: translateY(-3px);
@@ -22,8 +25,9 @@
 }
 
 .btn--primary--outline{
-    background-color: transparent;
-    border: 2px solid var(--primary);
+    background-color: transparent !important;
+    border: 1px solid #030762 !important;
+    color: #030762 !important;
 }
 
 .btn--orange--solid{
@@ -49,6 +53,7 @@
 }
 
 .btn--small{
-    padding: 15px 30px;
+    padding: 10px 30px;
     font-size: 20px;
+    width: fit-content;
 }

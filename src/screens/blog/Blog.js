@@ -34,31 +34,33 @@ const Blog = () => {
 
 
     return (
-        <>
-             <Header
-                header= "Blog Post"
-                title = "New Blog Post"
-                onClick = {() => history.push("/adminaddPost")}
-            />
+    <>
+      <Header
+        header= "Blog Post"
+        title = "New Blog Post"
+        onClick = {() => history.push("/adminaddPost")}
+      />
 
-            <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
-                {
-                  blogs?.map((item, index) => (
-                      <div key = {index}>
-                        <BCard
-                          src = {item.image}
-                          title= {item.title}
-                          // date= {formatter.format(new Date(item.created_at))}
-                          onDelete = {()  => handleDelete(item.id)}
-                          onEdit = {() => handleUpdate(item.id)}
-                        />
-                      </div>
-                      )
-                   )
-                }
-            </div>
-             
-        </>
+      <div style = {{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
+        {
+          blogs && blogs.length > 0 ? blogs?.map((item, index) => (
+            <div key = {index}>
+              <BCard
+                src = {item.image}
+                title= {item.title}
+                // date= {formatter.format(new Date(item.created_at))}
+                onDelete = {()  => handleDelete(item.id)}
+                onEdit = {() => handleUpdate(item.id)}
+              />
+            </div>) 
+            ): (
+              <div style={{display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto"}}>
+                <h1> No blog post available</h1>
+              </div>
+            )
+          }
+      </div> 
+    </>
     )
 }
 

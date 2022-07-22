@@ -18,6 +18,8 @@ import "./assets/css/grid.css"
 import {AuthContext} from "./context/authContext/AuthContext"
 import Signup from "./screens/signup/Signup"
 import BlogDetails from './container/blog/blogDetails';
+import ScrollToTop from './components/scollTop/ScrollTop';
+import ResetLink from './screens/reset/Reset';
 
 function App() 
    {
@@ -28,6 +30,7 @@ function App()
          <>
             <GlobalStyles sidebar={sidebar} />
             <Router>
+              <ScrollToTop/>
                {/* <Switch></Switch> */}
                <Route path="/productsDetails/:id">
                   <Description sidebar={sidebar} setSidebar={setSidebar} />
@@ -62,12 +65,16 @@ function App()
                   {!user ? <Signin/> : <Redirect to="/admin" />}
                </Route>
 
-               <Route exact path = "/forget">
-                  {!user ? <Signup/> : <Redirect to="/admin" />}
+               <Route path = "/reset">
+                    <ResetLink/>
                </Route> 
+
                <Route exact path = "/forget">
-                  {!user ? <Signup/> : <Redirect to="/admin" />}
-               </Route>  
+                 <Signup/> 
+               </Route> 
+               {/* <Route exact path = "/adminblog">
+                  {user ? <Blog/>}
+               </Route>   */}
             </Router>
          </>        
       );

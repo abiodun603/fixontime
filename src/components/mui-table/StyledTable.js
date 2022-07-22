@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const ButtonAction = styled.div `
     display: flex;
     position: absolute;
-    top: -50px;
+    top: -40px;
     right: 0;
 `
 

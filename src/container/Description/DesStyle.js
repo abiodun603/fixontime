@@ -1,7 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { COLORS, SIZES } from "../../constant";
-import { Link } from "react-router-dom";
 export const DesContainer = styled.div`
     position: relative;
     z-index:1;
@@ -82,12 +81,6 @@ export const DesContent = styled.div`
     @media screen and (max-width: 870px){
         justify-content: center;
     }
-    
-
-
-    
-    
-
 `;
 
 
@@ -128,7 +121,7 @@ export const NojaImage = styled.img`
 
 
 
-export const DescDownload = styled.div`
+export const DescDownload = styled.a`
     border: 1px solid ${COLORS.blue};
     display: flex;
     border-radius:5px;
@@ -214,15 +207,16 @@ export const Ptag = styled.p`
     color: ${COLORS.lightgray};
 `;
 
-export const DesContactBtn = styled(Link)`
+export const DesContactBtn = styled.button`
     width: fit-content;
     display: flex;
     height: 50px;
-    background: #E6E6EF;
+    background: #FFFFFF;
+    border: 1px solid ${COLORS.blue};
     margin-top: 27px;
     border-radius: 6px;
     align-items: center;
-    padding:0 23px;
+    padding:0 15px;
 `;
 
 export const ContactText = styled.h5`

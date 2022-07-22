@@ -1,13 +1,7 @@
 import { Radio } from "@mui/material";
 import styled from "styled-components";
 
-export const DashboardCard = styled.div `
-  display: flex;
 
-  @media screen and (max-width: 468px) {
-    flex-direction:column;
-  }
-`
 
 export const PageHeader = styled.div `
     text-transform: capitalize;

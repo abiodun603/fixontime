@@ -10,18 +10,20 @@ import { BlogContext } from "../../context/blogContext/BlogContext";
 import { createBlog } from "../../context/blogContext/apiCalls";
 import { ButtonCancel, ButtonSubmit } from "../../components/card-button/StyledButton";
 import CardButton from "../../components/card-button/CardButton";
+import { Puff } from "react-loading-icons";
+import { useHistory } from "react-router-dom";
 
 const AddPost = () => {
+    const history = useHistory();
     const [values, handleChange] = useForm({
         title: "",
         content: "",
     })
     const [selectedFile, setSelectedFile] = useState(null)
-
     // useContext
-    const {dispatch} = useContext(BlogContext)
+    const {dispatch, isFetching} = useContext(BlogContext)
 
-
+    console.log(isFetching);
     const handleForm = (e) => {
         const formData = new FormData();
         formData.append("title", values.title);
@@ -29,64 +31,62 @@ const AddPost = () => {
         formData.append("category_id", "2");
         formData.append("image", selectedFile);
         e.preventDefault();
-
         createBlog(formData, dispatch);
-
-        console.log(values);
     }
 
     return (
         <>
-             <Header
-                header= "Blog Post"
-            />
+          <Header
+            header= "Blog Post"
+          />
             {/*<BCard/> */}
 
-            <FormCard
-                header = "Add blog post"
-            >  
-                <FormWrapper onSubmit = {handleForm} enctype = "multipart/form-data">
-                    <FromBx>
-                        <span>Title</span>
-                        <Input 
-                            type = "text" 
-                            placeholder = ""
-                            name = "title"
-                            required
-                            value = {values.title}
-                            onChange = {handleChange}
-                            style={{background: "#FFFFFF"}}
+          <FormCard
+            header = "Add blog post"
+          >  
+            <FormWrapper onSubmit = {handleForm} enctype = "multipart/form-data">
+              <div style={{textAlign: "center", background: "#D6F3E9", fontSize: "13px", padding: ".8rem", marginBottom: "12px"}}>Image size must not be greater than 512kb</div>
+              <FromBx>
+                  <span>Title</span>
+                  <Input 
+                      type = "text" 
+                      placeholder = ""
+                      name = "title"
+                      required
+                      value = {values.title}
+                      onChange = {handleChange}
+                      style={{background: "#FFFFFF"}}
 
-                        />
-                    </FromBx>
-
-                    <FromBx>
-                        <span>Thumbnail image</span>
-                        <File
-                            onFileSelect={(file) => setSelectedFile(file)}
-                        />
-                    </FromBx>
-
-                    <FromBx>
-                        <span>Blog text</span>
-                        <ScrollTextArea
-                            value = {values.text}
-                            onChange = {handleChange}
-                        />
-                    </FromBx>
-                    <div style={{marginTop: 40}}></div>
-                     <CardButton>
-                        <ButtonCancel>
-                            <span>
-                                Cancel
-                            </span>
-                        </ButtonCancel>
-                        <ButtonSubmit type = "sumbit">
-                            Ok 
-                        </ButtonSubmit>
-                    </CardButton>
-                </FormWrapper> 
-            </FormCard>                    
+                  />
+              </FromBx>
+              <FromBx>
+                  <span>Thumbnail image</span>
+                  <File
+                      onFileSelect={(file) => setSelectedFile(file)}
+                  />
+              </FromBx>
+              <FromBx>
+                <span>Blog text</span>
+                <ScrollTextArea
+                  value = {values.text}
+                  onChange = {handleChange}
+                />
+              </FromBx>
+                <div style={{marginTop: 40}}></div>
+                <CardButton>
+                  <ButtonCancel  onClick = {() => history.push("/adminBlog")}>
+                    <span>
+                      Cancel
+                    </span>
+                  </ButtonCancel>
+                  <ButtonSubmit type = "sumbit">
+                    {
+                      !isFetching ? "Ok" :  <Puff/>
+                    }
+                  </ButtonSubmit>
+                </CardButton>
+            </FormWrapper> 
+          </FormCard>                    
         </>
     )
 }

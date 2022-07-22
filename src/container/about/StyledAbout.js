@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import pole from "../../assets/image/about/always-the-first-min.png"
+import glass from "../../assets/image/contact/glass.png"
+import about from "../../assets/image/banner/about.png"
 
 export const TransWrapper = styled.div `
     display: flex;
@@ -13,9 +15,10 @@ export const TransWrapper = styled.div `
     }
 `
 
-export const TransContainer = styled.div `
-    padding-right: 4rem;
 
+export const TransContainer = styled.div `  
+    flex: 1.5;
+    padding-right: 4rem;
     h2{
         color: #030762;
         font-size: 36px;
@@ -30,17 +33,25 @@ export const TransContainer = styled.div `
         margin-bottom: 1rem  !important;
     }
 
+    @media screen and (max-width: 968px){
+      padding-right: 0; 
+    }
+
     @media screen and (max-width: 468px){
-        padding-right: 1rem;
+        // padding-right: 1rem;
         h2{
             font-size: 24px;
         }
+        p{
+          text-align: unset;
+        }
     }
     
-
+    
 `
 
 export const TransImage = styled.div   `
+    flex:1;
     img{
         width: 400px;
     }
@@ -51,16 +62,54 @@ export const TransImage = styled.div   `
             margin-left: -30px;
         }
     }
+
+    @media screen and (max-width: 968px){
+      display: none; 
+    }
 `
+
+export const AboutLand = styled.div `
+  height: 250px;
+  background-image: url(${glass}), url(${about});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+
+  h1{
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 64px;
+      color: #030762
+  }
+
+  p{
+      color: #505050;
+      font-size: 18px;
+      text-align: center;
+  }
+
+  @media screen and (max-width: 468px){
+      h1{
+          font-size: 36px;
+      }
+    P{
+        text-align: center;
+    }
+  }
+`
+
 
 // Core Value
 export const CoreWrapper = styled.div `
-    margin: 4rem 6rem;
+    margin: 4rem 3rem;
     display: flex;
     flex-direction: column;
-    align-items center;
+    max-width:100%;
 
     h2{
+        margin-left: -5rem !important;
         text-align: center;
         color: #030762;
         font-size: 36px;
@@ -73,14 +122,20 @@ export const CoreWrapper = styled.div `
         h2{
             margin-bottom: unset !important;
             font-size: 24px;
+            text-align: center;
+            margin-left: unset !important;
         }
     }
 `
 export const CoreContainer = styled.div `
     display: flex;
+    max-width:100%;
+    align-items: flex-start;
+    justify-content: space-evenly;
     
     @media screen and (max-width: 468px){
         flex-direction: column;
+        align-items: center;
     }
 `
 
@@ -194,7 +249,18 @@ export const QuestionWrapper = styled.div`
         text-align: center;
     }
 
-    span{
+    p{
+      text-align: center;
+    }
+
+  .feel{
+    margin-top: .6rem !important;
+    margin-botom: .4rem !important;
+  }
+
+
+
+    a{
         color: #FD0014;
     }
 

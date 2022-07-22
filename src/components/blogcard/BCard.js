@@ -4,8 +4,8 @@ import { BlogContainer} from "./StyledBC"
 const BCard = (props) => {
     return (
         <>
-            <BlogContainer>
-                <div className="tabContent" id="category">
+            <BlogContainer onClick={props.onClick} >
+                <div className="tabContent" id="category" >
                     <div className="news__card">
                         <div id = "image__container">
                             <img src={props.src} alt="" className="news__img "/>

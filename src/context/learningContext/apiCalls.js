@@ -26,13 +26,9 @@ export const createLearn = async(learn, dispatch)=> {
                 }
             }
         )
-            //                 setGetBlogPost(res.data.items)
-            //             })
-            console.log(res.data)
-        // dispatch(createLearnSuccess(res.data))
+
         swal({
-            title: "Are you sure?",
-            text: "Video post have been added up successfully",
+            text: "Learning post added  successfully",
             icon: "success",
             confirmButtonColor: '#030762',
             // buttons: true,
@@ -66,7 +62,6 @@ export const deleteLearn = async (id, dispatch) => {
 
     dispatch(deleteLearnSuccess(id));
     swal({
-        title: "Are you sure?",
         text: "Video post have been deleted  successfully",
         icon: "success",
         confirmButtonColor: '#030762',

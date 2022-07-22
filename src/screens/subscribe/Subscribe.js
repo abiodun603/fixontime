@@ -6,51 +6,83 @@ import { DataGrid } from '@mui/x-data-grid';
 import { ButtonDelete, ButtonDownload ,ButtonAction} from '../../components/mui-table/StyledTable';
 import {MdOutlineDeleteForever} from "react-icons/md"
 import {AiOutlineDownload} from "react-icons/ai"
+import Contact from "../contact/Contact";
+import swal from "sweetalert";
 
 const columns = [
-    { field: 'id', headerName: 'Id', flex: 1 },
+    // { field: 'id', headerName: 'Id', flex: 1 },
     { field: 'email', headerName: 'Email',flex: 1 },
   ];
+
+  
 const Subscribe = () => {
     const [data, setData] = useState([])
     const [selectionModel, setSelectionModel] = useState([]);
-
-
-    const deleteByIds = () => {
-        let arrayids = []
-
-        
-    }
-
+    
     useEffect(() => {
-        axios.get("https://v1.api.seenergysolutions.org/api/subscriptions",
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
-                }
-            }
-        ).then((res) => {
-            console.log(res.data)
-            // values.title = res.data.title
-            setData(res.data.data)
-        }) 
+      getSubscriptions();
     }, [])
 
-    console.log(data)
+    const getSubscriptions = () => {
+      axios.get("https://v1.api.seenergysolutions.org/api/subscriptions",
+      {
+      headers: {
+          "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+      }
+        }
+      ).then((res) => {
+        console.log(res.data)
+        setData(res.data.data)
+      }) 
+    }
 
     const handleDelete = async(ids,e) =>  {
-        e.preventDefault();
-        // console.log(selectionModel)
-        await axios.delete("https://fixontime.herokuapp.com/subscriptions/" + ids,
-                {
-                headers: {
-                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
-                }
+      e.preventDefault();
+      await axios.delete("https://v1.api.seenergysolutions.org/api/subscriptions/" + ids,
+              {
+              headers: {
+                  "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+              }
+          }
+      ).then(res => {
+        console.log(res);
+          swal({
+            title: "Subscription deleted successfully",
+            icon: "success",
+            confirmButtonColor: '#030762',
+            dangerMode: true,
+          }).then((res) => {
+            getSubscriptions();
+            if (res) {
+            } else {
+              swal("Your imaginary file is safe!");
             }
-        )
-        setData(data.filter((item) => item.id !== ids));
-        console.log(data);
+        }); 
+      })
+      .then((res) =>{
+        getSubscriptions()
+      })
     }
+
+    const handleDownload = async(e) => {
+      e.preventDefault()
+      await axios({
+        url: 'https://v1.api.seenergysolutions.org/api/subscriptions/csv/download',
+        method: 'GET',
+        headers: {
+          "Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).data.token
+        },
+        responseType: 'blob', // important
+      }).then((response) => {
+         const url = window.URL.createObjectURL(new Blob([response.data]));
+         const link = document.createElement('a');
+         link.href = url;
+         link.setAttribute('download', 'subscribe.csv'); //or any other extension
+         document.body.appendChild(link);
+         link.click();
+      });
+    }
+
     return (
         <>
             <Header
@@ -72,7 +104,7 @@ const Subscribe = () => {
                         <MdOutlineDeleteForever/>
                         <span>Delete</span>
                     </ButtonDelete>
-                    <ButtonDownload>
+                    <ButtonDownload onClick={handleDownload}>
                         <AiOutlineDownload/>
                         <span>Download</span>
                     </ButtonDownload>

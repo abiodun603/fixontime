@@ -30,7 +30,6 @@ const TopNav = (props) => {
                         <AiOutlineMenu onClick={() => props.setSidebar(!props.sidebar)}/>
                       }
                     </div>
-
                   )
                 }
             </TopNavRight>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeadFoot from '../../components/HeadFoot'
 import {HomeContainer,HomeContent,HomePage,
     LeftSection,LeftText,ButtonTouch,LandingTitle,LandingSubTitle,RightSection,HomePic,
@@ -19,11 +19,13 @@ import 'swiper/scss/pagination'
 import { useForm } from '../../hooks/useForm';
 import axios from "axios"
 import swal from "sweetalert";
-import npower from "../../assets/image/homepage/noja_power_logo-min.png"
-import lucy from "../../assets/image/homepage/lucy_electric_logo-min.png"
-import repl from "../../assets/image/homepage/repl_logo-min.png"
+import npower from "../../assets/image/brands/noja-power.svg"
+import lucy from "../../assets/image/brands/lucy-electric.svg"
+import repl from "../../assets/image/brands/repl.svg"
 import team from "../../assets/image/homepage/team_support-min.png"
 import install from "../../assets/image/homepage/electrical_installation-min.png"
+import { Puff } from 'react-loading-icons';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -31,6 +33,7 @@ SwiperCore.use([Autoplay,Navigation,Pagination]);
 
 
 function Home(props) {
+  const history = useHistory();
     useEffect(() => {
         props.setSidebar(false);
     },[]);
@@ -39,6 +42,7 @@ function Home(props) {
     const [values, handleChange] = useForm({
         email: ""
     });
+    const [loading, setloading] = useState(false);
   
       const setCarousel = {
         dots: true,
@@ -54,64 +58,67 @@ function Home(props) {
 
 
     const swiper = {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
         // Default parameters
-        slidesPerView: 2,
-        spaceBetween: 300,
-        // Responsive breakpoints
-        breakpoints: {
-          // when window width is >= 320px
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          834: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          // when window width is >= 942px
-          942: {
-            slidesPerView: 2,
-            spaceBetween: 100
-          },
-          // when window width is >= 1100px
-          1100: {
-            slidesPerView: 2,
-            spaceBetween: 250
-          }
+      slidesPerView: 2,
+      spaceBetween: 300,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        834: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        // when window width is >= 942px
+        942: {
+          slidesPerView: 2,
+          spaceBetween: 100
+        },
+        // when window width is >= 1100px
+        1100: {
+          slidesPerView: 2,
+          spaceBetween: 250
         }
+      }
       };
 
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
+        setloading(true);
          // const history = useHistory()
         const url =  "https://v1.api.seenergysolutions.org/api/subscriptions"
         const data = {
-            email: values.email,
+          email: values.email,
         }
-         axios.post(
-             url ,
-             data,
-         ).then(response => {
- 
-             console.log(response.data)
-            //  alert("update successfully")
-             
-             })
-             .catch(err => {
-                 console.log(err)
-             })
-             swal({
-                title: "Subscription Successfull",
-                text: "We will get in touch with you as soon as possible",
-                icon: "success",
-                confirmButtonColor: '#030762',
-                buttons: true,
-                dangerMode: true,
-              })
+        await axios.post(
+        url ,
+        data,
+        ).then(response => {
+        setloading(false);
+        console.log(response.data)
+        swal({
+          title: "Subscription Successful",
+          icon: "success",
+          confirmButtonColor: '#030762',
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            history.push("/")
+          } else {
+            swal("Your imaginary file is safe!");
+          }
+        });})
+        .catch(err => {
+            console.log(err)
+        })
+           
     }
 
     return (
@@ -120,50 +127,47 @@ function Home(props) {
           <HomeContainer>
             <HomeContent>
               <HomePage>
-                  <LeftSection>
-                      <LeftText>
-                          <LandingTitle>
-                              We are a Distribution Network Contractor and Power System Automation Team of Professionals.
-                          </LandingTitle> 
-                          <LandingSubTitle>
-                              Reduce trippings and outages on your electricity network.
-                          </LandingSubTitle>
-                          <Link to="/contact">
-                              <ButtonTouch>Get In touch</ButtonTouch>
-                          </Link> 
-                      </LeftText>
-                  </LeftSection>
-                  <RightSection>
-                      
-                      <div className='carousel_content'>
-                          <Slider {...setCarousel}>
-                              
-                                  {landingCarousel.map((item) => (
-                                          <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`} alt = ""/>
-                                  ))}
-                              
-                          </Slider>
-                      </div>
-                      
-                  </RightSection>
+                <LeftSection>
+                    <LeftText>
+                      <LandingTitle>
+                        We are distribution network contractors and power system automation professionals.
+                      </LandingTitle> 
+                      <LandingSubTitle>
+                        Fix On Time is a leading engineering, procurement, and construction company.
+                      </LandingSubTitle>
+                     
+                      <Link to="/contact">
+                        <ButtonTouch>Get In touch</ButtonTouch>
+                      </Link> 
+                    </LeftText>
+                </LeftSection>
+                <RightSection>
+                    <div className='carousel_content'>
+                      <Slider {...setCarousel}>
+                        {landingCarousel.map((item) => (
+                          <HomePic src={process.env.PUBLIC_URL + `/Image/home/${item.image}`} alt = ""/>
+                        ))}
+                      </Slider>
+                    </div>
+                </RightSection>
               </HomePage>
               <HomeCompanyLogo>
-                  <a href="https://www.nojapower.com.au" target="_blank" rel="noopener noreferrer"> <img src={npower} alt="nodja power"/> </a>
-                  <a href="https:/www.lucyelectric.com" target="_blank" rel="noopener noreferrer"> <img src={lucy} alt="lucy electric"/> </a>
-                  <a href="https:/www.repl.com" rel="noopener noreferrer"> <img src={repl} alt="repl"/> </a>
+                  <a href="https://www.nojapower.com.au" target="_blank" rel="noopener noreferrer"> <img src={npower} alt="nodja power" /> </a>
+                  <a href="https://www.lucyelectric.com" target="_blank" rel="noopener noreferrer"> <img src={lucy} alt="lucy electric"/> </a>
+                  <a href="https://www.repl.com" rel="noopener noreferrer" target="_blank"> <img src={repl} alt="repl"/> </a>
               </HomeCompanyLogo>
               <HomeAbout>
                   <HomeAboutTitle>
-                      We are distribution network contractors and power system automation professionals. 
+                    We are distribution network contractors and power system automation professionals. 
                   </HomeAboutTitle>
                   <HomeAboutSubTitle>
-                      FixOnTime is a leading Engineering, Procurement, and Construction company approved to carry 
-                      out electrical engineering works and use our solutions within the Nigerian Electricity Supply Industry. We have  strong design experience, and 
-                      we are leaders in sourcing equipment that brings solutions to electrical challenges. 
+                    Fix On Time is a leading engineering, procurement, and construction company. Approved to carry 
+                    out electrical engineering works and use our solutions within the Nigerian Electricity Supply Industry. We have  strong design experience, and 
+                    we are leaders in sourcing equipment that brings solutions to electrical challenges. 
                   </HomeAboutSubTitle>
                   <WFE>
                       <div className="wfe_title">
-                          WHY FIXONTIME ELECTRIC? 
+                        Why Choose Us?
                       </div>
                       <div className='wfe_body'>
                           <div className='wfe_left_section'>
@@ -172,13 +176,13 @@ function Home(props) {
                                       Efficient and Excellent Service
                                   </div>
                                   <div className='wfe_subheader'>
-                                      Our departmental staff members and field workers are professionals trained 
-                                      to give you quality services. Enjoy prompt services and solutions. 
+                                    Our team of highly trained professionals will ensure you enjoy prompt services and fast
+                                    solutions to electrical challenges in your home or office.
                                   </div> 
                               </div>
                               <div className='wfe_text'>
                                   <div className='wfe_header'>
-                                      Unparalleled support
+                                      Unparalleled Support
                                   </div>
                                   <div className='wfe_subheader'>
                                       We have a team committed to supporting you. We do this by training your team on how to use all
@@ -236,18 +240,18 @@ function Home(props) {
                                   <button className='btn_touch'>Get in touch</button>
                               </Link>                                </SwiperSlide>
                           <SwiperSlide className='solution_body'>
-                              <div className='solution_title'>Engineering procurement</div>
-                              <div className='solution_subtitle'>
+                            <div className='solution_title'>Engineering Procurement</div>
+                            <div className='solution_subtitle'>
                               Are you ready to buy state-of-the-art products from original equipment 
                               manufacturers? As an exclusive distributor, we help you purchase electrical power 
                               and distribution equipment  up to 330KV to automate your distribution network.  
-                              </div>
-                              <div className='solution_subtitle' style={{marginTop:'20px'}}>
-                                  Save up to 40 percent of the cost when you buy through us. 
-                              </div>
-                              <Link to="/contact">
-                                  <button className='btn_touch'>Get in touch</button>
-                              </Link>                                </SwiperSlide>
+                            </div>
+                            <div className='solution_subtitle' style={{marginTop:'20px'}}>
+                                Save up to 40 percent of the cost when you buy through us. 
+                            </div>
+                            <Link to="/contact">
+                              <button className='btn_touch'>Get in touch</button>
+                            </Link>                                </SwiperSlide>
                           <SwiperSlide className='solution_body'>
                               <div className='solution_title'>Maintenance &#38; H.T Asset Management</div>
                               <div className='solution_subtitle'>
@@ -288,9 +292,7 @@ function Home(props) {
                                   <div className='testimony'>
                                       Our 11kV H.T panels have been badly installed before we took over the Estate, we have to work on them every now and then. Fixontime was invited and we have not had the first interruption in several months.
                                   </div>
-                                  {/* <div className="person_img">
-                                      <img src={process.env.PUBLIC_URL + `/Image/home/atik.jpg `}  alt =""/>
-                                  </div> */}
+
                                   <div className='person_detail'>
                                       {/* <p></p> */}
                                       <span  style={{marginTop: 30}}>Ovie, Lagos</span>
@@ -351,8 +353,10 @@ function Home(props) {
                   </p>
                   <form onSubmit={handleSubmit}>
                       <div className='subscribe'>
-                          <input type="text" placeholder="Enter you email address" name = "email"  requiredz value = {values.email} onChange = {handleChange}/>
-                          <button type="submit">Subscribe</button>
+                          <input type="text" placeholder="Enter your email address" name = "email"  requiredz value = {values.email} onChange = {handleChange}/>
+                          <button type="submit">
+                            {!loading ? "Subscribe" : <Puff/>}
+                          </button>
                       </div>
                   </form>
                   

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
     --kWhite: #FFFFFF;
     --kBlack : #263253;
@@ -96,3 +98,34 @@ input:focus {
     border: 1px solid red !important;
     background-color: red !important;
 } */
+
+.sideBar{
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #18191a  #18191a;
+}
+
+.sideBar::-webkit-scrollbar{
+  width: 8px;
+}
+
+.sideBar::-webkit-scrollbar-track{
+  border: 1px solid var(--grey3);
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.scrollbar::-webkit-scrollbar-track:hover{
+  background: #242526;
+}
+
+.sideBar:hover::-webkit-scrollbar-thumb{
+  background: #C4C4C4;
+  border-radius: 23px;
+  height: 4px;
+}
+
+.my__doc{
+  height: 500px !important;
+}
